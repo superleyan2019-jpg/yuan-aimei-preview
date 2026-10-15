@@ -1,0 +1,123 @@
+/* 共用導覽獨立命名，避免影響療程內頁原有的按鈕。 */
+.nav.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: clamp(14px, 1.4vw, 28px);
+  height: 92px;
+  padding: 0 6vw;
+  background: #fff;
+  color: #284f45;
+  border-bottom: 1px solid #bcddae;
+  line-height: 1.5;
+}
+.site-header .site-header-logo { flex: 0 0 auto; display: flex; align-items: center; }
+.site-header .site-header-logo img { display: block; width: 154px; height: auto; }
+.site-header .site-header-links {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: clamp(10px, 1.15vw, 26px);
+  font-size: 15px;
+  letter-spacing: .04em;
+}
+.site-header-links > a,
+.site-header-links > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+  color: #284f45;
+  text-decoration: none;
+  padding: 8px 0;
+}
+.site-header-links > a { text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.site-header .header-book {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 20px;
+  border: 1px solid #5daa96;
+  border-radius: 999px;
+  background: #bcddae;
+  color: #284f45;
+  font-size: 15px;
+  letter-spacing: .08em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.site-header .header-book:focus-visible,
+.site-header .header-book:active {
+  background: #284f45;
+  border-color: #284f45;
+  color: #fff;
+}
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 2px solid #284f45;
+  outline-offset: 4px;
+}
+@media (hover: hover) {
+  .site-header-links > a:hover { color: #397c69; text-decoration: underline; }
+  .site-header .header-book:hover {
+    background: #284f45;
+    border-color: #284f45;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(40, 79, 69, .18);
+  }
+}
+.site-header .header-menu-toggle { display: none; }
+@media (min-width: 1101px) and (max-width: 1399px) {
+  .nav.site-header { padding-inline: 4vw; gap: 16px; }
+  .site-header .site-header-logo img { width: 132px; }
+  .site-header .site-header-links { font-size: 14px; gap: 12px; letter-spacing: 0; }
+  .site-header .header-book { padding-inline: 16px; font-size: 14px; }
+}
+/* 小螢幕採展開式選單；預約一直可見，所有療程都能直接點擊。 */
+@media (max-width: 1100px) {
+  .nav.site-header { height: auto; min-height: 88px; padding: 14px 4vw; flex-wrap: wrap; gap: 12px; }
+  .site-header .site-header-logo { margin-right: auto; }
+  .site-header .site-header-logo img { width: 112px; }
+  .site-header .header-book { order: 1; min-height: 44px; padding: 9px 16px; font-size: 14px; }
+  .site-header[data-nav-ready] .header-menu-toggle {
+    display: inline-flex;
+    order: 2;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid #bcddae;
+    border-radius: 12px;
+    background: #fff;
+    color: #284f45;
+    cursor: pointer;
+  }
+  .header-menu-toggle svg { width: 24px; height: 24px; }
+  .site-header .site-header-links {
+    order: 4;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    flex: 1 1 100%;
+    gap: 4px 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e5eddf;
+    font-size: 15px;
+    letter-spacing: .04em;
+  }
+  .site-header[data-nav-ready]:not([data-menu-open]) .site-header-links { display: none; }
+  .site-header-links > a, .site-header-links > span { padding: 10px 8px; min-height: 44px; }
+  .site-header .header-menu-toggle[aria-expanded="true"] { background: #f3f8ef; border-color: #5daa96; }
+}
+@media (max-width: 767px) {
+  .nav.site-header { padding-inline: 20px; gap: 10px; }
+  .site-header .site-header-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header .header-book { transition: none; }
+}

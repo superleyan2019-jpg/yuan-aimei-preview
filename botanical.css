@@ -1,0 +1,49 @@
+/* 元艾美原站花草：保留原始造型與青綠／淺綠，僅以排版調整尺寸與角度。 */
+[data-botanical] { position: relative; isolation: isolate; --botanical-gutter: clamp(18px, calc((100vw - 1150px) / 2), 200px); }
+/* 獨立背景層不影響排版與點擊；裁切僅作用於裝飾，保留內容及焦點外框。 */
+.botanical-layer { position: absolute; inset: 0; z-index: -1; pointer-events: none; user-select: none; overflow: hidden; }
+.botanical-rail { position: absolute; top: 0; bottom: 0; width: var(--botanical-gutter); overflow: hidden; }
+.botanical-rail--left { left: 0; }
+.botanical-rail--right { right: 0; }
+.botanical-sprig { position: absolute; display: block; max-width: none; height: auto; opacity: .84; }
+
+/* 引言恢復原版寫實葉片：保留自然景深，僅放在文字兩側的留白。 */
+[data-botanical="intro"] { --botanical-gutter: clamp(160px, 24vw, 500px); }
+[data-botanical="intro"] .botanical-sprig { opacity: 1; }
+[data-botanical="intro"] .botanical-rail--left img { width: clamp(220px, 22vw, 470px); left: 0; top: -8vw; transform: none; }
+[data-botanical="intro"] .botanical-rail--right img { width: clamp(140px, 15vw, 320px); right: 0; top: -8vw; transform: none; }
+[data-botanical="treatments"] .botanical-rail--left img { width: 190px; left: -66px; top: 150px; transform: rotate(-15deg); }
+[data-botanical="treatments"] .botanical-rail--right img { width: 160px; right: -36px; bottom: 240px; transform: scaleX(-1) rotate(-8deg); }
+[data-botanical="seo-copy"] .botanical-rail--left img { width: 170px; left: -54px; top: 57%; transform: rotate(-20deg); }
+[data-botanical="seo-copy"] .botanical-rail--right img { width: 135px; right: -40px; top: 90px; transform: scaleX(-1) rotate(14deg); opacity: .7; }
+[data-botanical="reviews"] .botanical-rail--right img { width: 140px; right: -42px; top: 70px; transform: scaleX(-1) rotate(5deg); opacity: .74; }
+[data-botanical="knowledge"] .botanical-rail--left img { width: 150px; left: -48px; bottom: 48px; transform: rotate(-12deg); }
+[data-botanical="contact-details"] { --botanical-gutter: clamp(18px, calc(8vw - 20px), 130px); }
+[data-botanical="contact-details"] .botanical-rail--left img { width: 130px; left: -60px; bottom: 24px; transform: rotate(-10deg); opacity: .7; }
+[data-botanical="contact-details"] .botanical-rail--right img { width: 110px; right: -48px; top: 32px; transform: scaleX(-1) rotate(10deg); opacity: .7; }
+
+/* 窄螢幕僅在內容外側的留白帶顯示局部枝葉，不壓住卡片與段落。 */
+@media (min-width: 768px) and (max-width: 1100px) {
+  [data-botanical] { --botanical-gutter: 22px; }
+  [data-botanical="intro"] { --botanical-gutter: 100px; }
+  [data-botanical="intro"] .botanical-rail--left img { width: 190px; left: -40px; top: -65px; }
+  [data-botanical="intro"] .botanical-rail--right img { width: 120px; right: -15px; top: -50px; }
+}
+@media (max-width: 767px) {
+  [data-botanical], [data-botanical="intro"], [data-botanical="contact-details"] { --botanical-gutter: 18px; }
+  /* 手機只保留指定位置：引言兩側、看診感受右側、聯絡區左下。 */
+  [data-botanical] .botanical-rail { display: none; overflow: visible; }
+  [data-botanical="intro"] .botanical-rail,
+  [data-botanical="reviews"] .botanical-rail--right,
+  [data-botanical="contact-details"] .botanical-rail--left { display: block; }
+  [data-botanical] .botanical-sprig { width: 68px; opacity: .62; }
+  [data-botanical] .botanical-rail--left img { left: -46px; transform: none; }
+  [data-botanical] .botanical-rail--right img { right: -46px; transform: scaleX(-1); }
+  /* 手機只在上下留白露出葉片，避免寫實圖像與窄螢幕內文重疊。 */
+  [data-botanical="intro"] .botanical-rail { width: 150px; height: 44px; overflow: hidden; }
+  [data-botanical="intro"] .botanical-rail--left { top: 0; bottom: auto; }
+  [data-botanical="intro"] .botanical-rail--right { top: auto; bottom: 0; }
+  [data-botanical="intro"] .botanical-rail--left img { width: 130px; left: 0; top: -58px; bottom: auto; transform: none; opacity: 1; }
+  [data-botanical="intro"] .botanical-rail--right img { width: 110px; right: -5px; top: auto; bottom: -10px; transform: none; opacity: 1; }
+  [data-botanical="reviews"] .botanical-rail--right img { top: 30px; }
+}
