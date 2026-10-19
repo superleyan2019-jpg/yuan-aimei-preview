@@ -3,28 +3,35 @@
   --treatment-heading-size: 36px;
   --treatment-english-size: calc(16px * 36 / 34);
   --treatment-body-size: 18.25px;
+  --treatment-body-line-height: 1.8;
+  --treatment-heading-tracking: .22em;
 }
+
+/* 全篇說明內文共用行距，涵蓋 Banner、卡片、流程、條列、FAQ、表格與頁尾。
+   主標與中英文段落標題保留各自的標題行高。 */
+.treatment-page :is(p, li, td, th, figcaption),
+.treatment-page .parts span,
+.treatment-page .footer small { line-height: var(--treatment-body-line-height); }
 
 /* Banner 獨立於 36px 段落標題：桌機由 1440px 寬的 48px 平順放大至 1920px 寬的 56px。
    clamp 限定上下限，超寬螢幕不再放大；下方斷點保留平板與手機字級。 */
 .treatment-page .hero-copy h1 { font-size: clamp(48px, calc(24px + 1.6666667vw), 56px); line-height: 1.6; }
 .treatment-page .hero-copy > small { font-size: 18px; line-height: 1.6; }
-.treatment-page .hero-copy p { font-size: var(--treatment-body-size); line-height: 1.9; }
+.treatment-page .hero-copy p { font-size: var(--treatment-body-size); }
 
 .treatment-page .title h2 {
   font-size: var(--treatment-heading-size);
   line-height: 1.35;
+  letter-spacing: var(--treatment-heading-tracking);
   text-wrap: balance;
 }
-.treatment-page .title small { font-size: var(--treatment-english-size); line-height: 1.4; }
+.treatment-page .title small { font-size: var(--treatment-english-size); line-height: 1.4; letter-spacing: .18em; }
 
 /* 主要說明對齊首頁診所介紹；圖文段落小標對齊三項理念標題。 */
 .treatment-page .lead,
 .treatment-page .copy p,
 .treatment-page .visual-copy p,
-.treatment-page .points li { font-size: var(--treatment-body-size); line-height: 2; }
-/* 段落標題下的說明內文，桌機與手機統一 1.5 倍行距，保留 18.25px 字級。 */
-.treatment-page .lead { line-height: 1.5; }
+.treatment-page .points li { font-size: var(--treatment-body-size); }
 .treatment-page .copy h3,
 .treatment-page .visual-copy h3 { font-size: 23.75px; line-height: 1.6; text-wrap: pretty; }
 
@@ -34,7 +41,7 @@
 .treatment-page .card p,
 .treatment-page .parts span,
 .treatment-page .step p,
-.treatment-page .life-gallery figcaption { font-size: 14px; line-height: 1.8; }
+.treatment-page .life-gallery figcaption { font-size: 14px; }
 .treatment-page .step h3 { font-size: 19px; line-height: 1.5; text-wrap: balance; }
 
 /* FAQ 與補充資訊使用首頁問答字級；表格保留足夠可讀大小。 */
@@ -44,27 +51,24 @@
 .treatment-page .faq p,
 .treatment-page .panel p,
 .treatment-page .panel li,
-.treatment-page .notice p { font-size: 16px; line-height: 1.9; }
+.treatment-page .notice p { font-size: 16px; }
 .treatment-page .compare th,
-.treatment-page .compare td { font-size: 16px; line-height: 1.8; }
+.treatment-page .compare td { font-size: 16px; }
 .treatment-page .compare-scroll { max-width: 100%; overflow-x: auto; }
 
 /* 頁尾邀請區對齊首頁聯絡區；不影響共用 Header 字級。 */
 .treatment-page .cta h2 { font-size: 31px; line-height: 1.6; text-wrap: balance; }
-.treatment-page .cta p { font-size: 16px; line-height: 1.9; }
+.treatment-page .cta p { font-size: 16px; }
 .treatment-page .cta .btn { font-size: 15px; line-height: 1.5; }
-.treatment-page .footer small { font-size: 13px; line-height: 1.9; }
+.treatment-page .footer small { font-size: 13px; }
 
 @media (min-width: 768px) and (max-width: 1100px) {
   .treatment-page .hero-copy h1 { font-size: 30px; }
 }
 @media (max-width: 767px) {
-  .treatment-page { --treatment-english-size: 16px; }
+  .treatment-page { --treatment-english-size: 16px; --treatment-heading-tracking: .14em; }
   .treatment-page .hero-copy h1 { font-size: 25px; line-height: 1.5; }
   .treatment-page .hero-copy > small { font-size: 15px; }
-  .treatment-page .copy p,
-  .treatment-page .visual-copy p,
-  .treatment-page .points li { line-height: 1.9; }
   .treatment-page .faq h3,
   .treatment-page .step h3 { font-size: 18px; }
   /* 比較表在表格內橫向捲動，避免縮小字體或撐開整個頁面。 */
