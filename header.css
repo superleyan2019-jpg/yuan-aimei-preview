@@ -1,5 +1,10 @@
 /* 共用導覽獨立命名，避免影響療程內頁原有的按鈕。 */
+/* 錨點預留實際導覽高度，跳到段落時不會被頂端 Header 遮住。 */
+html { scroll-padding-top: calc(var(--site-header-height, 92px) + 20px); }
 .nav.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -109,6 +114,10 @@
     border-top: 1px solid #e5eddf;
     font-size: 15px;
     letter-spacing: .04em;
+    /* 橫向手機也能捲動展開的選單，保留頂端操作按鈕。 */
+    max-height: calc(100vh - 140px);
+    max-height: calc(100dvh - 140px);
+    overflow-y: auto;
   }
   .site-header[data-nav-ready]:not([data-menu-open]) .site-header-links { display: none; }
   .site-header-links > a, .site-header-links > span { padding: 10px 8px; min-height: 44px; }
