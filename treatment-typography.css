@@ -5,8 +5,9 @@
   --treatment-body-size: 18.25px;
 }
 
-/* Banner 沿用首頁主標的桌機／平板／手機字級，保留療程頁原本宋體。 */
-.treatment-page .hero-copy h1 { font-size: 36px; line-height: 1.6; }
+/* Banner 獨立於 36px 段落標題：桌機由 1440px 寬的 48px 平順放大至 1920px 寬的 56px。
+   clamp 限定上下限，超寬螢幕不再放大；下方斷點保留平板與手機字級。 */
+.treatment-page .hero-copy h1 { font-size: clamp(48px, calc(24px + 1.6666667vw), 56px); line-height: 1.6; }
 .treatment-page .hero-copy > small { font-size: 18px; line-height: 1.6; }
 .treatment-page .hero-copy p { font-size: var(--treatment-body-size); line-height: 1.9; }
 
@@ -22,6 +23,8 @@
 .treatment-page .copy p,
 .treatment-page .visual-copy p,
 .treatment-page .points li { font-size: var(--treatment-body-size); line-height: 2; }
+/* 段落標題下的說明內文，桌機與手機統一 1.5 倍行距，保留 18.25px 字級。 */
+.treatment-page .lead { line-height: 1.5; }
 .treatment-page .copy h3,
 .treatment-page .visual-copy h3 { font-size: 23.75px; line-height: 1.6; text-wrap: pretty; }
 
@@ -59,7 +62,6 @@
   .treatment-page { --treatment-english-size: 16px; }
   .treatment-page .hero-copy h1 { font-size: 25px; line-height: 1.5; }
   .treatment-page .hero-copy > small { font-size: 15px; }
-  .treatment-page .lead,
   .treatment-page .copy p,
   .treatment-page .visual-copy p,
   .treatment-page .points li { line-height: 1.9; }
