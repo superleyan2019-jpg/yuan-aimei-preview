@@ -1,0 +1,38 @@
+/* 已確認的五階段插圖流程：樣式限定在本區塊，沿用原始插圖及流程文字。 */
+#implant-journey { background: #f7f9f3; color: #53645f; }
+#implant-journey .journey { max-width: 1440px; margin: auto; padding: 66px 64px 64px; }
+#implant-journey .journey-title { text-align: center; margin-bottom: 34px; }
+#implant-journey h2 { font-size: 36px; font-weight: 500; letter-spacing: .22em; line-height: 1.35; color: #284f45; margin: 0 0 12px; text-wrap: balance; }
+#implant-journey .english { font-size: 16.9412px; letter-spacing: .18em; line-height: 1.4; }
+#implant-journey .lead { font-size: 18.25px; line-height: 1.8; text-align: center; max-width: 1100px; margin: 0 auto 40px; text-wrap: pretty; }
+#implant-journey .journey-list { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 28px; list-style: none; margin: 0; padding: 0; }
+#implant-journey .journey-step { position: relative; text-align: center; min-width: 0; }
+#implant-journey .number { display: block; font-size: 25px; color: #5caa96; line-height: 1.4; margin-bottom: 8px; font-family: Georgia,serif; }
+#implant-journey .journey-art { display: block; position: relative; width: 204px; height: 190px; overflow: hidden; margin: 0 auto 19px; }
+#implant-journey .journey-art img { position: absolute; display: block; max-width: none; height: auto; }
+#implant-journey .journey-step:not(:last-child)::after { content: '→'; position: absolute; top: 115px; right: -25px; color: #5caa96; font-size: 23px; line-height: 1; }
+#implant-journey h3 { font-size: 19px; line-height: 1.5; font-weight: 700; color: #284f45; margin: 0 0 13px; text-wrap: balance; }
+#implant-journey .journey-step p { font-size: 14px; line-height: 1.8; margin: 0 auto; max-width: 215px; text-wrap: pretty; }
+
+/* 中型螢幕採前三、後二排列，保留插圖和箭頭間距。 */
+@media (max-width: 1279px) {
+  #implant-journey .journey { padding: 48px 32px; }
+  #implant-journey .journey-list { grid-template-columns: repeat(6,minmax(0,1fr)); gap: 32px 24px; }
+  #implant-journey .journey-step { grid-column: span 2; }
+  #implant-journey .journey-step:nth-child(4) { grid-column: 2/span 2; }
+  #implant-journey .journey-step:nth-child(3)::after { display: none; }
+}
+
+/* 手機依閱讀順序改為單欄，方向箭頭朝下。 */
+@media (max-width: 767px) {
+  #implant-journey .journey { padding: 44px 26px; }
+  #implant-journey .journey-title { margin-bottom: 26px; }
+  #implant-journey h2 { font-size: 28px; letter-spacing: .14em; }
+  #implant-journey .english { font-size: 16px; }
+  #implant-journey .lead { font-size: 17px; margin-bottom: 28px; }
+  #implant-journey .journey-list { display: flex; flex-direction: column; gap: 52px; }
+  #implant-journey .journey-step:not(:last-child)::after { display: block; content: '↓'; top: auto; bottom: -37px; right: calc(50% - 7px); font-size: 24px; }
+  #implant-journey .journey-step p { max-width: 280px; font-size: 16px; }
+  #implant-journey .journey-art { margin-bottom: 12px; }
+  #implant-journey .number { margin-bottom: 4px; }
+}
