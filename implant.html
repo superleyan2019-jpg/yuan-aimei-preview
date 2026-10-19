@@ -90,9 +90,9 @@
 @media (hover:hover) { #implant-booking .btn:hover { background:#dcead4; border-color:#5daa96; } }
 </style><style id="implant-footer-design">
 /* 依原站頁尾高度限制重排資訊；不用固定高度、裁切或縮放壓縮內容。 */
-#clinic-footer { padding:20px 32px 16px; background:#fff; color:#52665e; }
+#clinic-footer { padding:20px 32px 16px; background:#f3f8ef; color:#52665e; }
 #clinic-footer .clinic-footer-inner { max-width:1140px; margin:0 auto; }
-#clinic-footer .contact.contact-details { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:40px; align-items:start; padding:0; background:#fff; }
+#clinic-footer .contact.contact-details { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:40px; align-items:start; padding:0; background:transparent; }
 #clinic-footer .footer-clinic-identity { display:grid; grid-template-columns:100px minmax(0,1fr); gap:18px; align-items:center; }
 #clinic-footer .contact-logo { width:100px; margin:0; }
 #clinic-footer .clinic-contact-links { margin:0; }
@@ -122,7 +122,7 @@
 /* 地圖保持完整 2:1 比例；原始圖及來源標示不裁切。 */
 #clinic-footer .clinic-map { width:100%; max-width:260px; }
 #clinic-footer .clinic-map figcaption { margin-top:4px; font-size:12px; line-height:1.6; text-align:left; }
-#clinic-footer .clinic-legal-footer { margin-top:8px; padding:8px 0 0; border-top:1px solid #d7e6ce; background:#fff; font-size:12px; }
+#clinic-footer .clinic-legal-footer { margin-top:8px; padding:8px 0 0; border-top:1px solid #d7e6ce; background:transparent; font-size:12px; }
 #clinic-footer .clinic-legal-footer::before { display:none; }
 #clinic-footer .clinic-legal-footer p { line-height:1.6; }
 #clinic-footer .clinic-legal-footer .clinic-copyright { margin-bottom:2px; font-size:12px; }
@@ -175,6 +175,52 @@
  #clinic-footer .hours-notes p:nth-child(2) { display:inline; }
  #clinic-footer .clinic-legal-footer .clinic-copyright { font-size:12px; margin:0; }
 }
+</style><style id="implant-faq-design">
+/* 用同一個白色問答面板整理六題，展開狀態以淡綠區分。 */
+#implant-faq { background:#f3f8ef; padding:72px 24px; }
+#implant-faq .implant-faq-shell { max-width:1050px; margin:0 auto; }
+#implant-faq .title { margin-bottom:24px; }
+#implant-faq .title h2 { font-size:36px; line-height:1.35; font-weight:500; letter-spacing:.22em; }
+#implant-faq .title small { display:block; margin-top:10px; font-size:16.9412px; line-height:1.5; letter-spacing:.18em; color:#596e65; }
+#implant-faq .implant-faq-intro { margin:0 0 36px; text-align:center; color:#52665e; font-size:20px; line-height:1.8; }
+#implant-faq .implant-faq-list { overflow:hidden; border:1px solid #d7e6ce; border-radius:10px; background:#fff; }
+#implant-faq .implant-faq-item { margin:0; border:0; background:#fff; }
+#implant-faq .implant-faq-item + .implant-faq-item { border-top:1px solid #d7e6ce; }
+#implant-faq summary { display:grid; grid-template-columns:46px minmax(0,1fr) 28px; align-items:center; gap:18px; padding:24px 30px; list-style:none; cursor:pointer; color:#284f45; }
+#implant-faq summary::-webkit-details-marker { display:none; }
+#implant-faq summary::marker { content:""; }
+#implant-faq summary h3 { margin:0; font-size:23.75px; line-height:1.5; letter-spacing:.02em; font-weight:700; }
+#implant-faq .implant-faq-phrase { display:inline-block; white-space:nowrap; }
+#implant-faq .implant-faq-q { font-family:Georgia,serif; font-size:24px; line-height:1.5; font-weight:400; color:#5daa96; }
+#implant-faq .implant-faq-toggle { display:block; position:relative; width:28px; height:28px; color:#5daa96; }
+#implant-faq .implant-faq-toggle::before, #implant-faq .implant-faq-toggle::after { content:""; position:absolute; background:currentColor; border-radius:1px; }
+#implant-faq .implant-faq-toggle::before { left:4px; top:13px; width:20px; height:2px; }
+#implant-faq .implant-faq-toggle::after { left:13px; top:4px; width:2px; height:20px; }
+#implant-faq details[open] summary { background:#edf5e9; }
+#implant-faq details[open] .implant-faq-toggle::after { display:none; }
+#implant-faq .implant-faq-answer { display:grid; grid-template-columns:46px minmax(0,1fr); gap:18px; padding:22px 76px 28px 30px; }
+#implant-faq .implant-faq-a { font-family:Georgia,serif; color:#52665e; font-size:23px; line-height:36px; }
+#implant-faq .implant-faq-answer p { margin:0; color:#3c514b; font-size:20px; line-height:1.8; }
+#implant-faq summary:focus-visible { outline:2px solid #284f45; outline-offset:-4px; border-radius:6px; }
+@media (hover:hover) { #implant-faq summary:hover { background:#f3f8ef; } #implant-faq details[open] summary:hover { background:#e8f1e3; } }
+@media (max-width:767px) {
+ #implant-faq { padding:48px 24px; }
+ #implant-faq .title h2 { font-size:36px; letter-spacing:.14em; }
+ #implant-faq .title small { font-size:16px; }
+ #implant-faq .implant-faq-intro { margin-bottom:26px; }
+ #implant-faq summary { grid-template-columns:34px minmax(0,1fr) 24px; align-items:start; gap:10px; padding:20px 18px; }
+ #implant-faq summary h3 { font-size:23.75px; }
+ #implant-faq .implant-faq-q { font-size:22px; }
+ #implant-faq .implant-faq-toggle { width:24px; height:28px; margin-top:4px; }
+ #implant-faq .implant-faq-toggle::before { left:2px; }
+ #implant-faq .implant-faq-toggle::after { left:11px; }
+ #implant-faq .implant-faq-answer { grid-template-columns:24px minmax(0,1fr); gap:10px; padding:18px 18px 24px; }
+ #implant-faq .implant-faq-a { font-size:22px; }
+}
+/* 窄手機允許長問句自然換行，維持字級並避免碰到右側展開按鈕。 */
+@media (max-width:359px) {
+ #implant-faq .implant-faq-phrase { max-width:100%; white-space:normal; }
+}
 </style></head><body class="treatment-page">
 <header class="nav site-header">
   <a class="site-header-logo" href="index.html" aria-label="元艾美牙醫診所首頁"><img src="yuan-aimei-v2-assets/logo.svg" alt="元艾美牙醫診所"></a>
@@ -224,7 +270,7 @@
 <p>人工植牙涉及手術與組織癒合，可能出現疼痛、腫脹、出血、感染、骨整合不佳，或鄰近解剖構造相關風險。個人條件不同，需由醫師在治療前個別說明。</p>
 <p>人工植牙也不能保證終身使用；長期結果與口腔衛生、牙周健康、咬合、抽菸及定期追蹤都有關係。</p>
 </aside></div></section>
-<section class="section mint"><div class="title"><h2>人工植牙常見問題</h2><i></i><small>FAQ</small></div><div class="faq"><article><h3>植牙會痛嗎？</h3><p>手術通常會在麻醉下進行；術後感受因手術範圍與個人狀況不同，醫師會說明照護與用藥方式。</p></article><article><h3>植牙需要多久？</h3><p>從評估、手術、骨整合到完成假牙，會依部位、骨質、癒合及是否需要其他處置而不同，不能只用固定天數回答。</p></article><article><h3>骨頭不足就不能植牙嗎？</h3><p>需要先確認骨量、缺損範圍與風險；部分情況可能有其他處置或重建方案，但須由醫師評估。</p></article><article><h3>植牙之後還會蛀牙嗎？</h3><p>植體和假牙本身不會像自然牙蛀牙，但周圍組織仍可能發炎或流失，因此清潔與定期檢查不能省略。</p></article><article><h3>有慢性病可以植牙嗎？</h3><p>不是只看疾病名稱，而是看控制情形、用藥與整體風險。請完整告知醫師，再由醫師評估。</p></article><article><h3>費用為什麼每個人不同？</h3><p>缺牙範圍、檢查結果、治療設計、假牙材料與是否需要額外處置都可能影響費用，應在評估後取得個別說明。</p></article></div></section>
+<section id="implant-faq" class="section mint" aria-labelledby="implant-faq-heading"><div class="implant-faq-shell"><div class="title"><h2 id="implant-faq-heading">人工植牙常見問題</h2><small>FAQ</small></div><p class="implant-faq-intro">從治療感受、時程到術後照護，先了解你在意的事。</p><div class="implant-faq-list"><details class="implant-faq-item" open><summary><span class="implant-faq-q" aria-hidden="true">Q</span><h3><span class="implant-faq-phrase">植牙會痛嗎？</span></h3><span class="implant-faq-toggle" aria-hidden="true"></span></summary><div class="implant-faq-answer"><span class="implant-faq-a" aria-hidden="true">A</span><p>手術通常會在麻醉下進行；術後感受因手術範圍與個人狀況不同，醫師會說明照護與用藥方式。</p></div></details><details class="implant-faq-item"><summary><span class="implant-faq-q" aria-hidden="true">Q</span><h3><span class="implant-faq-phrase">植牙需要多久？</span></h3><span class="implant-faq-toggle" aria-hidden="true"></span></summary><div class="implant-faq-answer"><span class="implant-faq-a" aria-hidden="true">A</span><p>從評估、手術、骨整合到完成假牙，會依部位、骨質、癒合及是否需要其他處置而不同，不能只用固定天數回答。</p></div></details><details class="implant-faq-item"><summary><span class="implant-faq-q" aria-hidden="true">Q</span><h3><span class="implant-faq-phrase">骨頭不足</span><span class="implant-faq-phrase">就不能植牙嗎？</span></h3><span class="implant-faq-toggle" aria-hidden="true"></span></summary><div class="implant-faq-answer"><span class="implant-faq-a" aria-hidden="true">A</span><p>需要先確認骨量、缺損範圍與風險；部分情況可能有其他處置或重建方案，但須由醫師評估。</p></div></details><details class="implant-faq-item"><summary><span class="implant-faq-q" aria-hidden="true">Q</span><h3><span class="implant-faq-phrase">植牙之後</span><span class="implant-faq-phrase">還會蛀牙嗎？</span></h3><span class="implant-faq-toggle" aria-hidden="true"></span></summary><div class="implant-faq-answer"><span class="implant-faq-a" aria-hidden="true">A</span><p>植體和假牙本身不會像自然牙蛀牙，但周圍組織仍可能發炎或流失，因此清潔與定期檢查不能省略。</p></div></details><details class="implant-faq-item"><summary><span class="implant-faq-q" aria-hidden="true">Q</span><h3><span class="implant-faq-phrase">有慢性病</span><span class="implant-faq-phrase">可以植牙嗎？</span></h3><span class="implant-faq-toggle" aria-hidden="true"></span></summary><div class="implant-faq-answer"><span class="implant-faq-a" aria-hidden="true">A</span><p>不是只看疾病名稱，而是看控制情形、用藥與整體風險。請完整告知醫師，再由醫師評估。</p></div></details><details class="implant-faq-item"><summary><span class="implant-faq-q" aria-hidden="true">Q</span><h3><span class="implant-faq-phrase">費用為什麼</span><span class="implant-faq-phrase">每個人不同？</span></h3><span class="implant-faq-toggle" aria-hidden="true"></span></summary><div class="implant-faq-answer"><span class="implant-faq-a" aria-hidden="true">A</span><p>缺牙範圍、檢查結果、治療設計、假牙材料與是否需要額外處置都可能影響費用，應在評估後取得個別說明。</p></div></details></div></div></section>
 <section id="implant-booking" class="cta" aria-labelledby="implant-booking-title"><h2 id="implant-booking-title">缺牙的事，先從一次完整評估開始。</h2><p>如果還不確定人工植牙是不是適合自己，可以先讓醫師了解目前的缺牙狀況，再一起討論下一步。</p><a class="btn" href="https://page.line.me/307baiqp" target="_blank" rel="noopener noreferrer" aria-label="點我預約，透過 LINE 預約看診（另開視窗）">點我預約</a></section>
 <footer id="clinic-footer" class="clinic-home-footer" aria-label="元艾美牙醫診所頁尾"><div class="clinic-footer-inner"><section class="contact contact-details" id="contact" aria-label="診所資訊與網站導覽">
   <div class="contact-copy">
