@@ -18,6 +18,25 @@
  .treatment-page .anatomy-figure{border-radius:22px}
  .treatment-page .parts .part-card{padding:20px}
 }
+</style><style id="implant-needs-design">
+/* C 方案使用開放三欄與細線，與上方淺綠結構卡拉開 72px。 */
+.treatment-page .implant-needs{max-width:1050px;margin:72px auto 0}
+.treatment-page .implant-needs-heading{margin:0 0 32px;color:#284f45;text-align:center;font-size:36px;line-height:1.35;font-weight:500;letter-spacing:var(--treatment-heading-tracking,.22em);text-wrap:balance}
+.treatment-page .implant-needs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.treatment-page .implant-need{padding:20px 32px;text-align:center;background:transparent;border:0;border-radius:0;box-shadow:none}
+.treatment-page .implant-need + .implant-need{border-left:1px solid #d7e6ce}
+.treatment-page .implant-need h3{margin:0 0 14px;color:#284f45;font-size:19px;line-height:1.5;font-weight:700}
+.treatment-page .implant-need p{margin:0;font-size:14px;line-height:1.8}
+/* 原圖以透明範圍顯示個別 ICON；左右自動留白讓 ICON、標題、內文同軸置中。 */
+.treatment-page .implant-need-icon{display:block;position:relative;overflow:hidden;margin:0 auto 16px}
+.treatment-page .implant-need-icon img{position:absolute;max-width:none;height:auto;display:block}
+@media(max-width:767px){
+ .treatment-page .implant-needs{margin-top:48px}
+ .treatment-page .implant-needs-heading{margin-bottom:28px}
+ .treatment-page .implant-needs-grid{grid-template-columns:1fr}
+ .treatment-page .implant-need{padding:24px 0}
+ .treatment-page .implant-need + .implant-need{border-left:0;border-top:1px solid #d7e6ce}
+}
 </style></head><body class="treatment-page">
 <header class="nav site-header">
   <a class="site-header-logo" href="index.html" aria-label="元艾美牙醫診所首頁"><img src="yuan-aimei-v2-assets/logo.svg" alt="元艾美牙醫診所"></a>
@@ -51,7 +70,11 @@
    <article class="part-card"><h3>3. 人工牙根</h3><p>植入齒槽骨內，待組織穩定後承接上方修復體。</p></article>
   </div>
  </div>
-<div class="grid3 treatment-info-cards"><div class="card"><h3>單顆缺牙</h3><p>希望重建缺牙位置，並避免為了固定牙橋而修磨兩側健康鄰牙者，可評估植牙可能性。</p></div><div class="card"><h3>多顆缺牙</h3><p>需一起考量缺牙範圍、剩餘牙齒、清潔能力與整體咬合，不一定是一顆缺牙對應一支植體。</p></div><div class="card"><h3>活動假牙不穩</h3><p>部分情況可評估以植體增加假牙支撐與穩定，但實際方式仍須依口腔條件判斷。</p></div></div></section>
+<section id="implant-needs" class="implant-needs" aria-labelledby="implant-needs-heading"><div class="implant-needs-inner"><h2 id="implant-needs-heading" class="implant-needs-heading">哪些缺牙情況，可以評估植牙？</h2><div class="implant-needs-grid" aria-label="缺牙類型">
+  <article class="implant-need"><span class="implant-need-icon" style="width:128px;height:80px" aria-hidden="true"><img src="yuan-aimei-v2-assets/implant-needs-icons-c-v1.png" alt="" width="2172" height="724" style="width:434.40000000000003px;left:-7.800000000000001px;top:-28.300000000000004px;clip-path:inset(29.55801104972376% 69.5672191528545% 35.22099447513812% 2.6243093922651934%)"></span><h3>單顆缺牙</h3><p>希望重建缺牙位置，並避免為了固定牙橋而修磨兩側健康鄰牙者，可評估植牙可能性。</p></article>
+  <article class="implant-need"><span class="implant-need-icon" style="width:128px;height:80px" aria-hidden="true"><img src="yuan-aimei-v2-assets/implant-needs-icons-c-v1.png" alt="" width="2172" height="724" style="width:399.7546012269938px;left:-135.5092024539877px;top:-23.22085889570552px;clip-path:inset(29.696132596685082% 34.99079189686925% 34.806629834254146% 34.806629834254146%)"></span><h3>多顆缺牙</h3><p>需一起考量缺牙範圍、剩餘牙齒、清潔能力與整體咬合，不一定是一顆缺牙對應一支植體。</p></article>
+  <article class="implant-need"><span class="implant-need-icon" style="width:128px;height:80px" aria-hidden="true"><img src="yuan-aimei-v2-assets/implant-denture-icon-v2.png" alt="" width="1254" height="1254" style="width:110.64705882352942px;left:9.029411764705877px;top:-15.235294117647062px;clip-path:inset(17.22488038277512% 9.968102073365232% 17.384370015948964% 9.330143540669857%)"></span><h3>活動假牙不穩</h3><p>部分情況可評估以植體增加假牙支撐與穩定，但實際方式仍須依口腔條件判斷。</p></article>
+ </div></div></section></section>
 <section class="section mint"><div class="title"><h2>植牙前，先把這些條件看清楚</h2><i></i><small>Evaluation</small></div><div class="visual-pair"><img src="yuan-aimei-v2-assets/implant-evaluation.png" alt="醫師與患者討論人工植牙評估"><div class="visual-copy"><h3>不是只有「有沒有骨頭」</h3><p>評估會把缺牙位置、牙周狀況、骨質與空間、鄰牙、咬合及全身健康放在一起看。影像只是其中一部分，仍需配合臨床檢查與病史，才能討論適合的重建方式。</p></div></div><div class="grid3 treatment-info-cards"><div class="card"><h3>牙周與清潔</h3><p>若有牙周發炎、牙菌斑控制不佳等情形，通常需要先處理並建立穩定的清潔習慣。</p></div><div class="card"><h3>骨質與空間</h3><p>透過臨床及影像檢查，了解骨頭高度、寬度、鄰牙與重要解剖構造的位置。</p></div><div class="card"><h3>病史與用藥</h3><p>慢性病控制、抽菸習慣及部分藥物都可能影響評估，應如實告知醫師，由醫師綜合判斷。</p></div></div></section>
 <section class="section"><div class="title"><h2>人工植牙大致會經過哪些階段？</h2><i></i><small>Treatment Journey</small></div><p class="lead">實際步驟與所需時間會依個人條件、是否需要其他處置及組織癒合情形不同。以下是便於理解的概略流程。</p><div class="steps"><div class="step"><b>01</b><h3>檢查與評估</h3><p>了解缺牙原因、口腔健康、影像與整體病史。</p></div><div class="step"><b>02</b><h3>治療規劃</h3><p>說明重建選項、可能風險、費用與預估階段。</p></div><div class="step"><b>03</b><h3>植入人工牙根</h3><p>依規劃進行手術，術後按醫囑照護與回診。</p></div><div class="step"><b>04</b><h3>等待組織穩定</h3><p>等待骨整合；時間會依部位與個人狀況而異。</p></div><div class="step"><b>05</b><h3>製作假牙與追蹤</h3><p>完成上方假牙後，持續清潔與定期檢查。</p></div></div></section>
 <section class="section mint"><div class="title"><h2>缺牙重建，不只有一種方式</h2><i></i><small>Options</small></div><div class="compare-scroll" tabindex="0" role="region" aria-label="缺牙重建方式比較表，可左右捲動"><table class="compare"><tr><th>方式</th><th>常見考量</th><th>需要一起評估</th></tr><tr><td>人工植牙</td><td>不需以鄰牙作為牙橋支撐，但屬侵入性治療，治療期與費用需納入考量。</td><td>骨質、牙周、病史、清潔與手術風險。</td></tr><tr><td>固定牙橋</td><td>利用鄰牙支撐缺牙區的假牙，通常需要修磨支撐牙。</td><td>鄰牙健康、缺牙範圍、受力與清潔。</td></tr><tr><td>活動假牙</td><td>可自行取下清潔，適用情況與設計範圍較廣。</td><td>穩定度、異物感、支撐牙與日常適應。</td></tr></table></div><p class="lead">沒有一種方式適合所有人。選擇的重點，是在口腔條件、生活需求、治療風險與長期維護之間找到合適的平衡。</p></section>
