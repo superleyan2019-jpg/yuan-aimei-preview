@@ -89,60 +89,59 @@
 #implant-booking .btn:focus-visible { outline:2px solid #284f45; outline-offset:4px; }
 @media (hover:hover) { #implant-booking .btn:hover { background:#dcead4; border-color:#5daa96; } }
 </style><style id="implant-footer-design">
-/* 四個資訊欄共用 1280px 版心，避免用固定高度壓縮文字。 */
-#clinic-footer { padding:38px 48px 22px; background:#f3f8ef; border-top:1px solid #d7e6ce; color:#52665e; }
-#clinic-footer .compact-footer-inner { max-width:1280px; margin:0 auto; }
-#clinic-footer .compact-footer-main { display:grid; grid-template-columns:160px 210px minmax(360px,1.5fr) minmax(230px,1fr); align-items:start; gap:24px; }
-#clinic-footer .compact-footer-brand { align-self:center; text-align:center; }
-#clinic-footer .compact-footer-brand img { display:block; width:150px; max-width:100%; height:auto; margin:0 auto; }
-#clinic-footer .compact-footer-brand span { display:block; margin-top:10px; font-size:15px; line-height:1.6; color:#284f45; letter-spacing:.06em; }
-#clinic-footer a { color:inherit; text-decoration:none; }
-#clinic-footer .compact-footer-nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 16px; padding-top:4px; }
-#clinic-footer .compact-footer-nav a { display:flex; align-items:center; min-height:36px; font-size:15px; line-height:1.6; }
-#clinic-footer .compact-footer-nav span { background:linear-gradient(#5daa96,#5daa96) left bottom / 0 1px no-repeat; transition:background-size .2s ease; }
-#clinic-footer .compact-footer-hours, #clinic-footer .compact-footer-contact { min-width:0; height:100%; border-left:1px solid #ccd8cf; padding-left:26px; }
-#clinic-footer .compact-footer-hours h2 { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-#clinic-footer .compact-hours-table { width:100%; table-layout:fixed; border-collapse:collapse; text-align:center; font-size:13px; line-height:1.5; color:#284f45; }
-#clinic-footer .compact-hours-table th, #clinic-footer .compact-hours-table td { padding:3px 0; font-size:13px; line-height:1.5; font-weight:400; }
-#clinic-footer .compact-hours-table th:first-child { width:100px; text-align:left; white-space:nowrap; }
-#clinic-footer .compact-hours-table td span { font-size:11px; }
-#clinic-footer .compact-hours-table .hours-special { font-size:15px; }
-#clinic-footer .compact-hours-table .hours-closed { color:#82988b; }
-#clinic-footer .compact-hours-notes { margin-top:10px; }
-#clinic-footer .compact-hours-notes p { display:inline; margin:0; font-size:12px; line-height:1.8; }
-#clinic-footer .compact-hours-notes p:first-child { display:block; }
-#clinic-footer .compact-hours-notes .hours-sunday::before { content:"・"; margin:0 3px; }
-#clinic-footer .compact-hours-notes strong { font-weight:500; }
-#clinic-footer .compact-footer-contact { display:flex; flex-direction:column; gap:12px; font-style:normal; }
-#clinic-footer .compact-footer-address { font-size:16px; line-height:1.8; }
-#clinic-footer .compact-footer-phone { color:#397c69; font-size:20px; line-height:1.6; }
-#clinic-footer .compact-footer-social { display:flex; flex-wrap:wrap; gap:8px 18px; font-size:14px; line-height:1.8; }
-#clinic-footer .compact-footer-legal { margin-top:28px; padding-top:18px; border-top:1px solid #d7e6ce; text-align:center; }
-#clinic-footer .compact-footer-legal p { margin:0; font-size:12px; line-height:1.8; }
-#clinic-footer .compact-footer-legal .clinic-copyright { font-size:13px; }
-#clinic-footer .compact-footer-legal .compact-footer-review { margin-top:6px; color:#6a7b71; font-size:12px; }
-#clinic-footer a:focus-visible { outline:2px solid #284f45; outline-offset:4px; }
-#clinic-footer .compact-footer-nav a:focus-visible span { background-size:100% 1px; }
-@media (hover:hover) { #clinic-footer .compact-footer-nav a:hover span { background-size:100% 1px; } #clinic-footer .compact-footer-contact a:hover { text-decoration:underline; text-decoration-color:#5daa96; text-underline-offset:4px; } }
-@media (max-width:1199px) {
- #clinic-footer { padding:32px 24px 22px; }
- #clinic-footer .compact-footer-main { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 32px; }
- #clinic-footer .compact-footer-brand { justify-self:start; }
- #clinic-footer .compact-footer-hours { padding:22px 0 0; border-left:0; border-top:1px solid #ccd8cf; }
- #clinic-footer .compact-footer-hours h2 { position:static; width:auto; height:auto; margin:0 0 10px; overflow:visible; clip-path:none; white-space:normal; font-size:15px; line-height:1.6; color:#284f45; font-weight:600; letter-spacing:.06em; }
- #clinic-footer .compact-footer-contact { padding:22px 0 0; border-left:0; border-top:1px solid #ccd8cf; }
+/* 版心參考緊湊版；仍保留首頁分組，不將內容改成四個橫向資訊欄。 */
+#clinic-footer { padding:24px 48px 18px; background:#fff; color:#52665e; }
+#clinic-footer .clinic-footer-inner { max-width:1280px; margin:0 auto; }
+#clinic-footer .contact.contact-details { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:64px; align-items:start; padding:0; background:#fff; }
+#clinic-footer .contact-logo { width:120px; margin:0 0 10px; }
+#clinic-footer .clinic-contact-links { margin-top:0; }
+#clinic-footer .clinic-contact-link { padding:3px 0; font-size:15px; line-height:1.6; }
+#clinic-footer .clinic-contact-link.clinic-phone { font-size:20px; }
+#clinic-footer .contact-icon { flex-basis:22px; width:22px; }
+#clinic-footer .contact-icon svg { width:20px; height:20px; }
+#clinic-footer .contact-icon.contact-facebook { font-size:24px; }
+#clinic-footer .clinic-hours { margin-top:14px; }
+#clinic-footer .contact-details h3 { margin-bottom:8px; font-size:18px; line-height:1.6; }
+#clinic-footer .hours-table { font-size:13px; }
+#clinic-footer .hours-table th, #clinic-footer .hours-table td { padding:4px 0; line-height:1.8; }
+#clinic-footer .hours-table td > span { font-size:12px; }
+#clinic-footer .hours-table .hours-special { font-size:16px; }
+#clinic-footer .hours-notes { margin-top:8px; }
+#clinic-footer .hours-notes p { margin-top:2px; font-size:12px; line-height:1.8; }
+#clinic-footer .hours-notes .hours-sunday { margin-top:2px; }
+#clinic-footer .contact-side { justify-content:flex-start; gap:16px; }
+#clinic-footer .contact-site-nav { padding-top:0; }
+#clinic-footer .contact-site-nav h3 { margin:0; font-size:18px; }
+#clinic-footer .contact-site-nav ul { margin-top:10px; }
+#clinic-footer .contact-site-nav li + li { margin-top:2px; }
+#clinic-footer .contact-site-nav a { min-height:28px; font-size:15px; }
+/* 完整顯示原地圖與來源標示，不裁切；縮小圖框而非拉扁圖片。 */
+#clinic-footer .clinic-map { width:100%; max-width:360px; }
+#clinic-footer .clinic-map figcaption { margin-top:6px; font-size:12px; line-height:1.8; text-align:left; }
+#clinic-footer .clinic-legal-footer { margin-top:16px; padding:14px 0 0; border-top:1px solid #d7e6ce; background:#fff; font-size:12px; }
+#clinic-footer .clinic-legal-footer::before { display:none; }
+#clinic-footer .clinic-legal-footer p { line-height:1.8; }
+#clinic-footer .clinic-legal-footer .clinic-copyright { margin-bottom:4px; font-size:13px; }
+#clinic-footer .clinic-footer-review { margin-top:5px; color:#6a7b71; font-size:12px; }
+@media (min-width:768px) and (max-width:1100px) {
+ #clinic-footer { padding:28px 32px 20px; }
+ #clinic-footer .contact.contact-details { gap:32px; }
+ #clinic-footer .contact-site-nav { gap:12px; }
+ #clinic-footer .contact-site-nav h3 { font-size:16px; }
+ #clinic-footer .contact-site-nav a { font-size:14px; }
+ #clinic-footer .contact-site-nav ul { padding-left:10px; }
 }
 @media (max-width:767px) {
- #clinic-footer .compact-footer-main { grid-template-columns:minmax(0,1fr); gap:24px; }
- #clinic-footer .compact-footer-brand { justify-self:center; }
- #clinic-footer .compact-footer-brand img { width:132px; }
- #clinic-footer .compact-footer-nav { column-gap:24px; }
- #clinic-footer .compact-footer-nav a { min-height:40px; font-size:16px; }
- #clinic-footer .compact-footer-hours h2 { font-size:16px; }
- #clinic-footer .compact-hours-table th:first-child { width:96px; }
- #clinic-footer .compact-footer-legal { text-align:left; margin-top:24px; }
+ #clinic-footer { padding:28px 24px 24px; }
+ #clinic-footer .contact.contact-details { grid-template-columns:minmax(0,1fr); gap:28px; }
+ #clinic-footer .clinic-contact-link { min-height:44px; }
+ #clinic-footer .contact-side { gap:26px; }
+ #clinic-footer .clinic-map { max-width:none; }
+ #clinic-footer .contact-site-nav h3 { font-size:16px; }
+ #clinic-footer .contact-site-nav a { min-height:44px; font-size:14px; }
+ #clinic-footer .contact-site-nav li + li { margin-top:0; }
+ #clinic-footer .clinic-legal-footer { margin-top:24px; padding-top:16px; text-align:left; }
 }
-@media (prefers-reduced-motion:reduce) { #clinic-footer .compact-footer-nav span { transition:none; } }
 </style></head><body class="treatment-page">
 <header class="nav site-header">
   <a class="site-header-logo" href="index.html" aria-label="元艾美牙醫診所首頁"><img src="yuan-aimei-v2-assets/logo.svg" alt="元艾美牙醫診所"></a>
@@ -194,5 +193,27 @@
 </aside></div></section>
 <section class="section mint"><div class="title"><h2>人工植牙常見問題</h2><i></i><small>FAQ</small></div><div class="faq"><article><h3>植牙會痛嗎？</h3><p>手術通常會在麻醉下進行；術後感受因手術範圍與個人狀況不同，醫師會說明照護與用藥方式。</p></article><article><h3>植牙需要多久？</h3><p>從評估、手術、骨整合到完成假牙，會依部位、骨質、癒合及是否需要其他處置而不同，不能只用固定天數回答。</p></article><article><h3>骨頭不足就不能植牙嗎？</h3><p>需要先確認骨量、缺損範圍與風險；部分情況可能有其他處置或重建方案，但須由醫師評估。</p></article><article><h3>植牙之後還會蛀牙嗎？</h3><p>植體和假牙本身不會像自然牙蛀牙，但周圍組織仍可能發炎或流失，因此清潔與定期檢查不能省略。</p></article><article><h3>有慢性病可以植牙嗎？</h3><p>不是只看疾病名稱，而是看控制情形、用藥與整體風險。請完整告知醫師，再由醫師評估。</p></article><article><h3>費用為什麼每個人不同？</h3><p>缺牙範圍、檢查結果、治療設計、假牙材料與是否需要額外處置都可能影響費用，應在評估後取得個別說明。</p></article></div></section>
 <section id="implant-booking" class="cta" aria-labelledby="implant-booking-title"><h2 id="implant-booking-title">缺牙的事，先從一次完整評估開始。</h2><p>如果還不確定人工植牙是不是適合自己，可以先讓醫師了解目前的缺牙狀況，再一起討論下一步。</p><a class="btn" href="https://page.line.me/307baiqp" target="_blank" rel="noopener noreferrer" aria-label="點我預約，透過 LINE 預約看診（另開視窗）">點我預約</a></section>
-<footer id="clinic-footer" class="clinic-compact-footer" aria-label="元艾美牙醫診所頁尾"><div class="compact-footer-inner"><div class="compact-footer-main"><a class="compact-footer-brand" href="index.html" aria-label="元艾美牙醫診所首頁"><img src="yuan-aimei-v2-assets/logo.svg" alt="元艾美"><span>元艾美牙醫診所</span></a><nav class="compact-footer-nav" aria-label="診療項目"><a href="implant.html"><span>人工植牙</span></a><a href="all-on-4.html"><span>All-on-4</span></a><a href="orthodontics.html"><span>牙齒矯正</span></a><a href="orthodontics.html#invisalign"><span>隱形矯正</span></a><a href="ceramic-dsd.html"><span>全瓷美學</span></a><a href="microscopic-endodontics.html"><span>顯微根管</span></a></nav><section class="compact-footer-hours" aria-labelledby="footer-hours-heading"><h2 id="footer-hours-heading">門診時間</h2><table class="compact-hours-table" aria-label="每週門診時間" aria-describedby="footer-hours-note"><thead><tr><th scope="col">時間／星期</th><th scope="col">一</th><th scope="col">二</th><th scope="col">三</th><th scope="col">四</th><th scope="col">五</th><th scope="col">六</th><th scope="col">日</th></tr></thead><tbody><tr><th scope="row">09:00–12:00</th><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td class="hours-closed"><span aria-label="休診">—</span></td></tr><tr><th scope="row">14:30–17:30</th><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span class="hours-special" aria-label="依下方特殊時段看診">＊</span></td><td><span class="hours-special" aria-label="依下方特殊時段看診">＊</span></td><td class="hours-closed"><span aria-label="休診">—</span></td></tr><tr><th scope="row">18:00–21:30</th><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span class="hours-special" aria-label="依下方特殊時段看診">＊</span></td><td class="hours-closed"><span aria-label="休診">—</span></td><td class="hours-closed"><span aria-label="休診">—</span></td></tr></tbody></table><div class="compact-hours-notes" id="footer-hours-note"><p><strong>＊週五</strong> 下午 14:00–20:00，最後掛號 19:30</p><p><strong>＊週六</strong> 下午 14:00–17:00，最後掛號 16:30</p><p class="hours-sunday">週日休診</p></div></section><address class="compact-footer-contact"><a class="compact-footer-address" href="https://goo.gl/maps/HnQeZLzpzb6wZsRm8" target="_blank" rel="noopener noreferrer">406 台中市北屯區遼寧路一段 145 號</a><a class="compact-footer-phone" href="tel:+886422450032">04-2245-0032</a><div class="compact-footer-social"><a href="https://page.line.me/307baiqp" target="_blank" rel="noopener noreferrer">LINE 預約</a><a href="https://www.facebook.com/ibeauty347/" target="_blank" rel="noopener noreferrer">Facebook</a></div></address></div><div class="compact-footer-legal"><p class="clinic-copyright">Copyright©2026 元艾美牙醫診所保留一切權利。</p><p class="clinic-legal-notice">禁止任何網際網路服務業者轉錄其網路資訊知內容供人點閱。但以網路搜尋或超連結方式，進入醫療機構知網址(域)直接點閱者，不在此限。網頁相容性建議使用Chrome瀏覽器閱覽。</p><p class="compact-footer-review">品牌配色預覽 v1｜醫療內容上線前須由診所與醫師審核</p></div></div></footer>
+<footer id="clinic-footer" class="clinic-home-footer" aria-label="元艾美牙醫診所頁尾"><div class="clinic-footer-inner"><section class="contact contact-details" id="contact" aria-label="診所資訊與網站導覽">
+  <div class="contact-copy">
+    <img class="contact-logo" src="yuan-aimei-v2-assets/logo.svg" alt="元艾美牙醫診所">
+    <div class="clinic-contact-links" aria-labelledby="contact-links-heading">
+      <h3 class="contact-sr-only" id="contact-links-heading">聯絡我們</h3>
+      <a class="clinic-contact-link" href="https://goo.gl/maps/HnQeZLzpzb6wZsRm8" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.7"/></svg></span><span><small>地址</small><span>406 台中市北屯區遼寧路一段 145 號</span></span></a>
+      <a class="clinic-contact-link clinic-phone" href="tel:+886422450032"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>電話</small><span>04-2245-0032</span></span></a>
+      <a class="clinic-contact-link" href="https://www.facebook.com/ibeauty347/" target="_blank" rel="noopener noreferrer"><span class="contact-icon contact-facebook" aria-hidden="true">f</span><span><small>Facebook</small><span>元艾美牙醫診所</span></span></a>
+    </div>
+    <div class="clinic-hours" id="clinic-hours" aria-labelledby="hours-heading">
+      <h3 id="hours-heading">門診時間</h3>
+      <table class="hours-table" aria-label="每週門診時間" aria-describedby="hours-note"><thead><tr><th scope="col">時間／星期</th><th scope="col">一</th><th scope="col">二</th><th scope="col">三</th><th scope="col">四</th><th scope="col">五</th><th scope="col">六</th><th scope="col">日</th></tr></thead><tbody><tr><th scope="row">09:00–12:00</th><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td class="hours-closed"><span aria-label="休診">—</span></td></tr><tr><th scope="row">14:30–17:30</th><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span class="hours-special" aria-label="依下方特殊時段看診">＊</span></td><td><span class="hours-special" aria-label="依下方特殊時段看診">＊</span></td><td class="hours-closed"><span aria-label="休診">—</span></td></tr><tr><th scope="row">18:00–21:30</th><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span aria-label="看診">●</span></td><td><span class="hours-special" aria-label="依下方特殊時段看診">＊</span></td><td class="hours-closed"><span aria-label="休診">—</span></td><td class="hours-closed"><span aria-label="休診">—</span></td></tr></tbody></table>
+      <div class="hours-notes" id="hours-note"><p><strong>＊週五</strong> 下午 14:00–20:00，最後掛號 19:30</p><p><strong>＊週六</strong> 下午 14:00–17:00，最後掛號 16:30</p><p class="hours-sunday">週日休診</p></div>
+    </div>
+  </div>
+  <div class="contact-side">
+    <nav class="contact-site-nav" aria-label="頁尾網站導覽"><div class="contact-nav-group"><h3>探索元艾美</h3><ul><li><a href="index.html#top"><span class="contact-nav-label">首頁</span></a></li><li><a href="index.html#about-clinic"><span class="contact-nav-label">關於元艾美</span></a></li><li><a href="index.html#faq"><span class="contact-nav-label">常見問題</span></a></li></ul></div><div class="contact-nav-group"><h3>就診資訊</h3><ul><li><a href="index.html#reviews-heading"><span class="contact-nav-label">看診感受</span></a></li><li><a href="index.html#dental-journal"><span class="contact-nav-label">牙科知識</span></a></li><li><a href="#clinic-hours"><span class="contact-nav-label">門診時間</span></a></li><li><a href="#contact-links-heading"><span class="contact-nav-label">聯絡我們</span></a></li></ul></div><div class="contact-nav-group"><h3>診療項目</h3><ul><li><a href="implant.html"><span class="contact-nav-label">人工植牙</span></a></li><li><a href="all-on-4.html"><span class="contact-nav-label">All-on-4</span></a></li><li><a href="orthodontics.html"><span class="contact-nav-label">牙齒矯正</span></a></li><li><a href="orthodontics.html#invisalign"><span class="contact-nav-label">隱形矯正</span></a></li><li><a href="ceramic-dsd.html"><span class="contact-nav-label">全瓷美學</span></a></li><li><a href="microscopic-endodontics.html"><span class="contact-nav-label">顯微根管</span></a></li></ul></div></nav>
+    <figure class="clinic-map">
+    <a class="clinic-map-image" href="https://goo.gl/maps/HnQeZLzpzb6wZsRm8" target="_blank" rel="noopener noreferrer" aria-label="在 Google 地圖開啟元艾美牙醫診所位置（另開視窗）"><picture><source media="(max-width: 767px)" srcset="yuan-aimei-v2-assets/clinic-google-map-wide-mobile.png" width="780" height="390"><img src="yuan-aimei-v2-assets/clinic-google-map-wide-desktop.png" alt="元艾美牙醫診所 Google 地圖截圖，位於台中市北屯區遼寧路一段 145 號" width="1520" height="760" loading="lazy"></picture></a>
+    <figcaption><a href="https://goo.gl/maps/HnQeZLzpzb6wZsRm8" target="_blank" rel="noopener noreferrer">在 Google 地圖查看位置與導航 <span aria-hidden="true">↗</span></a></figcaption>
+    </figure>
+  </div>
+</section><div class="clinic-legal-footer"><p class="clinic-copyright">Copyright©2026 元艾美牙醫診所保留一切權利。</p><p class="clinic-legal-notice">禁止任何網際網路服務業者轉錄其網路資訊知內容供人點閱。但以網路搜尋或超連結方式，進入醫療機構知網址(域)直接點閱者，不在此限。網頁相容性建議使用Chrome瀏覽器閱覽。</p><p class="clinic-footer-review">品牌配色預覽 v1｜醫療內容上線前須由診所與醫師審核</p></div></div></footer>
 <script src="header.js?v=d62684c3a2" defer></script></body></html>
