@@ -35,11 +35,13 @@
 .treatment-page .copy h3,
 .treatment-page .visual-copy h3 { font-size: 23.75px; line-height: 1.6; text-wrap: pretty; }
 
+/* 植牙三個組成部件採較大的標題與主要內文字級，提升結構說明的可讀性。 */
+.treatment-page .parts b { font-size: 23.75px; line-height: 1.5; }
+.treatment-page .parts span { font-size: var(--treatment-body-size); }
+
 /* 資訊卡沿用首頁需求卡層次；流程小字由 12px 提高到 14px。 */
-.treatment-page .card h3,
-.treatment-page .parts b { font-size: 19px; line-height: 1.5; }
+.treatment-page .card h3 { font-size: 19px; line-height: 1.5; }
 .treatment-page .card p,
-.treatment-page .parts span,
 .treatment-page .step p,
 .treatment-page .life-gallery figcaption { font-size: 14px; }
 .treatment-page .step h3 { font-size: 19px; line-height: 1.5; text-wrap: balance; }
