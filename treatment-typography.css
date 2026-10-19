@@ -2,7 +2,7 @@
 .treatment-page {
   --treatment-heading-size: 36px;
   --treatment-english-size: calc(16px * 36 / 34);
-  --treatment-body-size: 18.25px;
+  --treatment-body-size: 20px; /* 依確認調整主要內文，保留 1.8 倍行距。 */
   --treatment-body-line-height: 1.8;
   --treatment-heading-tracking: .22em;
 }
