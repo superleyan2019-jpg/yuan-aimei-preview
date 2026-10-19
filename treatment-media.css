@@ -1,0 +1,15 @@
+/* 圖文照片沿用首頁診療主圖的 10px 圓角，桌機與手機使用相同數值。 */
+.treatment-page { --treatment-image-radius: 10px; }
+
+.treatment-page .visual > img,
+.treatment-page .visual-pair > img,
+.treatment-page .anatomy > img {
+  border-radius: var(--treatment-image-radius);
+}
+
+/* 結構圖的編號覆蓋層與圖片共用外框，完整保留圖文比例與內容。 */
+.treatment-page .anatomy .anatomy-figure {
+  border-radius: var(--treatment-image-radius);
+  overflow: hidden;
+}
+.treatment-page .anatomy-figure > img { border-radius: inherit; }
