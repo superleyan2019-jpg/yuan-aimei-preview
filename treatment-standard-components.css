@@ -118,9 +118,7 @@
   .treatment-standard-content .tds-care-grid .card { padding: 20px; }
 }
 @media (max-width: 767px) {
-  .treatment-standard-content .hero { height: auto; padding: 32px 24px 340px; background-color: #f3f8ef; background-size: auto 320px; background-position: 62% bottom; background-repeat: no-repeat; }
-  .treatment-standard-content .hero-copy { position: static; max-width: none; }
-  .treatment-standard-content .hero-copy p { margin-bottom: 0; }
+  /* 手機 Banner 統一由 treatment-banner.css 管理。 */
   .treatment-standard-content .section { padding: 48px 24px; }
   .treatment-standard-content .card { padding: 24px; }
   .treatment-standard-content .notice { padding: 24px 20px; background: #f3f8ef; }

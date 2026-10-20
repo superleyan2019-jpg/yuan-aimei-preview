@@ -174,11 +174,7 @@
 @media (max-width: 767px) {
   #allon4-content .allon4-structure-intro { margin-top: 32px; text-align: left; }
   #allon4-content #allon4-structure .visual { grid-template-columns: minmax(0, 1fr); margin-top: 24px; }
-  /* 手機將文字留在照片上方，避免長說明疊在人臉上；原照片不改、不變形。 */
-  #allon4-hero { height: auto; padding: 32px 24px 340px; background-color: #f3f8ef; background-size: auto 320px; background-position: 62% bottom; background-repeat: no-repeat; }
-  #allon4-hero .hero-copy { position: static; }
-  #allon4-hero .hero-copy p { margin-bottom: 0; }
-  #allon4-hero .hero-copy-line { display: inline; }
+  /* 手機 Banner 統一由 treatment-banner.css 管理。 */
   #allon4-content .section { padding: 48px 24px; }
   #allon4-content :is(.card, .evaluation-panel) { padding: 24px; }
   #allon4-content .allon4-structure-cards li { padding: 20px; }
