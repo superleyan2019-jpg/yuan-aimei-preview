@@ -1,0 +1,81 @@
+/* 已確認的 v5 頁尾；由 output/apply-approved-footer.cjs 統一產生。 */
+#clinic-footer{display:block;margin:0;border:0;width:100%;height:auto;background:#f3f8ef;color:#284f45;font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;font-size:16px;font-weight:400;line-height:normal;letter-spacing:normal;text-align:left}
+#clinic-footer :where(section,nav,figure,div,details){margin:0;padding:0;border:0;background:transparent}
+#clinic-footer :where(h3,p,li,ul,table,th,td,figcaption){color:inherit;font-family:inherit;line-height:inherit;letter-spacing:normal}
+#clinic-footer :where(p,li){padding:0;border:0}
+#clinic-footer :where(a){font-family:inherit;letter-spacing:inherit}
+#clinic-footer :where(img){max-width:100%;object-fit:contain}
+#clinic-footer *{box-sizing:border-box}
+#clinic-footer a{color:inherit;text-decoration:none}
+#clinic-footer a:hover{text-decoration:underline;text-underline-offset:4px}
+#clinic-footer a:focus-visible,#clinic-footer summary:focus-visible{outline:2px solid #284f45;outline-offset:4px}
+#clinic-footer{padding:26px 60px 15px}
+#clinic-footer .cf-clinic-footer-inner{max-width:1200px;margin:auto}
+#clinic-footer .cf-footer-main{display:grid;grid-template-columns:280px minmax(0,1fr) 300px;gap:36px;align-items:start}
+#clinic-footer .cf-contact-logo{width:105px;height:auto;display:block;margin:0 0 8px}
+#clinic-footer .cf-clinic-contact-links{display:flex;flex-direction:column}
+#clinic-footer .cf-clinic-contact-link{display:flex;align-items:center;gap:9px;font-size:14px;line-height:1.65;padding:3px 0}
+#clinic-footer .cf-clinic-phone{order:-1;color:#397c69;font-size:23px;font-weight:600;letter-spacing:.03em;padding-bottom:5px}
+#clinic-footer .cf-contact-icon{width:18px;flex:0 0 18px;color:#5daa96;text-align:center}
+#clinic-footer .cf-contact-icon svg{display:block;width:18px;height:18px}
+#clinic-footer .cf-contact-facebook{font:bold 23px/1 Arial}
+#clinic-footer .cf-contact-sr-only,#clinic-footer .cf-clinic-contact-link small{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#clinic-footer h3{font-size:16px;font-weight:700;letter-spacing:.07em;margin:0 0 10px}
+#clinic-footer .cf-hours-table{width:100%;border-collapse:collapse;table-layout:fixed;text-align:center;font-size:13px}
+#clinic-footer .cf-hours-table th,#clinic-footer .cf-hours-table td{height:27px;padding:3px 0;border-bottom:1px solid #dce7d6;font-weight:400}
+#clinic-footer .cf-hours-table th:first-child{width:105px;white-space:nowrap;text-align:left}
+#clinic-footer .cf-hours-table thead{color:#65796e}
+#clinic-footer .cf-hours-table td>span{font-size:11px}
+#clinic-footer .cf-hours-table .cf-hours-special{font-size:16px}
+#clinic-footer .cf-hours-closed{color:#9cae9c}
+#clinic-footer .cf-hours-notes{margin-top:10px;font-size:12px;color:#52665e;line-height:1.8}
+#clinic-footer .cf-hours-notes p{margin:0}
+#clinic-footer .cf-hours-notes strong{font-weight:700;color:#397c69;margin-right:5px}
+#clinic-footer .cf-hours-sunday{font-size:12px}
+#clinic-footer .cf-clinic-map{margin:0}
+#clinic-footer .cf-clinic-map-image{display:block;overflow:hidden;border-radius:10px;line-height:0}
+#clinic-footer .cf-clinic-map picture,#clinic-footer .cf-clinic-map img{display:block;width:100%;height:auto}
+#clinic-footer .cf-clinic-map figcaption{font-size:13px;line-height:1.8;margin-top:7px;text-align:right}
+#clinic-footer .cf-footer-treatment-nav{margin-top:12px}
+#clinic-footer .cf-footer-treatment-nav>summary{display:none}
+#clinic-footer .cf-footer-treatment-nav ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 8px;list-style:none;padding:0;margin:0}
+#clinic-footer .cf-footer-treatment-nav a{display:inline-flex;align-items:center;min-height:28px;font-size:13px;color:#52665e}
+#clinic-footer .cf-clinic-legal-footer{border-top:1px solid #d7e6ce;margin-top:12px;padding-top:9px;text-align:center;color:#6b7d70;font-size:12px;line-height:1.7}
+#clinic-footer .cf-clinic-legal-footer p{margin:0}
+#clinic-footer .cf-clinic-copyright{font-size:12px;margin-bottom:3px!important}
+@media(min-width:1200px){#clinic-footer .cf-footer-main{align-items:stretch;grid-template-columns:280px minmax(0,1fr) 350px}
+#clinic-footer .cf-clinic-hours{display:flex;flex-direction:column}
+#clinic-footer .cf-clinic-hours h3{margin:0 0 8px}
+#clinic-footer .cf-clinic-hours .cf-hours-table{flex:1}
+#clinic-footer .cf-clinic-hours .cf-hours-table th,#clinic-footer .cf-clinic-hours .cf-hours-table td{height:31px;padding:5px 0}
+#clinic-footer .cf-clinic-hours .cf-hours-notes{margin:8px 0 0}
+#clinic-footer .cf-clinic-hours .cf-hours-sunday{line-height:28px}
+#clinic-footer .cf-footer-location{display:flex;flex-direction:column}
+#clinic-footer .cf-footer-location h3{margin:0}
+#clinic-footer .cf-clinic-map{display:flex;flex-direction:column;flex:1;margin-top:8px}
+#clinic-footer .cf-clinic-map figcaption{display:flex;align-items:center;justify-content:flex-end;min-height:28px;margin-top:7px}
+}
+@media(max-width:1199px) and (min-width:768px){#clinic-footer{padding-inline:32px}
+#clinic-footer .cf-footer-main{grid-template-columns:230px 1fr;gap:30px}
+#clinic-footer .cf-footer-location{display:none}
+}
+@media(max-width:767px){#clinic-footer{padding:20px}
+#clinic-footer .cf-footer-main{display:block}
+#clinic-footer .cf-footer-clinic-identity{display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:center}
+#clinic-footer .cf-contact-logo{width:76px;margin:0}
+#clinic-footer .cf-clinic-phone{font-size:20px}
+#clinic-footer .cf-clinic-contact-link{font-size:13px}
+#clinic-footer .cf-clinic-hours{margin-top:20px}
+#clinic-footer .cf-hours-table th,#clinic-footer .cf-hours-table td{height:30px}
+#clinic-footer .cf-footer-location{display:none}
+#clinic-footer .cf-footer-treatment-nav{margin-top:8px}
+#clinic-footer .cf-footer-treatment-nav>summary{display:list-item;padding:8px 0;font-size:13px;cursor:pointer}
+#clinic-footer .cf-footer-treatment-nav a{min-height:44px}
+#clinic-footer .cf-clinic-legal-footer{margin-top:14px;text-align:left}
+}
+
+/* 手機頁尾保留診所名稱的可讀尺寸，聯絡資訊仍在同一列。 */
+@media (max-width: 767px) {
+  #clinic-footer .cf-footer-clinic-identity { grid-template-columns: 104px 1fr; gap: 14px; }
+  #clinic-footer .cf-contact-logo { width: 104px; }
+}
