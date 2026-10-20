@@ -1,0 +1,144 @@
+/* 三個待統一療程頁共用元件；所有選擇器限制於正文，避免影響頁尾高度。 */
+.treatment-standard-content { color: #3c514b; font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif; }
+.treatment-standard-content .mint { background: #f3f8ef; }
+.treatment-standard-content :is(.hero-copy,.title h2,.copy h3,.card h3,.notice h3) { color: #284f45; }
+.treatment-standard-content .title i { display: none; }
+.treatment-standard-content .title small { display: block; margin-top: 10px; color: #596e65; }
+.treatment-standard-content .lead { text-wrap: pretty; }
+.treatment-standard-content .hero-copy { left: 7%; max-width: 46%; }
+.treatment-standard-content .hero-copy p { max-width: 440px; }
+.treatment-standard-content :is(.visual,.grid3) > * { min-width: 0; }
+.treatment-standard-content .visual img { border-radius: 10px; }
+.treatment-standard-content .copy p { margin: 0 0 20px; }
+.treatment-standard-content .copy p:last-child { margin-bottom: 0; }
+.treatment-standard-content .points { list-style: disc; padding-left: 1.25em; }
+.treatment-standard-content .points li { padding: 0; margin: 10px 0; border: 0; }
+.treatment-standard-content .points li::marker { color: #5daa96; }
+
+/* 條件、選項及評估卡：移除舊頂線；不以空白 ICON 佔位。 */
+.treatment-standard-content .card { padding: 27px; border: 0; border-radius: 10px; background: #fff; box-shadow: 0 6px 18px rgba(40,79,69,.09); }
+.treatment-standard-content .card h3 { margin: 0 0 10px; font-size: 20.9px; font-weight: 700; line-height: 1.5; }
+.treatment-standard-content .card p { margin: 0; font-size: 16.8px; line-height: 1.8; }
+.treatment-standard-content .notice { max-width: 1050px; padding: 28px 32px; border: 0; border-radius: 10px; background: #fff; }
+.treatment-standard-content .notice h3 { margin: 0 0 12px; font-size: 23.75px; line-height: 1.5; }
+.treatment-standard-content .notice p { margin: 0; font-size: 20px; line-height: 1.8; }
+.treatment-standard-content .notice.tds-risk { background: #fdf6f9; border: 1px solid #f2dfe7; padding: 32px; }
+
+/* 流程先完成文字版排版，待確認專屬插圖後再放入，不借用別的療程情境。 */
+.treatment-standard-content .tds-journey { padding: 0; background: #fff; }
+.treatment-standard-content .tds-journey-inner { max-width: 1440px; margin: auto; padding: 66px 64px 64px; }
+.treatment-standard-content .tds-steps { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 28px; margin: 0; padding: 0; list-style: none; }
+.treatment-standard-content .tds-steps .step { position: relative; padding: 0; min-width: 0; min-height: 0; text-align: center; background: transparent; }
+.treatment-standard-content .step b { margin: 0 0 12px; font: 400 25px/1.4 Georgia,serif; color: #5daa96; }
+.treatment-standard-content .step h3 { margin: 0 0 13px; font-size: 19px; line-height: 1.5; font-weight: 700; color: #284f45; }
+.treatment-standard-content .step p { max-width: 215px; margin: auto; font-size: 14px; line-height: 1.8; text-wrap: pretty; }
+.treatment-standard-content .step:not(:last-child)::after { content: '→'; position: absolute; top: 5px; right: -25px; color: #5daa96; font-size: 23px; line-height: 1; }
+
+/* 比較表保留資料格線；使用者要移除的是卡片裝飾線。 */
+.treatment-standard-content .compare-scroll { max-width: 1050px; margin: 35px auto; border: 1px solid #afc5b7; border-radius: 10px; box-shadow: 0 8px 24px rgba(40,79,69,.10); background: #fff; }
+.treatment-standard-content .compare { width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+.treatment-standard-content .compare :is(th,td) { padding: 18px; border: 0; border-right: 1px solid #cadacf; border-bottom: 1px solid #cadacf; font-size: 16px; line-height: 1.8; text-align: left; vertical-align: top; }
+.treatment-standard-content .compare th { color: #12382f; background: #5daa96; border-color: #91c5b7; }
+.treatment-standard-content .compare th:first-child { width: 24%; }
+.treatment-standard-content .compare td { background: #fff; }
+.treatment-standard-content .compare td:first-child { color: #284f45; background: #eef4ea; font-weight: 600; }
+.treatment-standard-content .compare tr > :last-child { border-right: 0; }
+.treatment-standard-content .compare tr:last-child td { border-bottom: 0; }
+.treatment-standard-content .compare-scroll:focus-visible { outline: 2px solid #284f45; outline-offset: 4px; }
+
+/* 三項照護卡依實際數量排成兩欄加整欄，原文保留，ICON 待製。 */
+.treatment-standard-content .tds-care-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+.treatment-standard-content .tds-care-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+.treatment-standard-content .tds-care-grid .card { padding: 28px; border: 1px solid #d7e6ce; box-shadow: 0 6px 18px rgba(40,79,69,.07); }
+.treatment-standard-content .tds-care-grid h3 { font-size: 23.75px; line-height: 1.5; }
+.treatment-standard-content .tds-care-grid p { font-size: 20px; line-height: 1.8; }
+/* 矯正頁末張「兩種方式都一樣」為就診提醒，沿用淡粉色提醒卡配色。 */
+#orthodontics-care .tds-care-grid > .card:last-child {
+  background: #fdf6f9;
+  border-color: #f2dfe7;
+}
+
+/* 單欄展開 FAQ，Q 不編號，保留全數問答及鍵盤操作。 */
+.treatment-standard-content .tds-faq { padding: 72px 24px; background: #f3f8ef; }
+.treatment-standard-content .tds-faq-shell { max-width: 1050px; margin: auto; }
+.treatment-standard-content .tds-faq .title { margin-bottom: 36px; }
+.treatment-standard-content .tds-faq .title small { line-height: 1.5; }
+.treatment-standard-content .tds-faq-list { overflow: hidden; border: 1px solid #d7e6ce; border-radius: 10px; background: #fff; }
+.treatment-standard-content details { margin: 0; border: 0; background: #fff; }
+.treatment-standard-content details + details { border-top: 1px solid #d7e6ce; }
+.treatment-standard-content summary { display: grid; grid-template-columns: 46px minmax(0,1fr) 28px; align-items: center; gap: 18px; padding: 24px 30px; list-style: none; cursor: pointer; color: #284f45; }
+.treatment-standard-content summary::-webkit-details-marker { display: none; }
+.treatment-standard-content summary::marker { content: ''; }
+.treatment-standard-content summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 700; overflow-wrap: anywhere; }
+.treatment-standard-content .faq-q { font: 400 24px/1.5 Georgia,serif; color: #5daa96; }
+.treatment-standard-content .faq-toggle { position: relative; width: 28px; height: 28px; color: #5daa96; }
+.treatment-standard-content .faq-toggle::before,.treatment-standard-content .faq-toggle::after { content: ''; position: absolute; background: currentColor; border-radius: 1px; }
+.treatment-standard-content .faq-toggle::before { left: 4px; top: 13px; width: 20px; height: 2px; }
+.treatment-standard-content .faq-toggle::after { left: 13px; top: 4px; width: 2px; height: 20px; }
+.treatment-standard-content details[open] summary { background: #edf5e9; }
+.treatment-standard-content details[open] .faq-toggle::after { display: none; }
+.treatment-standard-content .faq-answer { display: grid; grid-template-columns: 46px minmax(0,1fr); gap: 18px; padding: 22px 76px 28px 30px; }
+.treatment-standard-content .faq-a { font: 400 23px/36px Georgia,serif; color: #52665e; }
+.treatment-standard-content .faq-answer p { margin: 0; color: #3c514b; font-size: 20px; line-height: 1.8; }
+.treatment-standard-content summary:focus-visible { outline: 2px solid #284f45; outline-offset: -4px; border-radius: 6px; }
+
+/* 共同預約規範：36px 標語、20px／1.8 說明；只有一個有效 LINE 預約按鈕。 */
+.treatment-standard-content .tds-booking { background: #fff; color: #284f45; }
+.treatment-standard-content .tds-booking h2 { font-size: 36px; line-height: 1.6; }
+.treatment-standard-content .tds-booking p { color: #52665e; font-size: 20px; line-height: 1.8; }
+.treatment-standard-content .tds-booking .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; min-height: 48px; max-width: 100%; margin: 0; padding: 12px 30px; background: #bcddae; border-color: #bcddae; color: #284f45; text-decoration: none; }
+.treatment-standard-content .tds-booking .btn:focus-visible { outline: 2px solid #284f45; outline-offset: 4px; }
+@media (hover: hover) {
+  .treatment-standard-content summary:hover { background: #f3f8ef; }
+  .treatment-standard-content details[open] summary:hover { background: #e8f1e3; }
+  .treatment-standard-content .tds-booking .btn:hover { background: #dcead4; border-color: #5daa96; }
+}
+/* 調整原先連續淡綠的分段，FAQ／預約／頁尾固定為淡綠／白／淡綠。 */
+#orthodontics-evaluation,#orthodontics-retainers { background: #fff; }
+#orthodontics-evaluation .notice { background: #f3f8ef; }
+#orthodontics-care { background: #f3f8ef; }
+#ceramic-dsd-care { background: #fff; }
+
+/* 矯正 Banner 左側植物較繁複，以淡白漸層維持文字對比，不修改照片。 */
+@media (min-width: 768px) {
+  #orthodontics-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(255,255,255,.58),rgba(255,255,255,.34) 36%,transparent 63%); pointer-events: none; }
+  #orthodontics-hero .hero-copy { z-index: 1; }
+}
+
+@media (min-width: 768px) { .treatment-standard-content .grid3:not(.tds-care-grid) { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 1279px) {
+  .treatment-standard-content .tds-journey-inner { padding: 48px 32px; }
+  .treatment-standard-content .tds-steps { grid-template-columns: repeat(6,minmax(0,1fr)); gap: 32px 24px; }
+  .treatment-standard-content .step { grid-column: span 2; }
+  .treatment-standard-content .step:nth-child(4) { grid-column: 2 / span 2; }
+  .treatment-standard-content .step:nth-child(3)::after { display: none; }
+}
+@media (max-width: 900px) {
+  .treatment-standard-content .tds-care-grid { grid-template-columns: minmax(0,1fr); gap: 16px; }
+  .treatment-standard-content .tds-care-grid .card { padding: 20px; }
+}
+@media (max-width: 767px) {
+  .treatment-standard-content .hero { height: auto; padding: 32px 24px 340px; background-color: #f3f8ef; background-size: auto 320px; background-position: 62% bottom; background-repeat: no-repeat; }
+  .treatment-standard-content .hero-copy { position: static; max-width: none; }
+  .treatment-standard-content .hero-copy p { margin-bottom: 0; }
+  .treatment-standard-content .section { padding: 48px 24px; }
+  .treatment-standard-content .card { padding: 24px; }
+  .treatment-standard-content .notice { padding: 24px 20px; background: #f3f8ef; }
+  .treatment-standard-content .mint .notice:not(.tds-risk) { background: #fff; }
+  .treatment-standard-content .notice.tds-risk { padding: 24px 20px; background: #fdf6f9; }
+  .treatment-standard-content .visual { gap: 24px; }
+  .treatment-standard-content .tds-journey { padding: 0; }
+  .treatment-standard-content .tds-journey-inner { padding: 44px 26px; }
+  .treatment-standard-content .tds-journey .title h2 { font-size: 28px; }
+  .treatment-standard-content .tds-steps { display: flex; flex-direction: column; gap: 52px; }
+  .treatment-standard-content .step p { max-width: 280px; font-size: 16px; }
+  .treatment-standard-content .step:not(:last-child)::after { display: block; content: '↓'; top: auto; bottom: -37px; right: calc(50% - 7px); }
+  .treatment-standard-content .compare-scroll { margin-block: 26px; }
+  .treatment-standard-content summary { grid-template-columns: 34px minmax(0,1fr) 24px; align-items: start; gap: 10px; padding: 20px 18px; }
+  .treatment-standard-content .faq-q { font-size: 22px; }
+  .treatment-standard-content .faq-toggle { width: 24px; margin-top: 4px; }
+  .treatment-standard-content .faq-toggle::before { left: 2px; }
+  .treatment-standard-content .faq-toggle::after { left: 11px; }
+  .treatment-standard-content .faq-answer { grid-template-columns: 24px minmax(0,1fr); gap: 10px; padding: 18px 18px 24px; }
+  .treatment-standard-content .faq-a { font-size: 22px; }
+}

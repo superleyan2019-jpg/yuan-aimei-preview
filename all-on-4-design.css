@@ -1,0 +1,206 @@
+/* All-on-4 同類元件對齊人工植牙；只作用於 main，不改共用 Header 或頁尾。 */
+#allon4-content {
+  color: #3c514b;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
+  --allon4-heading: #284f45;
+  --allon4-teal: #5daa96;
+  --allon4-line: #d7e6ce;
+}
+#allon4-content .mint { background: #f3f8ef; }
+#allon4-content :is(.hero-copy, .title h2, .copy h3, .card h3, .panel h3, .notice h3) { color: var(--allon4-heading); }
+#allon4-content .title i { display: none; }
+#allon4-content .title small { display: block; margin-top: 10px; color: #596e65; }
+#allon4-content .allon4-name { white-space: nowrap; }
+#allon4-content .lead { text-wrap: balance; }
+#allon4-content .hero-copy > small { color: #52665e; }
+#allon4-content .hero-copy p { max-width: 360px; }
+#allon4-hero .hero-copy-line { display: block; }
+@media (min-width: 1101px) { #allon4-hero .hero-copy { left: 7%; } }
+#allon4-content :is(.visual, .grid3, .split) > * { min-width: 0; }
+#allon4-content .visual img { display: block; border-radius: 10px; }
+#allon4-content .visual .copy p { margin: 0 0 20px; }
+#allon4-content .visual .copy p:last-child { margin-bottom: 0; }
+#allon4-content .points li { border-color: var(--allon4-line); }
+
+/* 結構圖右側改為三張淺綠說明卡，原說明全文保留。 */
+/* 共同介紹移到兩欄上方；桌機照片等比例裁切，以對齊右側卡片總高度。 */
+#allon4-content .allon4-structure-intro { max-width: 1050px; margin: 42px auto 0; text-align: center; }
+#allon4-content .allon4-structure-intro h3 { margin: 0 0 14px; color: #284f45; font-size: 23.75px; line-height: 1.6; letter-spacing: .06em; }
+#allon4-content .allon4-structure-intro p { max-width: 900px; margin: 0 auto; font-size: 20px; line-height: 1.8; text-wrap: pretty; }
+#allon4-content #allon4-structure .visual { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; margin-top: 28px; }
+#allon4-content #allon4-structure .visual > img { width: 100%; align-self: stretch; height: 100%; min-height: 0; object-fit: cover; object-position: center; }
+#allon4-content #allon4-structure .allon4-structure-cards { margin: 0; }
+#allon4-content .allon4-structure-cards { display: grid; gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; }
+#allon4-content .allon4-structure-cards li { padding: 19px 24px 20px; border: 0; border-radius: 16px; background: #f3f8ef; box-shadow: none; }
+#allon4-content .allon4-structure-cards h4 { margin: 0 0 6px; color: #284f45; font-size: 23.75px; line-height: 1.5; font-weight: 700; }
+#allon4-content .allon4-structure-cards p { margin: 0; font-size: 20px; line-height: 1.8; }
+
+/* 純文字條件卡保留原本三項／兩項，使用評估卡的字級與外觀。 */
+#allon4-content :is(.card, .evaluation-panel) {
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  padding: 27px;
+  box-shadow: 0 6px 18px rgba(40, 79, 69, .09);
+}
+#allon4-content :is(.card, .evaluation-panel) h3 {
+  margin: 0 0 10px;
+  font-size: 20.9px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+#allon4-content .card p,
+#allon4-content .evaluation-panel li { font-size: 16.8px; line-height: 1.8; }
+#allon4-content .evaluation-panel ul { margin: 0; padding-left: 1.2em; }
+#allon4-content .evaluation-panel li + li { margin-top: 8px; }
+#allon4-content .evaluation-panel li::marker { color: var(--allon4-teal); }
+/* 已確認的治療前檢查清單：淡綠平面卡片與左對齊，僅套用此區塊。 */
+#allon4-content #allon4-evaluation .evaluation-panel {
+  background: #f3f8ef;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 32px;
+  text-align: left;
+}
+#allon4-content #allon4-evaluation .evaluation-panel h3 { margin-bottom: 20px; }
+#allon4-content #allon4-evaluation .evaluation-panel li + li { margin-top: 12px; }
+@media (max-width: 767px) {
+  #allon4-content #allon4-evaluation .evaluation-panel { padding: 24px; }
+}
+#allon4-content .notice {
+  max-width: 1050px;
+  padding: 28px 32px;
+  border-left: 3px solid var(--allon4-teal);
+  border-radius: 10px;
+  background: #fff;
+}
+#allon4-content .notice h3 { margin: 0 0 12px; font-size: 23.75px; line-height: 1.5; }
+#allon4-content .notice p { margin: 0; font-size: 20px; line-height: 1.8; }
+
+/* 原頁為文字流程，沿用植牙的編號、字級與換欄規則，不借用單顆植牙插圖。 */
+#allon4-content #allon4-journey { padding: 0; background: #fff; }
+#allon4-journey .allon4-journey-inner { max-width: 1440px; margin: auto; padding: 66px 64px 64px; }
+#allon4-journey .steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 28px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#allon4-journey .step { position: relative; min-width: 0; min-height: 0; padding: 0; text-align: center; background: transparent; }
+#allon4-journey .step b { margin-bottom: 12px; font: 400 25px/1.4 Georgia, serif; color: var(--allon4-teal); }
+#allon4-journey .step h3 { margin: 0 0 13px; color: var(--allon4-heading); font-size: 19px; line-height: 1.5; }
+#allon4-journey .step p { max-width: 215px; margin: 0 auto; font-size: 14px; line-height: 1.8; text-wrap: pretty; }
+#allon4-journey .step:not(:last-child)::after { content: '→'; position: absolute; top: 5px; right: -25px; font-size: 23px; line-height: 1; color: var(--allon4-teal); }
+#allon4-journey .notice { margin-top: 44px; background: #f3f8ef; border-left: 0; }
+
+/* 比較表的高對比表頭與獨立外框；長療程名稱允許自然換行。 */
+#allon4-options { background: #f3f8ef; }
+#allon4-options .compare-scroll { max-width: 1050px; margin: 35px auto; background: #fff; border: 1px solid #afc5b7; border-radius: 10px; box-shadow: 0 8px 24px rgba(40,79,69,.10); }
+#allon4-options .compare { width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+#allon4-options .compare :is(th, td) { padding: 18px; border: 0; border-right: 1px solid #cadacf; border-bottom: 1px solid #cadacf; font-size: 16px; line-height: 1.8; }
+#allon4-options .compare th { color: #12382f; background: #5daa96; border-color: #91c5b7; }
+#allon4-options .compare th:first-child { width: 24%; }
+#allon4-options .compare td { background: #fff; }
+#allon4-options .compare td:first-child { background: #eef4ea; color: #284f45; font-weight: 600; }
+#allon4-options .compare tr > :last-child { border-right: 0; }
+#allon4-options .compare tr:last-child td { border-bottom: 0; }
+#allon4-options .compare-scroll:focus-visible { outline: 2px solid #284f45; outline-offset: 4px; }
+
+/* 兩項風險改為同一整欄提醒，全文顯示；不改寫風險內容。 */
+#allon4-content #allon4-care { background: #fff; }
+#allon4-risk .allon4-risk-panel { display: block; max-width: 1050px; margin: 35px auto 0; padding: 32px; background: #fdf6f9; border: 1px solid #f2dfe7; border-radius: 10px; }
+#allon4-risk .risk-topic { padding: 0; border: 0; box-shadow: none; background: transparent; }
+#allon4-risk .risk-topic + .risk-topic { margin-top: 24px; padding-top: 24px; border-top: 1px solid #f2dfe7; }
+#allon4-risk .risk-topic h3 { margin: 0 0 14px; color: #284f45; font-size: 23.75px; line-height: 1.5; }
+#allon4-risk .risk-topic p { margin: 0; font-size: 20px; line-height: 1.8; }
+
+/* 原生單欄展開 FAQ：保留每題文案，Q 不加數字，各題可獨立開合。 */
+#allon4-faq { padding: 72px 24px; background: #f3f8ef; }
+#allon4-faq .faq-shell { max-width: 1050px; margin: 0 auto; }
+#allon4-faq .title { margin-bottom: 36px; }
+#allon4-faq .title small { line-height: 1.5; }
+#allon4-faq .faq-list { overflow: hidden; border: 1px solid #d7e6ce; border-radius: 10px; background: #fff; }
+#allon4-faq details { margin: 0; border: 0; background: #fff; }
+#allon4-faq details + details { border-top: 1px solid #d7e6ce; }
+#allon4-faq summary { display: grid; grid-template-columns: 46px minmax(0,1fr) 28px; align-items: center; gap: 18px; padding: 24px 30px; list-style: none; cursor: pointer; color: #284f45; }
+#allon4-faq summary::-webkit-details-marker { display: none; }
+#allon4-faq summary::marker { content: ''; }
+#allon4-faq summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 700; overflow-wrap: anywhere; }
+#allon4-faq .faq-q { font: 400 24px/1.5 Georgia, serif; color: #5daa96; }
+#allon4-faq .faq-toggle { display: block; position: relative; width: 28px; height: 28px; color: #5daa96; }
+#allon4-faq .faq-toggle::before,
+#allon4-faq .faq-toggle::after { content: ''; position: absolute; background: currentColor; border-radius: 1px; }
+#allon4-faq .faq-toggle::before { left: 4px; top: 13px; width: 20px; height: 2px; }
+#allon4-faq .faq-toggle::after { left: 13px; top: 4px; width: 2px; height: 20px; }
+#allon4-faq details[open] summary { background: #edf5e9; }
+#allon4-faq details[open] .faq-toggle::after { display: none; }
+#allon4-faq .faq-answer { display: grid; grid-template-columns: 46px minmax(0,1fr); gap: 18px; padding: 22px 76px 28px 30px; }
+#allon4-faq .faq-a { font: 400 23px/36px Georgia, serif; color: #52665e; }
+#allon4-faq .faq-answer p { margin: 0; color: #3c514b; font-size: 20px; line-height: 1.8; }
+#allon4-faq summary:focus-visible { outline: 2px solid #284f45; outline-offset: -4px; border-radius: 6px; }
+@media (hover: hover) {
+  #allon4-faq summary:hover { background: #f3f8ef; }
+  #allon4-faq details[open] summary:hover { background: #e8f1e3; }
+}
+
+/* 白底預約區與淡綠 FAQ／頁尾錯開，僅保留可實際點擊的 LINE 預約。 */
+#allon4-booking { background: #fff; color: #284f45; }
+#allon4-booking h2 { color: #284f45; }
+#allon4-booking p { color: #52665e; }
+#allon4-booking .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; min-height: 48px; max-width: 100%; margin: 0; padding: 12px 30px; background: #bcddae; border-color: #bcddae; color: #284f45; text-decoration: none; }
+#allon4-booking .btn:focus-visible { outline: 2px solid #284f45; outline-offset: 4px; }
+@media (hover: hover) { #allon4-booking .btn:hover { background: #dcead4; border-color: #5daa96; } }
+
+@media (min-width: 768px) {
+  #allon4-content .grid3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  #allon4-evaluation .split { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 1279px) {
+  #allon4-journey .allon4-journey-inner { padding: 48px 32px; }
+  #allon4-journey .steps { grid-template-columns: repeat(6, minmax(0,1fr)); gap: 32px 24px; }
+  #allon4-journey .step { grid-column: span 2; }
+  #allon4-journey .step:nth-child(4) { grid-column: 2 / span 2; }
+  #allon4-journey .step:nth-child(3)::after { display: none; }
+}
+/* 中型螢幕提早上下排列，避免等高裁切隱藏兩側植體。 */
+@media (max-width: 1279px) {
+  #allon4-content #allon4-structure .visual { grid-template-columns: minmax(0, 1fr); max-width: 660px; }
+  #allon4-content #allon4-structure .visual > img { height: auto; }
+}
+@media (max-width: 767px) {
+  #allon4-content .allon4-structure-intro { margin-top: 32px; text-align: left; }
+  #allon4-content #allon4-structure .visual { grid-template-columns: minmax(0, 1fr); margin-top: 24px; }
+  /* 手機將文字留在照片上方，避免長說明疊在人臉上；原照片不改、不變形。 */
+  #allon4-hero { height: auto; padding: 32px 24px 340px; background-color: #f3f8ef; background-size: auto 320px; background-position: 62% bottom; background-repeat: no-repeat; }
+  #allon4-hero .hero-copy { position: static; }
+  #allon4-hero .hero-copy p { margin-bottom: 0; }
+  #allon4-hero .hero-copy-line { display: inline; }
+  #allon4-content .section { padding: 48px 24px; }
+  #allon4-content :is(.card, .evaluation-panel) { padding: 24px; }
+  #allon4-content .allon4-structure-cards li { padding: 20px; }
+  #allon4-content .notice { padding: 24px 20px; }
+  #allon4-content .visual { gap: 24px; }
+  /* 結構示意保留原圖完整比例；生活照片仍依原版裁切。 */
+  #allon4-structure .visual img { height: auto; }
+  #allon4-content #allon4-journey { padding: 0; }
+  #allon4-journey .allon4-journey-inner { padding: 44px 26px; }
+  #allon4-journey .title h2 { font-size: 28px; }
+  #allon4-journey .steps { display: flex; flex-direction: column; gap: 52px; }
+  #allon4-journey .step h3 { font-size: 19px; }
+  #allon4-journey .step p { max-width: 280px; font-size: 16px; }
+  #allon4-journey .step:not(:last-child)::after { display: block; content: '↓'; top: auto; bottom: -37px; right: calc(50% - 7px); font-size: 24px; }
+  #allon4-options .compare-scroll { margin-block: 26px; }
+  #allon4-risk .allon4-risk-panel { padding: 24px 20px; }
+  #allon4-faq summary { grid-template-columns: 34px minmax(0,1fr) 24px; align-items: start; gap: 10px; padding: 20px 18px; }
+  #allon4-faq .faq-q { font-size: 22px; }
+  #allon4-faq .title .allon4-name { display: block; }
+  #allon4-faq .faq-toggle { width: 24px; margin-top: 4px; }
+  #allon4-faq .faq-toggle::before { left: 2px; }
+  #allon4-faq .faq-toggle::after { left: 11px; }
+  #allon4-faq .faq-answer { grid-template-columns: 24px minmax(0,1fr); gap: 10px; padding: 18px 18px 24px; }
+  #allon4-faq .faq-a { font-size: 22px; }
+}

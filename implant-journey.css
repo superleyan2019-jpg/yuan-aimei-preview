@@ -12,7 +12,8 @@
 #implant-journey .journey-art img { position: absolute; display: block; max-width: none; height: auto; }
 #implant-journey .journey-step:not(:last-child)::after { content: '→'; position: absolute; top: 115px; right: -25px; color: #5caa96; font-size: 23px; line-height: 1; }
 #implant-journey h3 { font-size: 19px; line-height: 1.5; font-weight: 700; color: #284f45; margin: 0 0 13px; text-wrap: balance; }
-#implant-journey .journey-step p { font-size: 14px; line-height: 1.8; margin: 0 auto; max-width: 215px; text-wrap: pretty; }
+/* 與 All-on-4 流程一致，所有尺寸均採 16.8px；長說明自然換行。 */
+#implant-journey .journey-step p { font-size: 16.8px; line-height: 1.8; margin: 0 auto; max-width: 215px; text-wrap: pretty; }
 
 /* 中型螢幕採前三、後二排列，保留插圖和箭頭間距。 */
 @media (max-width: 1279px) {
@@ -32,7 +33,7 @@
   #implant-journey .lead { font-size: 17px; margin-bottom: 28px; }
   #implant-journey .journey-list { display: flex; flex-direction: column; gap: 52px; }
   #implant-journey .journey-step:not(:last-child)::after { display: block; content: '↓'; top: auto; bottom: -37px; right: calc(50% - 7px); font-size: 24px; }
-  #implant-journey .journey-step p { max-width: 280px; font-size: 16px; }
+  #implant-journey .journey-step p { max-width: 280px; }
   #implant-journey .journey-art { margin-bottom: 12px; }
   #implant-journey .number { margin-bottom: 4px; }
 }

@@ -1,0 +1,28 @@
+/* 矯正需求改為開放分欄；沿用植牙的字級與留白，ICON 確認後再加入。 */
+#orthodontics-intro .grid3 {
+  max-width: 1050px;
+  margin: 72px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 0;
+}
+#orthodontics-intro .card {
+  min-width: 0;
+  min-height: 0;
+  padding: 20px 32px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  text-align: center;
+}
+#orthodontics-intro .card + .card { border-left: 1px solid #d7e6ce; }
+#orthodontics-intro .card h3 { margin: 0 0 14px; font-size: 20.9px; font-weight: 700; line-height: 1.5; }
+#orthodontics-intro .card p { margin: 0; font-size: 16.8px; line-height: 1.8; }
+/* 核可圖示使用一致顯示框，完整保留原圖比例。 */
+#orthodontics-intro .need-icon { display: block; width: 128px; height: 80px; object-fit: contain; margin: 0 auto 16px; }
+@media (max-width:767px) {
+  #orthodontics-intro .grid3 { grid-template-columns: 1fr; margin-top: 48px; }
+  #orthodontics-intro .card { padding: 24px 0; }
+  #orthodontics-intro .card + .card { border-left: 0; border-top: 1px solid #d7e6ce; }
+}

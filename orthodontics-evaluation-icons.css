@@ -1,0 +1,9 @@
+/* 評估卡維持靠左閱讀；相同圖框讓三張卡片的標題起點一致。 */
+#orthodontics-evaluation .evaluation-icon {
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin: 0 0 16px;
+  border-radius: 0;
+}

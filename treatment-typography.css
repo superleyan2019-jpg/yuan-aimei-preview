@@ -79,3 +79,7 @@
   .treatment-page .cta .btn { font-size: 14px; }
   .treatment-page .footer small { font-size: 12px; }
 }
+
+/* 人工植牙與 All-on-4 預約區依確認改用一般標題／內文字級；不擴及其他療程或頁尾。 */
+.treatment-page :is(#implant-booking, #allon4-booking) h2 { font-size: var(--treatment-heading-size); }
+.treatment-page :is(#implant-booking, #allon4-booking) p { font-size: var(--treatment-body-size); line-height: var(--treatment-body-line-height); }

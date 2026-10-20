@@ -1,0 +1,26 @@
+/* 本療程使用已確認的五張插圖；只調整流程圖片、序號間距與箭頭位置。 */
+#allon4-content #allon4-journey .step b { margin-bottom: 8px; }
+/* 熟齡閱讀需求：桌機與手機說明統一放大，文字自然換行、不固定高度。 */
+#allon4-content #allon4-journey .step p { font-size: 16.8px; line-height: 1.8; }
+#allon4-content #allon4-journey .allon4-journey-art {
+  display: block;
+  width: 204px;
+  max-width: 100%;
+  height: 190px;
+  margin: 0 auto 19px;
+}
+#allon4-content #allon4-journey .allon4-journey-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+}
+/* 插圖置中並保留完整比例；箭頭對齊插圖，不停留在序號旁。 */
+@media (min-width: 768px) {
+  #allon4-content #allon4-journey .step:not(:last-child)::after { top: 115px; }
+}
+@media (max-width: 767px) {
+  #allon4-content #allon4-journey .step b { margin-bottom: 4px; }
+  #allon4-content #allon4-journey .allon4-journey-art { margin-bottom: 12px; }
+}

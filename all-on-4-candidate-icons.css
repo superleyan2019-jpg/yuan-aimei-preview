@@ -1,0 +1,9 @@
+/* 已確認 ICON 以原比例裁切，固定顯示框讓三欄標題對齊。 */
+#allon4-candidates .allon4-candidate-icon{display:block;position:relative;overflow:hidden;width:128px;height:80px;margin:0 auto 16px}
+#allon4-candidates .allon4-candidate-icon img{display:block;position:absolute;max-width:none;height:auto}
+/* 短標題與 ICON 同軸；多行說明保留一致左緣，方便逐行閱讀。 */
+#allon4-content #allon4-candidates .card h3{text-align:center}
+#allon4-content #allon4-candidates .card p{text-align:left}
+/* 補充評估資訊沿用同系列卡片外觀；僅此區塊移除側線，不影響其他提醒。 */
+#allon4-content #allon4-candidates .notice{border:0;border-radius:10px;background:#fff;padding:27px;box-shadow:0 6px 18px rgba(40,79,69,.09);text-align:left}
+@media(max-width:767px){#allon4-content #allon4-candidates .notice{padding:24px}}

@@ -1,0 +1,16 @@
+/* 療程頁共用快捷功能；獨立類名避免繼承首頁舊版增加頁尾留白的規則。 */
+.treatment-floating-actions { position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); z-index: 50; display: flex; flex-direction: column; gap: 10px; }
+.treatment-floating-action { display: grid; place-items: center; width: 64px; height: 64px; padding: 0; border: 0; border-radius: 50%; background: #5daa96; color: #fff; box-shadow: 0 4px 14px rgba(40,79,69,.12); text-decoration: none; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background .18s ease, box-shadow .18s ease; }
+.treatment-floating-action svg { display: block; width: 32px; height: 32px; pointer-events: none; }
+.treatment-floating-action:focus-visible { outline: 3px solid #284f45; outline-offset: 4px; }
+/* 頁尾進入視窗或開啟手機導覽時暫時隱藏，維持資訊可讀且不增加頁尾高度。 */
+.treatment-floating-actions[data-footer-visible],
+body:has(.site-header[data-menu-open]) .treatment-floating-actions,
+body:has(dialog[open]) .treatment-floating-actions { visibility: hidden; pointer-events: none; }
+@media (hover: hover) { .treatment-floating-action:hover { background: #284f45; box-shadow: 0 6px 18px rgba(40,79,69,.18); } }
+@media (max-width: 767px) {
+  .treatment-floating-actions { right: max(12px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); gap: 8px; }
+  .treatment-floating-action { width: 52px; height: 52px; }
+  .treatment-floating-action svg { width: 28px; height: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .treatment-floating-action { transition: none; } }

@@ -1,0 +1,10 @@
+/* 只作用於矯正選擇卡片：共用圖框比例，保留原本的文字與卡片樣式。 */
+#orthodontics-options .ortho-option-art {
+  display: block;
+  width: 100%;
+  max-width: 216px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  margin: 0 auto 16px;
+}
