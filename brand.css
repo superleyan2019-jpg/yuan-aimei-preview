@@ -69,8 +69,8 @@ body { color: var(--ink); font-family: "Noto Sans TC", "Microsoft JhengHei", "Pi
 .faq-block article p { margin: 13px 0 0 38px; font-size: 16px; line-height: 1.9; color: #52665e; }
 /* 三項需求採品牌淡粉底，與上方白色療程卡片區分；保留圓角與淡陰影。 */
 .treatment-groups { max-width: 1020px; margin: 36px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.treatment-groups > div { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 25px; background: #FDF3F7; border: 0; border-radius: 10px; box-shadow: 0 4px 16px rgba(40, 79, 69, .07); }
-.need-icon { display: block; position: relative; flex: 0 0 84px; width: 84px; height: 72px; overflow: hidden; mix-blend-mode: multiply; }
+.treatment-groups > div { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 25px; background: #FEF8FA; border: 0; border-radius: 10px; box-shadow: 0 4px 16px rgba(40, 79, 69, .07); }
+.need-icon { display: block; position: relative; flex: 0 0 84px; width: 84px; height: 72px; overflow: hidden; mix-blend-mode: normal; }
 .need-icon img { position: absolute; display: block; height: auto; max-width: none; }
 .need-copy { min-width: 0; flex: 1 1 120px; }
 .need-copy b { color: var(--brand-deep); font-size: 19px; line-height: 1.5; }
