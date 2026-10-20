@@ -11,6 +11,7 @@ html { scroll-padding-top: calc(var(--site-header-height, 92px) + 20px); }
   gap: clamp(14px, 1.4vw, 28px);
   height: 92px;
   padding: 0 6vw;
+  /* 白底搭配綠色、粉色 LOGO，放大尺寸沿用下方的響應式設定。 */
   background: #fff;
   color: #284f45;
   border-bottom: 1px solid #bcddae;
@@ -121,7 +122,7 @@ html { scroll-padding-top: calc(var(--site-header-height, 92px) + 20px); }
   }
   .site-header[data-nav-ready]:not([data-menu-open]) .site-header-links { display: none; }
   .site-header-links > a, .site-header-links > span { padding: 10px 8px; min-height: 44px; }
-  .site-header .header-menu-toggle[aria-expanded="true"] { background: #f3f8ef; border-color: #5daa96; }
+  .site-header .header-menu-toggle[aria-expanded="true"] { background: #f3f8ef; color: #284f45; border-color: #5daa96; }
 }
 @media (max-width: 767px) {
   .nav.site-header { padding-inline: 20px; gap: 10px; }
@@ -129,4 +130,21 @@ html { scroll-padding-top: calc(var(--site-header-height, 92px) + 20px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .site-header .header-book { transition: none; }
+}
+
+/* 放大完整字標，讓下方「牙醫診所」更易辨識；頁首同步預留上下空間。 */
+.nav.site-header { height: 132px; }
+.site-header .site-header-logo img { width: 154px; height: auto; }
+@media (min-width: 1101px) and (max-width: 1399px) {
+  .nav.site-header { height: 122px; }
+  .site-header .site-header-logo img { width: 140px; }
+}
+@media (max-width: 1100px) {
+  .nav.site-header { height: auto; padding-block: 8px; }
+  .site-header .site-header-logo img { width: 140px; }
+}
+/* 窄手機保留預約與選單的操作空間，LOGO 仍大於原本的 96px。 */
+@media (max-width: 359px) {
+  .site-header .site-header-logo img { width: 128px; }
+  .site-header .header-book { padding-inline: 12px; }
 }

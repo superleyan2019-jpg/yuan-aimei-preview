@@ -1,0 +1,5 @@
+/* 完整診所字標：維持比例，手機保留可讀尺寸。 */
+@media(max-width:767px){
+ #clinic-footer .footer-clinic-identity{grid-template-columns:104px minmax(0,1fr);gap:14px}
+ #clinic-footer .contact-logo{width:104px;height:auto}
+}
