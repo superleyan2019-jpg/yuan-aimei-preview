@@ -1,0 +1,15 @@
+/* 矯正頁 Banner：加強手機、平板主標層級，桌機沿用既有尺寸。
+   以區塊 ID 限定範圍，不影響其他療程或頁內標題。 */
+@media (max-width: 1100px) {
+  #orthodontics-hero .hero-copy h1 {
+    font-size: 40px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  #orthodontics-hero .hero-copy h1 {
+    font-size: 34px;
+  }
+}
