@@ -20,11 +20,8 @@
 .doctor-section--soft { background: #f3f8ef; }
 .doctor-layout { display: grid; grid-template-columns: minmax(0, .36fr) minmax(0, .64fr); gap: 64px; align-items: start; }
 .doctor-portrait { margin: 0; min-width: 0; }
-/* 未提供真人照片前，用中性佔位示意保留 4:5 構圖，避免誤認虛構肖像。 */
-.portrait-placeholder { position: relative; aspect-ratio: 4/5; border-radius: 10px; background: #e7eee8; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; color: #596e65; }
-.portrait-monogram { position: absolute; top: 26px; font: 12px/1.5 Arial, sans-serif; letter-spacing: .24em; }
-.portrait-placeholder svg { width: 66%; height: auto; stroke: #9bb4a7; stroke-width: 1.4; }
-.portrait-caption { position: absolute; bottom: 24px; font-size: 14px; letter-spacing: .08em; }
+/* 使用 Emily 提供的男女醫師示意圖；寬度隨欄位縮放，高度依原圖比例，避免人物被裁切或拉伸。 */
+.doctor-photo { display: block; width: 100%; height: auto; border-radius: 10px; }
 .doctor-info { min-width: 0; }
 .doctor-heading { margin-bottom: 22px; }
 .doctor-heading h2 { margin: 0; color: #284f45; font-size: 32px; line-height: 1.5; font-weight: 500; letter-spacing: .12em; }
