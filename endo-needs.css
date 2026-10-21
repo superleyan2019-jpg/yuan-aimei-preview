@@ -1,0 +1,45 @@
+/* 顯微根管適用情境：沿用人工植牙的開放分欄，只作用於此段。 */
+#microscopic-endodontics-intro .endo-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  max-width: 1050px;
+  margin: 72px auto 0;
+}
+#microscopic-endodontics-intro .endo-need {
+  min-width: 0;
+  padding: 20px 32px;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+#microscopic-endodontics-intro .endo-need + .endo-need { border-left: 1px solid #d7e6ce; }
+#microscopic-endodontics-intro .endo-need-icon {
+  display: block;
+  width: 128px;
+  height: 80px;
+  margin: 0 auto 16px;
+  object-fit: contain;
+  border-radius: 0;
+}
+#microscopic-endodontics-intro .endo-need h3 {
+  margin: 0 0 14px;
+  color: #284f45;
+  font-size: 20.9px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+#microscopic-endodontics-intro .endo-need p {
+  margin: 0;
+  color: #3c514b;
+  font-size: 16.8px;
+  line-height: 1.8;
+}
+/* 換成單欄時，直分隔線改為橫線；文字自然換行，不限制行數。 */
+@media (max-width: 767px) {
+  #microscopic-endodontics-intro .endo-needs-grid { grid-template-columns: 1fr; margin-top: 48px; }
+  #microscopic-endodontics-intro .endo-need { padding: 24px 0; }
+  #microscopic-endodontics-intro .endo-need + .endo-need { border-left: 0; border-top: 1px solid #d7e6ce; }
+}

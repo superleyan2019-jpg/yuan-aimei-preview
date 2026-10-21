@@ -59,7 +59,8 @@
 .treatment-page .compare-scroll { max-width: 100%; overflow-x: auto; }
 
 /* 頁尾邀請區對齊首頁聯絡區；不影響共用 Header 字級。 */
-.treatment-page .cta h2 { font-size: 31px; line-height: 1.6; text-wrap: balance; }
+/* 五個療程頁底部預約標題統一使用 Noto Sans TC；保留各頁既定字級、字重與行距。 */
+.treatment-page .cta h2 { font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif; font-size: 31px; line-height: 1.6; text-wrap: balance; }
 .treatment-page .cta p { font-size: 16px; }
 .treatment-page .cta .btn { font-size: 15px; line-height: 1.5; }
 .treatment-page .footer small { font-size: 13px; }

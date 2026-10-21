@@ -1,0 +1,48 @@
+/* 本機確認版：使用已安裝的文鼎方新書 Heavy，不複製字型檔。 */
+@font-face {
+  font-family: "Treatment FangXin H7 Heavy";
+  src: local("AR FangXinShuH7B5Std HV"), local("文鼎方新書H7B5Std_H");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* 窄桌機將根管情境圖漸進右移；左側用白底銜接，保留標題與人物的距離。
+   到 1440px 時位移歸零，沿用已確認的一般桌機構圖。 */
+@media (min-width: 1101px) and (max-width: 1439px) {
+  body.treatment-page #microscopic-endodontics-hero {
+    --endo-image-shift: clamp(0px, calc(540px - 37.5vw), 128px);
+    /* 白色漸層柔化右移後的圖片左邊界，避免出現直線接縫。 */
+    background-image: linear-gradient(to right, #fff 0, #fff var(--endo-image-shift), rgba(255,255,255,0) calc(var(--endo-image-shift) + 120px)), url("yuan-aimei-micro-endo-assets/hero.png");
+    background-size: 100% 100%, cover;
+    background-position: left top, calc(50% + var(--endo-image-shift)) center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+  }
+}
+
+/* 僅調整桌機；手機仍使用各頁原有的字型、字級、行距及自然換行。 */
+@media (min-width: 1101px) {
+  body.treatment-page :is(#allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero) .hero-copy h1,
+  body.treatment-page :is(#allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero) .treatment-hero-question {
+    font-family: "Treatment FangXin H7 Heavy", "Songti TC", "Noto Serif TC", serif;
+    font-weight: 900;
+    font-synthesis: none;
+    font-size: 52px;
+    line-height: 1.5;
+  }
+  body.treatment-page :is(#allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero) .hero-copy p {
+    max-width: 500px;
+  }
+  body.treatment-page .treatment-hero .banner-description-line {
+    display: block;
+  }
+  /* 生活情境圖右側有植物，說明縮短每行，避免文字壓在枝葉上。 */
+  body.treatment-page #allon4-hero .hero-copy p {
+    max-width: 400px;
+  }
+  /* 根管標題較長，小桌機也保留完整第二行，避免「問題」被拆開。 */
+  body.treatment-page #microscopic-endodontics-hero .hero-copy {
+    max-width: max(46%, 570px);
+  }
+}

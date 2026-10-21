@@ -129,7 +129,8 @@
 #allon4-faq summary { display: grid; grid-template-columns: 46px minmax(0,1fr) 28px; align-items: center; gap: 18px; padding: 24px 30px; list-style: none; cursor: pointer; color: #284f45; }
 #allon4-faq summary::-webkit-details-marker { display: none; }
 #allon4-faq summary::marker { content: ''; }
-#allon4-faq summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 700; overflow-wrap: anywhere; }
+/* Q&A 問題依確認使用一般字重，字級及行距維持原設定。 */
+#allon4-faq summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 400; overflow-wrap: anywhere; }
 #allon4-faq .faq-q { font: 400 24px/1.5 Georgia, serif; color: #5daa96; }
 #allon4-faq .faq-toggle { display: block; position: relative; width: 28px; height: 28px; color: #5daa96; }
 #allon4-faq .faq-toggle::before,

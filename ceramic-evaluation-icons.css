@@ -1,0 +1,9 @@
+
+/* 沿用矯正評估卡：ICON、標題置中，說明靠左。 */
+#ceramic-dsd-evaluation .evaluation-icon-box { display:flex;align-items:center;justify-content:center;width:96px;height:96px;margin:0 auto 12px;color:#154f3e; }
+#ceramic-dsd-evaluation .evaluation-icon-box img {display:block;width:96px;height:96px;object-fit:contain;border-radius:0;}
+#ceramic-dsd-evaluation .evaluation-icon-box svg {display:block;width:88px;height:88px;}
+/* 此 SVG 原線寬 3，放大後約 3.3px；調為 1.3，對齊左右圖示約 1.4px 的可見線條。 */
+#ceramic-dsd-evaluation .evaluation-icon-box svg[data-care-icon="force"] {stroke-width:1.3;}
+#ceramic-dsd-evaluation .card h3 {text-align:center;}
+#ceramic-dsd-evaluation .card p {text-align:left;text-wrap:pretty;}

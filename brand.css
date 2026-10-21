@@ -65,7 +65,8 @@ body { color: var(--ink); font-family: "Noto Sans TC", "Microsoft JhengHei", "Pi
 .faq-block article { padding: 28px 30px; background: var(--surface-soft); border: 0; border-radius: 16px; }
 .faq-question { display: flex; align-items: baseline; gap: 14px; }
 .faq-q { flex: 0 0 24px; color: var(--brand-deep); font-family: Georgia, serif; font-size: 22px; font-weight: 600; }
-.faq-block h3 { margin: 0; font-size: 19px; line-height: 1.6; }
+/* Q&A 問題依確認使用一般字重，保留原本桌機與手機字級。 */
+.faq-block h3 { margin: 0; font-size: 19px; line-height: 1.6; font-weight: 400; }
 .faq-block article p { margin: 13px 0 0 38px; font-size: 16px; line-height: 1.9; color: #52665e; }
 /* 三項需求採品牌淡粉底，與上方白色療程卡片區分；保留圓角與淡陰影。 */
 .treatment-groups { max-width: 1020px; margin: 36px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }

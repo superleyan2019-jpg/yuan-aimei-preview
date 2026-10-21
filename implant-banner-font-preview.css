@@ -1,0 +1,34 @@
+/* 人工植牙 Banner 字型試排：只讀取本機已安裝字型，不複製或傳送字型檔。 */
+@font-face {
+  font-family: "Implant FangXin H7 Heavy";
+  src: local("AR FangXinShuH7B5Std HV"), local("文鼎方新書H7B5Std_H");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* 更換標題字型和真實字重，保留手機版層級。 */
+body.treatment-page #implant-hero .hero-copy h1,
+body.treatment-page #implant-hero .treatment-hero-question {
+  font-family: "Implant FangXin H7 Heavy", "Songti TC", "Noto Serif TC", serif;
+  font-weight: 900;
+  font-synthesis: none;
+}
+
+/* 沿用網站的桌機斷點；平板及手機維持原字級。 */
+@media (min-width: 1101px) {
+  body.treatment-page #implant-hero .hero-copy h1 {
+    font-size: 52px;
+    line-height: 1.5;
+  }
+  /* 依語意分成兩行，留足「整體健康」的空間；僅在桌機限制詞內換行。 */
+  body.treatment-page #implant-hero .hero-copy p {
+    max-width: 500px;
+  }
+  body.treatment-page #implant-hero .implant-hero-health {
+    white-space: nowrap;
+  }
+  body.treatment-page #implant-hero .implant-hero-description-next {
+    display: block;
+  }
+}

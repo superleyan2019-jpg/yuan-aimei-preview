@@ -69,7 +69,8 @@
 .treatment-standard-content summary { display: grid; grid-template-columns: 46px minmax(0,1fr) 28px; align-items: center; gap: 18px; padding: 24px 30px; list-style: none; cursor: pointer; color: #284f45; }
 .treatment-standard-content summary::-webkit-details-marker { display: none; }
 .treatment-standard-content summary::marker { content: ''; }
-.treatment-standard-content summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 700; overflow-wrap: anywhere; }
+/* Q&A 問題依確認使用一般字重，字級及行距維持原設定。 */
+.treatment-standard-content summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 400; overflow-wrap: anywhere; }
 .treatment-standard-content .faq-q { font: 400 24px/1.5 Georgia,serif; color: #5daa96; }
 .treatment-standard-content .faq-toggle { position: relative; width: 28px; height: 28px; color: #5daa96; }
 .treatment-standard-content .faq-toggle::before,.treatment-standard-content .faq-toggle::after { content: ''; position: absolute; background: currentColor; border-radius: 1px; }

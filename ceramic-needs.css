@@ -1,0 +1,46 @@
+/* 全瓷美學需求：獨立限定於本區，沿用植牙的開放圖示分欄。 */
+#ceramic-dsd-intro .ceramic-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1050px;
+  margin: 72px auto 0;
+  gap: 0;
+}
+#ceramic-dsd-intro .ceramic-need {
+  min-width: 0;
+  padding: 20px 32px;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+#ceramic-dsd-intro .ceramic-need + .ceramic-need { border-left: 1px solid #d7e6ce; }
+#ceramic-dsd-intro .ceramic-need h3 {
+  margin: 0 0 14px;
+  color: #284f45;
+  font-size: 20.9px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+#ceramic-dsd-intro .ceramic-need p { margin: 0; font-size: 16.8px; line-height: 1.8; }
+/* 依透明圖的有效範圍定位，保留原圖比例；三個圖框與標題同軸對齊。 */
+#ceramic-dsd-intro .ceramic-need-icon {
+  display: block;
+  position: relative;
+  width: 128px;
+  height: 80px;
+  margin: 0 auto 16px;
+  overflow: hidden;
+}
+#ceramic-dsd-intro .ceramic-need-icon img {
+  display: block;
+  position: absolute;
+  max-width: none;
+  height: auto;
+}
+@media (max-width: 767px) {
+  #ceramic-dsd-intro .ceramic-needs-grid { grid-template-columns: minmax(0, 1fr); margin-top: 48px; }
+  #ceramic-dsd-intro .ceramic-need { padding: 24px 0; }
+  #ceramic-dsd-intro .ceramic-need + .ceramic-need { border-left: 0; border-top: 1px solid #d7e6ce; }
+}
