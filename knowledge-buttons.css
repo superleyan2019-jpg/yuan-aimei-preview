@@ -1,0 +1,31 @@
+/* 沿用人工植牙頁 #implant-booking .btn：同尺寸、配色、圓角與互動效果。
+   僅供本次知識區入口與線框使用，不改動其他頁面原有按鈕。 */
+#dental-journal .knowledge-more-link,
+.journal-button {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:160px; min-height:48px; max-width:100%; margin:0; padding:12px 30px;
+  border:1px solid #bcddae; border-radius:50px;
+  background:#bcddae; color:#284f45;
+  font-family:inherit; font-size:15px; font-weight:400; line-height:1.5;
+  letter-spacing:normal; text-align:center; text-decoration:none; cursor:pointer;
+}
+#dental-journal .knowledge-more-link:focus-visible,
+.journal-button:focus-visible { outline:2px solid #284f45; outline-offset:4px; }
+@media (hover:hover) {
+  #dental-journal .knowledge-more-link:hover,
+  .journal-button:not(:disabled):hover { background:#dcead4; border-color:#5daa96; }
+}
+.journal-button:disabled { opacity:.45; cursor:default; }
+/* 篩選、頁碼是選取控制，保留同一按鈕外觀；以底線標明目前選取值。 */
+.journal-button[aria-pressed="true"],.journal-button[aria-current="page"] {
+  text-decoration:underline; text-underline-offset:5px; border-color:#284f45;
+}
+/* 次要操作沿用既有 .btn 的綠框／深綠字，保留同一圓角與字體。
+   僅調整線框控制項，首頁入口與主要預約按鈕維持原樣。 */
+.filters .journal-button,
+.pagination .journal-button,
+.review-controls .journal-button,
+.return-list .journal-button { background:#fff; border-color:#5daa96; color:#284f45; }
+.filters .journal-button[aria-pressed="true"],
+.pagination .journal-button[aria-current="page"],
+.review-controls .journal-button[aria-pressed="true"] { background:#bcddae; border-color:#284f45; }
