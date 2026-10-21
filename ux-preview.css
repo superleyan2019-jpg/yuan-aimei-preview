@@ -1,0 +1,61 @@
+/* UX 預覽的新增元件獨立命名；既有插圖、療程字級與頁尾沿用原稿。 */
+.ux-section { padding:60px 24px; }
+.ux-heading { max-width:1050px; margin:0 auto 30px; text-align:center; color:#284f45; }
+.ux-eyebrow { margin:0 0 12px; color:#52665e; font-size:15px; line-height:1.6; letter-spacing:.12em; }
+.ux-heading h2 { margin:0; font-size:32px; font-weight:500; letter-spacing:.08em; line-height:1.5; text-wrap:balance; }
+.ux-heading > p:last-child:not(.ux-eyebrow) { margin:16px 0 0; font-size:16.8px; line-height:1.8; color:#52665e; text-wrap:balance; }
+/* 按鈕對齊現有 knowledge-more-link／植牙預約：無新增箭頭。 */
+.ux-button { display:inline-flex; align-items:center; justify-content:center; min-width:160px; min-height:48px; max-width:100%; padding:12px 30px; border:1px solid #bcddae; border-radius:50px; background:#bcddae; color:#284f45; font:400 15px/1.5 "Noto Sans TC","PingFang TC",sans-serif; letter-spacing:normal; text-align:center; text-decoration:none; }
+.ux-button-secondary { background:#fff; border-color:#5daa96; }
+.ux-button:focus-visible,.ux-text-link:focus-visible { outline:2px solid #284f45; outline-offset:4px; }
+.ux-text-link { display:inline-flex; justify-content:center; align-items:center; min-height:44px; max-width:100%; color:#284f45; font-size:15px; line-height:1.6; text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px; }
+@media(hover:hover) { .ux-button:hover { background:#dcead4; border-color:#5daa96; } .ux-text-link:hover { color:#397c69; } }
+.ux-skip { position:fixed; top:12px; left:12px; z-index:2000; transform:translateY(-180%); padding:12px 24px; color:#fff; background:#284f45; border-radius:8px; }
+.ux-skip:focus { transform:translateY(0); }
+#main-content:focus { outline:none; }
+.site-header-links [aria-current="page"] { text-decoration:underline; text-underline-offset:6px; }
+.ux-hero-actions { position:absolute; left:6vw; bottom:28px; display:flex; gap:12px; flex-wrap:wrap; }
+.ux-actions,.ux-support-links { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px; }
+.ux-support-links { gap:8px 28px; margin-top:20px; }
+.ux-home-booking { background:#fff; text-align:center; }
+.ux-home-booking.ux-section { padding:32px 24px; }
+.ux-home-booking .ux-heading { margin-bottom:20px; }
+.ux-home-booking .ux-heading h2 { font-size:28px; letter-spacing:.04em; }
+/* 恢復確認文案：主標下兩句說明自然換行，保留精簡版留白。 */
+.ux-booking-description { margin-top:16px; color:#52665e; font-size:16.8px; line-height:1.8; text-wrap:balance; }
+.ux-booking-description p { margin:0; }
+.ux-booking-description p + p { margin-top:8px; }
+.ux-home-booking .ux-booking-note { margin-top:12px; }
+.ux-mobile-only { display:none; }
+.site-header .site-header-links > .ux-mobile-only { display:none; }
+.ux-booking-note, .treatment-page #implant-booking .ux-booking-note { max-width:680px; margin:16px auto 0; color:#52665e; font-size:15px; line-height:1.8; text-align:center; text-wrap:balance; }
+#implant-booking .ux-actions { margin-top:26px; }
+#dental-journal .ux-text-link { justify-content:flex-start; margin-top:8px; }
+.ux-guide { padding:30px 24px; background:#f3f8ef; border-bottom:1px solid #d7e6ce; }
+.ux-guide-inner { max-width:1050px; margin:auto; display:grid; grid-template-columns:240px minmax(0,1fr); gap:32px; align-items:center; }
+.ux-guide .ux-eyebrow { margin-bottom:8px; }
+.ux-guide h2 { margin:0; font-size:22px; font-weight:500; line-height:1.5; color:#284f45; }
+.ux-guide-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.ux-guide-links .ux-button { min-width:0; padding:10px 16px; }
+.ux-section-link { max-width:1050px; margin:24px auto 0; text-align:center; }
+.ux-table-hint { display:none; }
+/* 不額外固定第二排導覽，避免手機閱讀區被遮住；頁內連結沿用 Header 留白。 */
+@media(max-width:767px) {
+  /* 手機整頁移除側邊懸浮層，避免壓住任一段落；桌機維持原樣。
+     LINE 保留在固定 Header；電話與門診入口放選單，回頁首放正文末端。 */
+  .floating-contact-actions,.treatment-floating-actions { display:none; }
+  .site-header .site-header-links > .ux-mobile-only { display:inline-flex; }
+  .ux-mobile-top { display:flex; justify-content:center; padding:4px 24px 20px; background:#fff; }
+  .ux-home-booking .ux-heading h2 { font-size:25px; }
+  .ux-section { padding:40px 24px; }
+  .ux-heading { margin-bottom:26px; }
+  .ux-heading h2 { font-size:27px; letter-spacing:.04em; }
+  .ux-hero-actions { left:20px; right:20px; bottom:20px; gap:8px; }
+  .ux-hero-actions .ux-button { min-width:0; padding:10px 18px; font-size:14px; }
+  .ux-actions .ux-button { min-width:0; padding-inline:20px; }
+  .ux-guide { padding:28px 24px; }
+  .ux-guide-inner { grid-template-columns:1fr; gap:20px; }
+  .ux-guide-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ux-table-hint { display:block; margin:22px 0 0; font-size:15px; line-height:1.8; color:#52665e; text-align:center; }
+}
+@media(max-width:359px) { .ux-hero-actions .ux-button { padding-inline:12px; } }

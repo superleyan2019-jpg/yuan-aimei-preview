@@ -1,0 +1,21 @@
+/* 僅過渡顏色與輕微按壓；不放大照片、不持續晃動裝飾或聯絡按鈕。 */
+.ux-button,
+.ux-text-link,
+.site-header-links > a,
+.site-header .header-book,
+.treat,
+#dental-journal .knowledge-more-link {
+  transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease,box-shadow 180ms ease,scale 150ms ease;
+}
+.ux-button:active,
+.site-header .header-book:active,
+.treat:active,
+#dental-journal .knowledge-more-link:active { scale:.985; }
+.ux-guide-links .ux-button:focus-visible { background:#dcead4; }
+/* 裝置要求減少動態時，新增回饋和既有快捷鈕的平滑回頂端都尊重此偏好。 */
+@media(prefers-reduced-motion:reduce) {
+  .ux-button,.ux-text-link,.site-header-links > a,.site-header .header-book,
+  .treat,#dental-journal .knowledge-more-link { transition:none; }
+  .ux-button:active,.site-header .header-book:active,.treat:active,
+  #dental-journal .knowledge-more-link:active { scale:none; }
+}
