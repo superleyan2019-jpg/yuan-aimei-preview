@@ -61,3 +61,12 @@
  .article-page .consult .journal-button{font-size:14px;min-height:48px}
 }
 @media(max-width:359px){.article-page{width:calc(100% - 40px)}.article-panel{padding:20px 18px}}
+
+/* 文章 01 新增內文照片與說明，沿用原本單欄寬度、字級及圓角。 */
+.article-inline-image{margin:28px 0}
+.article-inline-image img{display:block;width:100%;height:auto;border-radius:10px}
+.article-inline-image figcaption{margin-top:10px;font-size:14px;line-height:1.8;color:var(--muted)}
+.article-questions article{margin:0 0 28px}
+.article-questions h3{font-size:20px;line-height:1.8;font-weight:500;margin:0 0 12px}
+.article-page .article-notice{font-size:14px;line-height:1.9;color:var(--muted);margin:0 0 28px}
+.article-page .consult .article-byline{font-size:14px;color:var(--muted);margin-bottom:14px}

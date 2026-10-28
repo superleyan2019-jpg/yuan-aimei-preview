@@ -1,4 +1,6 @@
 /* 沿用元艾美共通色彩、首頁文章卡及醫療團隊頁的花草主視覺。 */
+/* 手機 Banner 的 flex 子項填滿可用寬度，避免 width:auto 縮成文字寬而偏左。 */
+@media(max-width:767px){.journal-hero>.journal-container{flex:1;min-width:0}}
 :root{--ink:#284f45;--body:#3c514b;--muted:#52665e;--line:#d7e6ce;--soft:#f3f8ef}
 *{box-sizing:border-box}body{margin:0;background:#fff;color:var(--body);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:18px;line-height:1.8}a{color:inherit;text-underline-offset:5px}button{font:inherit}button,summary,a{touch-action:manipulation}[hidden]{display:none!important}a:focus-visible,summary:focus-visible{outline:2px solid #284f45;outline-offset:4px}h1,h2,h3,h4{color:var(--ink)}
 .journal-container{width:84%;max-width:1120px;margin-inline:auto}

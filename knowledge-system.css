@@ -1,0 +1,116 @@
+/* 牙科知識共通規格：首頁與列表共用卡片層級，文章保留獨立閱讀字級。 */
+/* 閱讀操作是整張卡片連結的一部分，避免巢狀按鈕與重複鍵盤停駐。 */
+.knowledge-page #cards .read-label {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:128px; min-height:44px; margin-top:auto; padding:10px 22px;
+  border:1px solid #5daa96; border-radius:50px; background:#fff; color:#284f45;
+  font-size:15px; font-weight:400; line-height:1.5; text-decoration:none;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.knowledge-page #cards .card-link:focus-visible {
+  outline:2px solid #284f45; outline-offset:4px; border-color:#5daa96;
+}
+.knowledge-page #cards .card-link:focus-visible .read-label,
+.knowledge-page #cards .card-link:active .read-label {
+  background:#284f45; border-color:#284f45; color:#fff;
+}
+@media(hover:hover){
+ .knowledge-page #cards .card-link:hover { background:#eff6e9; border-color:#5daa96; }
+ .knowledge-page #cards .card-link:hover .read-label { background:#284f45; border-color:#284f45; color:#fff; }
+}
+/* 只移除列表底部預約區的粉色底，保留原有文字與按鈕位置。 */
+.knowledge-page #list-view .consult { background:#fff; }
+/* 列表首圖採已確認的 16:9 滿版裁切；負邊距抵消文字內距。 */
+.knowledge-page #cards .card-link { overflow:hidden; }
+.knowledge-page #cards .card-image {
+  display:block; width:calc(100% + 56px); max-width:none; aspect-ratio:16/9;
+  height:auto; object-fit:cover; object-position:center; flex-shrink:0;
+  margin:-30px -28px 26px; background:#e9eee5;
+}
+@media(max-width:767px){.knowledge-page #cards .card-image{width:calc(100% + 48px);margin:-26px -24px 24px}}
+@media(max-width:359px){.knowledge-page #cards .card-image{width:calc(100% + 40px);margin:-24px -20px 22px}}
+#dental-journal .knowledge-grid article,
+.knowledge-page #cards .card-link {
+  min-width:0; padding:30px 28px; border:1px solid transparent;
+  border-radius:16px; background:#f3f8ef; box-shadow:none;
+}
+#dental-journal .knowledge-grid article h3,
+.knowledge-page #cards .card h4 {
+  color:#284f45; font-size:20px; font-weight:600; line-height:1.6;
+  letter-spacing:normal; margin:18px 0 14px;
+}
+#dental-journal .knowledge-grid article p,
+.knowledge-page #cards .card p {
+  color:#52665e; font-size:16.8px; font-weight:400; line-height:1.8;
+  letter-spacing:normal; margin:0 0 24px;
+}
+#dental-journal .knowledge-grid article small,
+.knowledge-page #cards .tag {
+  display:inline-block; padding:4px 13px; border-radius:50px;
+  color:#284f45; background:#fce9f1; font-size:14px; font-weight:400;
+  line-height:1.6; letter-spacing:normal;
+}
+/* 圖片說明貼近對應圖片；衛教提醒固定在正文末尾、療程連結之前。 */
+.article-page .article-cover figcaption,
+.article-page .article-inline-image figcaption,
+.article-page .article-notice {
+  color:#52665e; font-size:14px; font-weight:400; line-height:1.8; text-align:left;
+}
+.article-page .article-inline-image figcaption { margin:10px 0 0; }
+.article-page .article-cover figcaption { margin:10px 0 0; }
+.article-page .article-content-panel { margin:28px 0; }
+.article-page .article-content-item { margin:24px 0; padding-bottom:6px; border-bottom:1px solid #d7e6ce; }
+.article-page .article-content-item p:first-child { margin-bottom:8px; }
+.article-page .article-section h3 { font-size:20px; line-height:1.8; font-weight:500; margin:28px 0 12px; }
+/* 比較表保留完整欄位；小螢幕只在表格內橫向捲動，不壓縮正文。 */
+.article-page .article-table { overflow-x:auto; border:1px solid #d7e6ce; border-radius:10px; margin:28px 0; }
+.article-page .article-table table { width:100%; min-width:680px; border-collapse:collapse; font-size:18px; line-height:1.9; }
+.article-page .article-table th,.article-page .article-table td { padding:16px; text-align:left; vertical-align:top; border-right:1px solid #d7e6ce; border-bottom:1px solid #d7e6ce; }
+.article-page .article-table th { background:#f3f8ef; color:#284f45; font-weight:600; }
+.article-page .article-table th:last-child,.article-page .article-table td:last-child { border-right:0; }
+.article-page .article-table tr:last-child td { border-bottom:0; }
+.article-page .article-table:focus-visible { outline:2px solid #284f45; outline-offset:3px; }
+.article-page .article-table-hint { display:none; }
+@media(max-width:767px){
+ .article-page .article-table-hint { display:block; font-size:14px; line-height:1.8; color:#52665e; margin:20px 0 8px; }
+ .article-page .article-table-hint+.article-table { margin-top:0; }
+}
+.article-page .article-notice { margin:28px 0; }
+/* 同療程頁的 Q／A、細框與展開底色；字級維持文章問題 20px、答案 18px。 */
+.article-page .article-questions {
+  overflow:hidden; border:1px solid #d7e6ce; border-radius:10px; background:#fff;
+}
+.article-page .article-questions details { margin:0; border:0; background:#fff; }
+.article-page .article-questions details+details { border-top:1px solid #d7e6ce; }
+.article-page .article-questions summary {
+  display:grid; grid-template-columns:32px minmax(0,1fr) 24px; align-items:center;
+  gap:16px; padding:22px 24px; list-style:none; cursor:pointer; color:#284f45;
+}
+.article-page .article-questions summary::-webkit-details-marker { display:none; }
+.article-page .article-questions summary::marker { content:''; }
+.article-page .article-questions summary h3 {
+  margin:0; font-size:20px; font-weight:500; line-height:1.8; letter-spacing:normal;
+}
+.article-page .article-questions .faq-q,
+.article-page .article-questions .faq-a { font:400 22px/1.6 Georgia,serif; color:#5daa96; }
+.article-page .article-questions .faq-a { color:#52665e; }
+.article-page .article-questions .faq-toggle { position:relative; width:24px; height:24px; color:#5daa96; }
+.article-page .article-questions .faq-toggle::before,
+.article-page .article-questions .faq-toggle::after { content:''; position:absolute; background:currentColor; border-radius:1px; }
+.article-page .article-questions .faq-toggle::before { left:2px; top:11px; width:20px; height:2px; }
+.article-page .article-questions .faq-toggle::after { left:11px; top:2px; width:2px; height:20px; }
+.article-page .article-questions details[open] summary { background:#edf5e9; }
+.article-page .article-questions details[open] .faq-toggle::after { display:none; }
+.article-page .article-questions .faq-answer {
+  display:grid; grid-template-columns:32px minmax(0,1fr); gap:16px; padding:22px 64px 26px 24px;
+}
+.article-page .article-questions .faq-answer p { margin:0; color:#3c514b; font-size:18px; line-height:1.9; }
+.article-page .article-questions summary:focus-visible { outline:2px solid #284f45; outline-offset:-4px; }
+@media(hover:hover){.article-page .article-questions summary:hover{background:#f3f8ef}}
+@media(max-width:767px){
+  #dental-journal .knowledge-grid article,.knowledge-page #cards .card-link { padding:26px 24px; }
+  .article-page .article-questions summary { grid-template-columns:24px minmax(0,1fr) 24px; gap:10px; padding:18px 16px; align-items:start; }
+  .article-page .article-questions .faq-toggle { margin-top:6px; }
+  .article-page .article-questions .faq-answer { grid-template-columns:24px minmax(0,1fr); gap:10px; padding:18px 16px 22px; }
+}
+@media(max-width:359px){#dental-journal .knowledge-grid article,.knowledge-page #cards .card-link{padding:24px 20px}}
