@@ -1,77 +1,138 @@
-/* 醫療團隊使用獨立命名；共用 Header、字型、品牌色及頁尾保持既有設計。
-   圖片在左、完整履歷在右；內容自然增高，不用固定卡片高度或截斷文字。 */
+/* 三欄版：照片／姓名與學經歷／引言。各醫師獨立增高，底色由產生器依順序交錯。 */
 .team-page * { box-sizing: border-box; }
 .team-page { margin: 0; line-height: 1.8; background: #fff; }
 .team-page a { text-underline-offset: 5px; }
 .team-page .site-header a[aria-current="page"] { text-decoration: underline; text-decoration-color: #5daa96; }
-.team-container, .doctor-layout { width: min(1120px, 84%); margin: 0 auto; }
-/* 使用已確認的無字生成圖作背景，標題仍為可選取的 HTML 文字。
-   picture 在手機切換專用構圖，避免橫幅裁切後遺失兩側植物。 */
-.team-intro { position: relative; isolation: isolate; overflow: hidden; display: grid; align-items: center; min-height: clamp(360px, 28vw, 480px); padding: 80px 0; background: #f3f8ef; }
+.team-container, .doctor-layout { width: min(1120px, 84%); margin-inline: auto; }
+.team-intro { position: relative; isolation: isolate; overflow: hidden; display: grid; align-items: center; min-height: clamp(300px, 23vw, 360px); padding: 64px 0; background: #f3f8ef; }
 .team-intro > .team-container { position: relative; z-index: 1; }
-.team-intro-art { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.team-intro-art { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .72; }
 .team-intro-art img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .team-title { margin: 0 0 20px; text-align: center; }
-.team-title::after { content: ""; display: block; width: 40px; height: 2px; margin: 24px auto 0; background: #bcddae; }
 .team-title h1 { margin: 0; color: #284f45; font-size: 44px; font-weight: 500; line-height: 1.35; letter-spacing: .22em; padding-left: .22em; }
-.team-title p { margin: 6px 0 0; font-size: calc(16px * 36 / 34); letter-spacing: .18em; line-height: 1.4; color: #596e65; }
+.team-title p { margin: 6px 0 0; font-size: 17px; letter-spacing: .18em; line-height: 1.4; color: #596e65; }
 .team-lead { margin: 0; text-align: center; font-size: 20px; line-height: 1.8; text-wrap: balance; }
-.doctor-section { padding: 64px 0; }
-.doctor-section--soft { background: #f3f8ef; }
-.doctor-layout { display: grid; grid-template-columns: minmax(0, .36fr) minmax(0, .64fr); gap: 64px; align-items: start; }
-.doctor-portrait { margin: 0; min-width: 0; }
-/* 使用 Emily 提供的男女醫師示意圖；寬度隨欄位縮放，高度依原圖比例，避免人物被裁切或拉伸。 */
-.doctor-photo { display: block; width: 100%; height: auto; border-radius: 10px; }
-.doctor-info { min-width: 0; }
-.doctor-heading { margin-bottom: 22px; }
-.doctor-heading h2 { margin: 0; color: #284f45; font-size: 32px; line-height: 1.5; font-weight: 500; letter-spacing: .12em; }
-.doctor-heading h2 span { margin-left: 16px; font-size: 18px; font-weight: 400; letter-spacing: .08em; }
-/* 院長職稱與姓名同列，以細直線分隔；姓名與「醫師」保持一組，窄螢幕不拆字。 */
+
+/* 植物與柔和底色都留在 article 內；增刪時不會跨區留下半株裝飾。 */
+.doctor-section { position: relative; isolation: isolate; overflow: clip; padding: 72px 0 136px; scroll-margin-top: 140px; }
+.doctor-section--white { background: #fff; }
+.doctor-section--sage { background: #edf5eb; }
+.doctor-layout { position: relative; z-index: 1; width: min(1280px, calc(100% - 180px)); display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1fr) minmax(0,1.2fr); gap: 36px; align-items: start; }
+.doctor-identity { grid-column: 1; grid-row: 1; min-width: 0; }
+.doctor-credentials { grid-column: 2; grid-row: 1; min-width: 0; }
+.doctor-story { grid-column: 3; grid-row: 1; min-width: 0; }
+.doctor-portrait { width: min(100%, 320px); margin: 0; }
+.doctor-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; border-radius: 10px; }
+.doctor-heading { margin-bottom: 28px; }
+.doctor-heading h2 { margin: 0; color: #284f45; font-size: 32px; line-height: 1.5; font-weight: 500; letter-spacing: .1em; }
+.doctor-heading h2 span { margin-left: 14px; font-size: 18px; font-weight: 400; letter-spacing: .08em; }
 .doctor-heading .doctor-heading-director { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
 .doctor-heading .doctor-heading-director > span { margin: 0; font: inherit; letter-spacing: inherit; white-space: nowrap; }
 .doctor-heading .doctor-prefix { padding-right: 12px; border-right: 1px solid #9bb4a7; }
 .doctor-heading .doctor-name { display: inline-flex; align-items: baseline; gap: 12px; }
 .doctor-heading .doctor-name .doctor-role { margin: 0; }
-.doctor-qualifications + .doctor-qualifications { margin-top: 20px; padding-top: 20px; border-top: 1px solid #d7e6ce; }
-.doctor-qualifications h3 { margin: 0 0 8px; color: #284f45; font-size: 23.75px; line-height: 1.6; font-weight: 700; letter-spacing: .04em; }
-.doctor-qualifications ul { padding-left: 1.2em; margin: 0; font-size: 20px; }
-.doctor-qualifications li { padding-left: .15em; margin: 3px 0; line-height: 1.8; overflow-wrap: anywhere; }
-.doctor-qualifications li::marker { color: #5daa96; font-size: .75em; }
-/* 預約採淺綠實心膠囊，不放外框線與箭頭；頁首保留適合導覽的緊湊尺寸。 */
-.doctor-book { display: inline-flex; align-items: center; justify-content: center; margin-top: 26px; min-width: 160px; max-width: 100%; min-height: 48px; padding: 12px 30px; border: 0; border-radius: 999px; background: #bcddae; color: #284f45; text-decoration: none; font-size: 16px; }
+.doctor-qualifications + .doctor-qualifications { margin-top: 28px; }
+.doctor-qualifications h3 { margin: 0 0 10px; color: #284f45; font-size: 20px; font-weight: 500; line-height: 1.6; letter-spacing: .06em; }
+.doctor-qualifications ul { padding-left: 1.15em; margin: 0; font-size: 20px; }
+.doctor-qualifications li { padding-left: .1em; margin: 4px 0; line-height: 1.8; overflow-wrap: anywhere; }
+.doctor-qualifications li::marker { color: #5daa96; font-size: .7em; }
+
+/* 引言自然增高，不截字；確認狀態保留於維護資料，不顯示於畫面。 */
+.doctor-message { position: relative; z-index: 1; margin: 0; padding: 28px 26px 30px; background: #edf5e8; border-radius: 18px; }
+.doctor-section--sage .doctor-message { background: #fffefa; }
+.doctor-message-label { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0 0 20px; color: #526e61; font-size: 15px; letter-spacing: .1em; }
+.doctor-message h3 { margin: 0 0 22px; color: #284f45; font-size: 26px; font-weight: 500; line-height: 1.6; text-wrap: balance; letter-spacing: .04em; }
+.doctor-message-copy { margin: 0; font-size: 20px; line-height: 1.9; color: #35483f; text-wrap: pretty; }
+.doctor-book { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; min-width: 160px; max-width: 100%; min-height: 48px; margin-top: 24px; padding: 12px 30px; border: 0; border-radius: 999px; background: #bcddae; color: #284f45; text-decoration: none; font-size: 16px; }
 .team-page .site-header .header-book { border: 0; background: #bcddae; color: #284f45; }
-.team-booking { padding: 60px 8%; text-align: center; border-top: 1px solid #d7e6ce; background: #fff; }
+.team-page .doctor-book:focus-visible { outline: 2px solid #284f45; outline-offset: 4px; }
+
+/* 已確認的 A 組合依左右留白配置。右側保留快捷鈕走道，枝形完整可辨。 */
+.doctor-botanical { position: absolute; pointer-events: none; object-fit: contain; z-index: 0; }
+.doctor-botanical--a-right .doctor-botanical { width: 220px; height: 190px; right: max(110px, calc((100% - 1240px) / 2)); bottom: -24px; }
+.doctor-botanical--a-left .doctor-botanical { width: 200px; height: 172px; left: max(26px, calc((100% - 1320px) / 2)); bottom: -36px; transform: scaleX(-1); }
+.doctor-botanical--a-small .doctor-botanical { width: 180px; height: 155px; right: max(160px, calc((100% - 1140px) / 2)); bottom: -8px; }
+/* 單枝以不同方向、長寬比及落點穿插，避免整頁反覆出現同一組合。 */
+.doctor-botanical--round-edge .doctor-botanical { width: 64px; height: 104px; left: 12px; top: 44%; transform: rotate(-8deg); }
+.doctor-botanical--sweep-right .doctor-botanical { width: 190px; height: 90px; right: max(130px, calc((100% - 1180px) / 2)); bottom: 24px; transform: rotate(-8deg); }
+.doctor-botanical--upright-left .doctor-botanical { width: 54px; height: 102px; left: max(110px, calc((100% - 1160px) / 2)); bottom: 18px; transform: rotate(-22deg); }
+.doctor-botanical--round-right .doctor-botanical { width: 65px; height: 105px; right: max(190px, calc((100% - 1060px) / 2)); bottom: 18px; transform: rotate(16deg); }
+.doctor-botanical--sprig-left .doctor-botanical { width: 126px; height: 66px; left: max(160px, calc((100% - 1060px) / 2)); bottom: 30px; transform: rotate(10deg); }
+/* 尚無學經歷時，姓名與引言共用右側寬區；保留照片欄和整頁對齊。 */
+.doctor-section--no-credentials .doctor-identity { grid-row: 1 / 3; }
+.doctor-section--no-credentials .doctor-credentials { grid-column: 2 / 4; grid-row: 1; }
+.doctor-section--no-credentials .doctor-heading { margin-bottom: 0; }
+.doctor-section--no-credentials .doctor-story { grid-column: 2 / 4; grid-row: 2; max-width: 760px; }
+.doctor-section--no-credentials .doctor-layout { row-gap: 24px; grid-template-rows: min-content 1fr; }
+.doctor-section--no-story .doctor-credentials { grid-column: 2 / 4; max-width: 720px; }
+.team-booking { position: relative; isolation: isolate; overflow: hidden; padding: 64px 180px 100px; text-align: center; border-top: 1px solid #d7e6ce; background: #fff; }
+.team-booking::before, .team-booking::after { content: ""; position: absolute; z-index: -1; pointer-events: none; background: center / contain no-repeat; }
+.team-booking::before { width: 100px; height: 162px; left: 36px; bottom: -18px; transform: rotate(-12deg); background-image: url('yuan-aimei-v2-assets/team-leaf-round-9.svg'); }
+.team-booking::after { width: 240px; height: 207px; right: 102px; bottom: -32px; background-image: url('yuan-aimei-v2-assets/team-botanical-approved-a.svg'); }
 .team-booking h2 { font-size: 36px; color: #284f45; font-weight: 500; line-height: 1.5; letter-spacing: .08em; margin: 0 0 14px; text-wrap: balance; }
 .team-booking p { font-size: 20px; margin: 0; line-height: 1.8; text-wrap: balance; }
 .team-skip { position: fixed; top: -100px; left: 16px; padding: 12px 20px; background: #284f45; color: white; z-index: 2000; }
 .team-skip:focus { top: 12px; }
-.team-page .doctor-book:focus-visible { outline: 2px solid #284f45; outline-offset: 4px; }
-@media (hover:hover) {
-  .doctor-book:hover, .team-page .site-header .header-book:hover { background: #dcead4; color: #284f45; box-shadow: none; }
+.team-skip:not(:focus) { clip-path: inset(50%); }
+@media (hover:hover) { .doctor-book:hover, .team-page .site-header .header-book:hover { background: #dcead4; color: #284f45; box-shadow: none; } }
+
+/* 平板保留可讀字級：照片與學經歷並排，引言接在下方。 */
+@media (min-width:901px) and (max-width:1179px) {
+  .doctor-layout { width: auto; margin: 0 100px 0 36px; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 32px; }
+  .doctor-story { grid-column: 1 / 3; grid-row: 2; max-width: none; }
+  .doctor-section--no-credentials .doctor-credentials, .doctor-section--no-credentials .doctor-story { grid-column: 2; }
+  .doctor-botanical--round-edge .doctor-botanical { top: auto; bottom: 18px; left: 46px; }
 }
-@media (min-width:768px) and (max-width:1100px) {
-  .team-container, .doctor-layout { width: 88%; }
-  .doctor-layout { gap: 36px; grid-template-columns: minmax(0, .34fr) minmax(0, .66fr); }
-  .doctor-info { padding-right: 44px; }
+/* 照片、姓名與履歷置中；引言靠左。透明框保留原有尺寸與換行，畫面無框線。 */
+@media (max-width:900px) {
+  .team-page { padding-bottom: 86px; }
+  .doctor-section { padding: 36px 0 104px; scroll-margin-top: 126px; }
+  .doctor-layout { width: min(620px, calc(100% - 36px)); margin: 0 auto; padding: 24px 18px 28px; display: flex; flex-direction: column; align-items: center; gap: 28px; border: 1px solid transparent; border-radius: 20px; background: rgba(255,255,255,.75); }
+  /* 綠底醫師區直接使用區塊底色，不再疊加白色卡片。 */
+  .doctor-section--sage .doctor-layout { background: transparent; }
+  .doctor-identity, .doctor-credentials { width: 100%; }
+  .doctor-credentials { padding-top: 0; text-align: center; }
+  .doctor-portrait { width: min(100%,360px); margin: 0 auto; }
+  .doctor-heading { margin-bottom: 28px; }
+  .doctor-heading .doctor-heading-director { justify-content: center; }
+  .doctor-qualifications h3 { color: #66816b; font-weight: 400; margin-bottom: 12px; }
+  .doctor-qualifications ul { list-style: none; padding: 0; }
+  .doctor-qualifications li { padding: 0; margin: 7px 0; font-size: 18px; line-height: 1.85; overflow-wrap: normal; }
+  .doctor-message, .doctor-section--sage .doctor-message { padding: 0; border-radius: 0; background: transparent; }
+  .doctor-message-label { justify-content: center; font-size: 20px; margin-bottom: 16px; color: #66816b; }
+  .doctor-message h3 { font-size: 21px; text-align: center; margin-bottom: 16px; }
+  .doctor-message-copy { font-size: 19px; line-height: 1.95; text-align: left; }
+  .doctor-identity { order: 1; }
+  .doctor-story, .doctor-section--no-credentials .doctor-story { display: contents; }
+  .doctor-message { order: 3; width: 100%; }
+  .doctor-credentials { order: 2; }
+  .doctor-story .doctor-book { order: 4; margin: 0; }
+  .doctor-botanical--a-right .doctor-botanical { width: 140px; height: 121px; right: 20px; bottom: -10px; }
+  .doctor-botanical--a-left .doctor-botanical { width: 140px; height: 121px; left: 16px; right: auto; bottom: -10px; }
+  .doctor-botanical--a-small .doctor-botanical { width: 118px; height: 102px; right: 40px; bottom: 0; }
+  .doctor-botanical--round-edge .doctor-botanical { width: 47px; height: 76px; left: 32px; top: auto; bottom: 14px; transform: rotate(-16deg); }
+  .doctor-botanical--sweep-right .doctor-botanical { width: 135px; height: 64px; right: 24px; bottom: 22px; }
+  .doctor-botanical--upright-left .doctor-botanical { width: 39px; height: 74px; left: 54px; bottom: 14px; }
+  .doctor-botanical--round-right .doctor-botanical { width: 43px; height: 70px; right: 50px; bottom: 16px; }
+  .doctor-botanical--sprig-left .doctor-botanical { width: 105px; height: 55px; left: 40px; bottom: 23px; }
+  .team-booking { padding: 44px 24px 110px; }
+  .team-booking::before { width: 60px; height: 97px; left: 22px; bottom: -6px; }
+  .team-booking::after { width: 180px; height: 90px; right: 14px; bottom: 0; }
+  /* 快捷鈕改底部橫排，釋放右側文字欄；保留原有按鈕與無障礙名稱。 */
+  .team-page .treatment-floating-actions { flex-direction: row; left: 50%; right: auto; bottom: max(10px, env(safe-area-inset-bottom)); transform: translateX(-50%); gap: 10px; padding: 6px 10px; border: 1px solid #d7e6ce; border-radius: 999px; background: rgba(255,255,255,.96); box-shadow: 0 3px 16px rgba(40,79,69,.12); }
+  .team-page .treatment-floating-action { width: 44px; height: 44px; box-shadow: none; }
+  .team-page .treatment-floating-action svg { width: 25px; height: 25px; }
+  .team-page .doctor-book { scroll-margin-bottom: 100px; }
 }
-/* 手機改單欄，不縮小主要履歷字級；照片限寬，讓文字保持自然閱讀寬度。 */
 @media (max-width:767px) {
-  .team-container, .doctor-layout { width: auto; margin: 0 24px; }
-  .team-intro { min-height: 360px; padding: 72px 0; }
+  .team-container { width: auto; margin: 0 24px; }
+  .team-intro { min-height: 300px; padding: 56px 0; }
   .team-title h1 { font-size: 36px; letter-spacing: .14em; padding-left: .14em; }
   .team-title p { font-size: 16px; }
-  .doctor-section { padding: 40px 0; }
-  .doctor-layout { display: grid; grid-template-columns: minmax(0,1fr); gap: 26px; }
-  /* 右側保留快捷按鈕的閱讀避讓空間，長履歷不會被浮動按鈕壓住。 */
-  .doctor-info { padding-right: 48px; }
-  .doctor-portrait { width: min(100%,360px); justify-self: center; }
-  .doctor-heading h2 { font-size: 30px; }
-  .doctor-heading h2 span { margin-left: 12px; }
-  .doctor-heading .doctor-heading-director { font-size: clamp(24px, 7.2vw, 30px); }
-  .doctor-book { width: 100%; }
-  .team-booking { padding: 44px 24px; }
-}
-/* 方形背景在較寬手機保留足夠高度，避免上下角的花葉被整片裁掉。 */
-@media (max-width:600px) {
-  .team-intro { min-height: clamp(360px, 80vw, 480px); }
+  .doctor-heading h2 { font-size: 28px; }
+  .doctor-heading h2 span { margin-left: 10px; }
+  .doctor-heading .doctor-heading-director { font-size: 26px; gap: 6px 8px; }
+  .doctor-heading .doctor-prefix { padding-right: 8px; }
+  .doctor-book { padding: 12px 22px; }
+  .team-booking h2 { font-size: 30px; }
 }
