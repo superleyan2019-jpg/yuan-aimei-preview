@@ -1,0 +1,37 @@
+/* 平塗植物與區塊內曲面；Banner 與資訊編排沿用 team.css。 */
+.team-page .doctor-section--white { background:#fff; }
+.team-page .doctor-section--sage { background:linear-gradient(110deg,#edf6e9,#f3f9ee 68%,#edf6e9); }
+/* 局部曲面對應參考圖；不串接相鄰醫師的裝飾或固定頁高。 */
+.team-page .doctor-section::before,.team-page .doctor-section::after { content:''; position:absolute; pointer-events:none; z-index:0; }
+.team-page .doctor-section::before { width:72%; height:280px; right:-27%; bottom:-150px; border-radius:64% 36% 0 0 / 95% 80% 0 0; transform:rotate(-17deg); background:#e6f1df; }
+.team-page .doctor-section::after { display:none; }
+.team-page .doctor-botanical { position:absolute; z-index:0; width:auto; height:auto; top:auto; left:auto; right:auto; bottom:0; transform:none; opacity:1; }
+.team-page .reference-corner-right .doctor-botanical { width:20vw; max-width:310px; right:0; }
+.team-page .reference-corner-left .doctor-botanical { width:17vw; max-width:255px; left:0; transform:scaleX(-1); }
+.team-page .reference-corner-small .doctor-botanical { width:18vw; max-width:275px; right:0; }
+.team-page .reference-bud-left .doctor-botanical { width:11.72vw; max-width:168px; left:0; z-index:2; }
+.team-page .reference-bud-right .doctor-botanical { width:9.3vw; max-width:134px; right:0; transform:scaleX(-1); }
+.team-page .reference-bud-left::before,.team-page .reference-corner-left::before { left:-38%; right:auto; bottom:-125px; transform:rotate(20deg); background:#e0eed7; }
+.team-page .reference-bud-right::before { background:#e0eed7; }
+.team-page .reference-quiet::before { width:95%; right:-22%; height:250px; bottom:-185px; transform:rotate(-10deg); background:#e9f3e4; }
+.team-page .reference-quiet::after { display:block; width:55%; right:-15%; height:185px; bottom:-125px; transform:rotate(-18deg); border-radius:60% 40% 0 0 / 90% 80% 0 0; background:#e1efdb; }
+.team-booking { border-top:0; background:linear-gradient(120deg,#fff,#f5f9f1); }
+.team-booking::before { width:clamp(190px,22vw,300px); height:210px; left:0; bottom:0; transform:none; background-image:url('yuan-aimei-v2-assets/team-flat-booking.svg'); background-position:left bottom; }
+.team-booking::after { display:none; }
+@media(min-width:901px) and (max-width:1179px){
+ .team-page .reference-bud-left .doctor-botanical { width:78px; left:-40px; z-index:0; }
+ .team-page .reference-bud-right .doctor-botanical { width:85px; right:0; }
+ .team-page .reference-corner-left .doctor-botanical { width:155px; left:-60px; }
+ .team-page .reference-corner-right .doctor-botanical,.team-page .reference-corner-small .doctor-botanical { width:155px; }
+}
+@media(max-width:900px){
+ .team-page .doctor-section::before { width:450px; height:150px; right:-200px; bottom:-80px; }
+ .team-page .reference-bud-left::before,.team-page .reference-corner-left::before { left:-280px; right:auto; bottom:-65px; }
+ .team-page .reference-bud-left .doctor-botanical { width:52px; left:0; z-index:0; }
+ .team-page .reference-bud-right .doctor-botanical { width:52px; right:0; }
+ .team-page .reference-corner-right .doctor-botanical,.team-page .reference-corner-small .doctor-botanical { width:110px; right:0; }
+ .team-page .reference-corner-left .doctor-botanical { width:105px; left:0; }
+ .team-page .reference-quiet::before { bottom:-110px; }
+ .team-page .reference-quiet::after { width:70%; height:100px; bottom:-70px; }
+ .team-booking::before { width:125px; height:90px; left:-24px; }
+}
