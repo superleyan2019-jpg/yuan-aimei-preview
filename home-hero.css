@@ -1,0 +1,8 @@
+/* 沿用同一張已確認領口的橫幅；手機移動背景取景，不拉伸人物。 */
+@media (max-width: 767px) {
+  #top.hero { background-position: 22% center; }
+}
+/* 最窄手機稍多留出右側文字空間，維持臉部與橘子完整。 */
+@media (max-width: 359px) {
+  #top.hero { background-position: 24% center; }
+}

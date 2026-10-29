@@ -1,0 +1,49 @@
+/* 圖片來源獨立於內文：以一致字級、對比與間距呈現，避免被療程內文字級放大。 */
+body .image-notice,
+body .article-cover > figcaption.image-notice {
+  display: block;
+  margin: 10px 0 0;
+  padding: 0;
+  color: #52665e;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
+  text-align: left;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+.image-notice-figure,
+.image-notice-wrap { min-width: 0; margin: 0; }
+.image-notice-figure > img { display: block; width: 100%; border-radius: 10px; }
+/* All-on-4 結構圖原來以整欄高度裁切；加說明後仍完整保留圖像比例。 */
+#allon4-content #allon4-structure .visual > .image-notice-figure { align-self: center; }
+#allon4-content #allon4-structure .image-notice-figure > img { height: auto; object-fit: cover; }
+body .image-notice--group { max-width: 1050px; margin: 24px auto 0; text-align: center; }
+body .image-notice--hero {
+  position: absolute; right: 24px; bottom: 14px; z-index: 2;
+  max-width: calc(100% - 48px); margin: 0; padding: 6px 10px;
+  background: rgba(255,255,255,.94); border-radius: 4px;
+}
+/* 首頁療程主圖與來源分開排版；說明直接使用區塊原本的底色。 */
+.home-treatment-figure { display: flex; flex-direction: column; min-width: 0; margin: 0; }
+.home-treatment-figure .photo-block { flex: 1; }
+body .image-notice--background {
+  position: static; margin: 10px 0 0; padding: 0;
+  background: transparent;
+}
+/* 首頁與看牙指南列表不放來源標示，圖片間距沿用各自卡片原有樣式。 */
+body .article-inline-image figcaption { margin-top: 10px; }
+body .article-inline-image figcaption .image-notice { margin: 0; }
+.image-description { display: block; margin-top: 6px; color: #52665e; font-size: 14px; line-height: 1.65; }
+body .image-notice--portrait { margin-top: 10px; }
+@media (max-width: 767px) {
+  .home-treatment-figure .photo-block { flex: none; }
+  /* 手機 Banner 圖、來源、標題依序排，說明不覆蓋人物或標題。 */
+  body.treatment-page .image-notice--hero {
+    position: static; max-width: none; padding: 10px 24px;
+    background: #fff; border-radius: 0;
+  }
+  body .image-notice--group { text-align: left; }
+}

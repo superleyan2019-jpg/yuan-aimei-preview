@@ -3,8 +3,7 @@
 .treatment-floating-action { display: grid; place-items: center; width: 64px; height: 64px; padding: 0; border: 0; border-radius: 50%; background: #5daa96; color: #fff; box-shadow: 0 4px 14px rgba(40,79,69,.12); text-decoration: none; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background .18s ease, box-shadow .18s ease; }
 .treatment-floating-action svg { display: block; width: 32px; height: 32px; pointer-events: none; }
 .treatment-floating-action:focus-visible { outline: 3px solid #284f45; outline-offset: 4px; }
-/* 頁尾進入視窗或開啟手機導覽時暫時隱藏，維持資訊可讀且不增加頁尾高度。 */
-.treatment-floating-actions[data-footer-visible],
+/* 開啟手機導覽或對話框時暫時隱藏；一般捲動（包含頁尾）持續顯示。 */
 body:has(.site-header[data-menu-open]) .treatment-floating-actions,
 body:has(dialog[open]) .treatment-floating-actions { visibility: hidden; pointer-events: none; }
 @media (hover: hover) { .treatment-floating-action:hover { background: #284f45; box-shadow: 0 6px 18px rgba(40,79,69,.18); } }

@@ -1,4 +1,4 @@
-/* 人工植牙 Banner 字型試排：只讀取本機已安裝字型，不複製或傳送字型檔。 */
+/* Banner 優先使用 Adobe Fonts；以下 local 字型僅供斷線備援，不複製或傳送字型檔。 */
 @font-face {
   font-family: "Implant FangXin H7 Heavy";
   src: local("AR FangXinShuH7B5Std HV"), local("文鼎方新書H7B5Std_H");
@@ -10,7 +10,7 @@
 /* 更換標題字型和真實字重，保留手機版層級。 */
 body.treatment-page #implant-hero .hero-copy h1,
 body.treatment-page #implant-hero .treatment-hero-question {
-  font-family: "Implant FangXin H7 Heavy", "Songti TC", "Noto Serif TC", serif;
+  font-family: "ar-fangxinshuh7b5std", "Implant FangXin H7 Heavy", "Songti TC", "Noto Serif TC", serif;
   font-weight: 900;
   font-synthesis: none;
 }

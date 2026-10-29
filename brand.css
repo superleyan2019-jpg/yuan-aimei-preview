@@ -34,6 +34,14 @@ body { color: var(--ink); font-family: "Noto Sans TC", "Microsoft JhengHei", "Pi
 .treat .treat-heading { position: relative; display: block; width: 100%; padding: 0 18px; box-sizing: border-box; margin-bottom: 9px; }
 .treat .treat-arrow { position: absolute; right: 0; top: 50%; transform: translateY(-50%); color: #C86C94; font-family: Arial, sans-serif; font-size: 26px; line-height: 1; transition: color .18s ease, transform .18s ease; }
 .treat .treat-description { font-size: 13px; line-height: 1.8; }
+/* 桌機小字調整：只提高首頁閱讀用說明，手機／平板沿用原字級。
+   評論選擇器包含卡片層，確保優先於首頁既有的內嵌評論樣式。 */
+@media (min-width: 1101px) {
+  .treat .treat-description,
+  .treatment-groups .need-copy p,
+  .reviews-preview .google-review-card .review-body { font-size: 16px; }
+  .reviews-preview .google-review-card .review-date { font-size: 13px; }
+}
 @media (hover: hover) {
   /* 內側 2px 深綠框不占版面空間，滑過時卡片與文字不位移。 */
   .treat:hover { background: #EFF6E9; box-shadow: inset 0 0 0 2px var(--brand-deep), 0 8px 22px rgba(40, 79, 69, .13); }

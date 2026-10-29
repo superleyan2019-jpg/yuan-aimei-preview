@@ -1,4 +1,4 @@
-/* 本機確認版：使用已安裝的文鼎方新書 Heavy，不複製字型檔。 */
+/* 使用 Adobe Fonts 文鼎方新書 Heavy；以下本機字型來源僅供斷線備援。 */
 @font-face {
   font-family: "Treatment FangXin H7 Heavy";
   src: local("AR FangXinShuH7B5Std HV"), local("文鼎方新書H7B5Std_H");
@@ -25,7 +25,7 @@
 @media (min-width: 1101px) {
   body.treatment-page :is(#allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero) .hero-copy h1,
   body.treatment-page :is(#allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero) .treatment-hero-question {
-    font-family: "Treatment FangXin H7 Heavy", "Songti TC", "Noto Serif TC", serif;
+    font-family: "ar-fangxinshuh7b5std", "Treatment FangXin H7 Heavy", "Songti TC", "Noto Serif TC", serif;
     font-weight: 900;
     font-synthesis: none;
     font-size: 52px;

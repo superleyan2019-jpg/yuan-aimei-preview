@@ -9,6 +9,7 @@
     '#implant-structure', '#implant-evaluation .visual-pair', '#implant-care .visual-pair',
     '#implant-journey .journey-step',
     '.treatment-page .visual > img',
+    '.treatment-page .visual > .image-notice-figure',
     '.treatment-page .tds-step-art', '#allon4-journey .allon4-journey-art',
     '.doctor-portrait', '.knowledge-page #cards .card', '.knowledge-page .article-cover'
   ];

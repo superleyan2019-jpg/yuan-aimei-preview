@@ -1,4 +1,4 @@
-// 手機快捷聯絡改為選單內的原生連結；不需要依段落反覆顯示或隱藏浮動按鈕。
+// 手機保留浮動快捷鈕與選單內聯絡連結；一般捲動與頁尾不隱藏浮鈕。
 // 錨點仍為原生連結；加上焦點移動，讓鍵盤使用者跳轉後可接續操作。
 document.addEventListener('click', event => {
   const link=event.target.closest('a[href^="#"]');

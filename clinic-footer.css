@@ -79,3 +79,19 @@
   #clinic-footer .cf-footer-clinic-identity { grid-template-columns: 104px 1fr; gap: 14px; }
   #clinic-footer .cf-contact-logo { width: 104px; }
 }
+
+/* 快捷鈕在頁尾持續顯示：內容右側預留按鈕寬度與間距，不額外墊高頁尾。 */
+@media (min-width: 1101px) {
+  /* 門診資訊是實際看診依據；只放大時間與註記，其他頁尾文字保持原設定。 */
+  #clinic-footer .cf-hours-table { font-size: 15px; }
+  #clinic-footer .cf-hours-notes,
+  #clinic-footer .cf-hours-sunday { font-size: 14px; }
+  body:has(.floating-contact-actions, .treatment-floating-actions) #clinic-footer {
+    padding-right: max(92px, calc(env(safe-area-inset-right) + 72px));
+  }
+}
+@media (max-width: 1100px) {
+  body:has(.floating-contact-actions, .treatment-floating-actions) #clinic-footer {
+    padding-right: max(56px, calc(env(safe-area-inset-right) + 52px));
+  }
+}

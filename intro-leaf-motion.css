@@ -1,0 +1,43 @@
+/* 寫實葉片引言：參考原站左右 25vw / 15vw 與三秒入場；
+   所有規則限於 #about-clinic，不影響下方平塗植物或文字排版。 */
+#about-clinic[data-botanical="intro"] .botanical-rail {
+  display: block;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  overflow: visible;
+}
+#about-clinic .botanical-rail--left { width: 25vw; }
+#about-clinic .botanical-rail--right { width: 15vw; }
+#about-clinic .botanical-rail .botanical-sprig {
+  width: 100%;
+  height: auto;
+  top: -50%;
+  bottom: auto;
+  opacity: 1;
+  transform: none;
+}
+#about-clinic .botanical-rail--left img { left: 0; }
+#about-clinic .botanical-rail--right img { right: 0; }
+
+/* 無 JavaScript 時直接呈現靜態葉片；只有初始化成功才隱藏待入場。 */
+#about-clinic[data-leaf-state="pending"] .botanical-sprig { opacity: 0; }
+#about-clinic[data-leaf-state="playing"] .botanical-sprig {
+  animation: intro-leaf-arrive 3s ease-in-out both;
+}
+@keyframes intro-leaf-arrive {
+  from { opacity: 0; transform: translate3d(0, -100%, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* 沿用原站手機策略，避免上下窄條切圖與擠壓文字。 */
+@media (max-width: 576px) {
+  #about-clinic .botanical-layer { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #about-clinic .botanical-rail .botanical-sprig {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

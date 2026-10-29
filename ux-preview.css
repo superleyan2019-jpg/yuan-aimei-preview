@@ -41,9 +41,7 @@
 .ux-table-hint { display:none; }
 /* 不額外固定第二排導覽，避免手機閱讀區被遮住；頁內連結沿用 Header 留白。 */
 @media(max-width:767px) {
-  /* 手機整頁移除側邊懸浮層，避免壓住任一段落；桌機維持原樣。
-     LINE 保留在固定 Header；電話與門診入口放選單，回頁首放正文末端。 */
-  .floating-contact-actions,.treatment-floating-actions { display:none; }
+  /* 手機沿用共用浮鈕尺寸與固定定位，整頁及頁尾皆持續顯示。 */
   .site-header .site-header-links > .ux-mobile-only { display:inline-flex; }
   .ux-mobile-top { display:flex; justify-content:center; padding:4px 24px 20px; background:#fff; }
   .ux-home-booking .ux-heading h2 { font-size:25px; }

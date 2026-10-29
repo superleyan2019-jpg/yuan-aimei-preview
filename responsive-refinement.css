@@ -1,0 +1,165 @@
+/* 2026-10-29 響應式驗收修正。桌機內容版面不變，植物裝飾另處理裁切。
+   共用檔最後載入；更新引用請執行 output/apply-responsive-refinement-20261029.cjs。 */
+@font-face {
+  font-family: "Responsive FangXin H7 Heavy";
+  src: local("AR FangXinShuH7B5Std HV"), local("文鼎方新書H7B5Std_H");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 植物原本被左右窄帶切成直線；所有尺寸取消內側裁切，
+   最外層仍限制在頁面內，保留自然從頁緣延伸的構圖。 */
+[data-botanical]:not([data-botanical="intro"]) .botanical-rail { overflow: visible; }
+
+@media (max-width: 1100px) {
+  /* 與桌機使用同一字型與字重；字級仍依手機／平板層級。
+     優先讀取 Adobe 網頁字型；本機與系統字型僅在網路字型無法載入時備援。 */
+  body.treatment-page :is(#implant-hero, #allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero) :is(.hero-copy h1, .treatment-hero-question) {
+    font-family: "ar-fangxinshuh7b5std", "Responsive FangXin H7 Heavy", "Songti TC", "Noto Serif TC", serif;
+    font-weight: 900;
+    font-synthesis: none;
+  }
+
+  /* 44px 點擊框，內縮 2px 後呈現 40px 圓鈕；小圖示維持足夠辨識度。 */
+  body :is(.treatment-floating-actions, .floating-contact-actions) {
+    right: max(4px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    gap: 4px;
+  }
+  body :is(.treatment-floating-action, .floating-contact-action) {
+    width: 44px;
+    height: 44px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: none;
+  }
+  body :is(.treatment-floating-action, .floating-contact-action) svg { width: 23px; height: 23px; }
+  /* 團隊頁回到同一右側操作列，避免底部橫排遮住置中的醫師姓名。 */
+  body.team-page .treatment-floating-actions {
+    left: auto; right: max(4px, env(safe-area-inset-right)); transform: none;
+    flex-direction: column; padding: 0; border: 0; background: transparent; box-shadow: none;
+  }
+  body.team-page .treatment-floating-action { width: 44px; height: 44px; }
+  /* 兩側使用相同安全邊距，不能只擴大右側而讓整個內容偏左。 */
+  body.treatment-page main > :is(.section, .cta, .ux-section) { padding-inline: max(56px, 7vw) !important; }
+  /* 流程區由內層負責留白，避免重複套上兩層內距。 */
+  body.treatment-page main > :is(.tds-journey, #allon4-journey) { padding-inline: 0 !important; }
+  body.treatment-page :is(.tds-journey-inner, .allon4-journey-inner), #implant-journey .journey { padding-inline: max(56px, 7vw); }
+  body:has(.intro) .seo-copy { padding-inline: max(56px, 6vw); }
+  .knowledge-page :is(.list-content, .article-page).journal-container {
+    width: auto; margin-inline: max(48px, 8%);
+  }
+  .team-page .doctor-layout { width: auto; max-width: calc(100% - 112px); margin-inline: auto; }
+
+  #dental-journal .knowledge-grid { align-items: stretch; }
+  #dental-journal .home-knowledge-link h3 { text-wrap: balance; }
+
+  /* 常用操作增加實際觸控範圍，沿用既有圖示與按鈕外觀。 */
+  .reviews-preview :is(.review-previous, .review-next) { width: 44px; height: 44px; }
+  .reviews-preview .review-google-link { display: grid; place-items: center; min-width: 44px; min-height: 44px; }
+  .reviews-preview .review-person { grid-template-columns: 40px minmax(0, 1fr) 44px; }
+  .reviews-preview .review-google-link { margin: 0; }
+  .reviews-preview .review-expand { min-height: 44px; padding-block: 10px; }
+  #clinic-footer .cf-clinic-contact-link { min-height: 44px; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  /* 依指定只省略平板首頁卡片摘要，手機及文章正文保留全文。 */
+  #dental-journal .home-knowledge-link p {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4;
+    overflow: hidden; min-height: 7.2em; max-height: 7.2em;
+  }
+  /* 平板沿用同一素材，將取景移向人物，文案移到右側留白。 */
+  body:has(.intro) .hero { background-position: 12% center; }
+  body:has(.intro) .hero-copy { left: auto !important; right: 8%; }
+  #clinic-footer { padding-block: 18px 8px; }
+  /* 保留三欄，改用四行摘要；縮減文字內距，增加每行可讀寬度。 */
+  #dental-journal .home-knowledge-link { padding: 24px 20px; }
+  #dental-journal .home-knowledge-image { width: calc(100% + 40px); margin: -24px -20px 22px; }
+  #dental-journal .home-knowledge-link h3 { min-height: 4.8em; }
+}
+
+@media (max-width: 767px) {
+  /* 手機沿用已確認的小枝葉位置。 */
+  [data-botanical]:not([data-botanical="intro"]) .botanical-sprig { width: 56px; transform: none; top: 8px; bottom: auto; }
+  [data-botanical]:not([data-botanical="intro"]) .botanical-rail--left img { left: 0; }
+  [data-botanical]:not([data-botanical="intro"]) .botanical-rail--right img { right: 0; }
+  [data-botanical]:is([data-botanical="seo-copy"], [data-botanical="knowledge"], [data-botanical="contact-details"]) .botanical-rail--left img { top: auto; bottom: 6px; }
+  /* 保留小浮鈕的 48px 安全邊距，兩側對稱。首頁與植牙手機原已隱藏
+     浮鈕，恢復 24px 閱讀留白，不為不存在的按鈕壓縮正文。 */
+  body.treatment-page main > :is(.section, .cta, .ux-section) { padding-inline: 48px !important; }
+  body.treatment-page main > :is(.tds-journey, #allon4-journey) { padding-inline: 0 !important; }
+  body.treatment-page :is(.tds-journey-inner, .allon4-journey-inner) { padding-inline: 48px; }
+  body.treatment-page :is(#implant-hero, #allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero) .hero-copy p { padding-inline: 48px; }
+  body.treatment-page:has(#implant-hero) main > :is(.section, .cta, .ux-section) { padding-inline: 24px !important; }
+  body.treatment-page #implant-hero .hero-copy p { padding-inline: 24px; }
+  #implant-journey .journey { padding-inline: 26px; }
+  body:has(.intro) .seo-copy { padding-inline: 24px; }
+  .team-page .doctor-layout { width: auto; margin-inline: 30px; max-width: none; }
+  .team-page .team-container { width: auto; margin-inline: 48px; }
+  .team-page .team-booking { padding-inline: 48px; }
+  .team-page .doctor-qualifications li { text-wrap: balance; }
+  .treatment-page :is(.card h3, .notice h3, .copy h3) { text-wrap: balance; }
+  /* 保持中文療程名稱完整，空間不足時在中英文之間換行。 */
+  #invisalign { word-break: keep-all; overflow-wrap: normal; }
+  #clinic-footer .cf-footer-treatment-nav > summary { min-height: 44px; }
+  /* 擴大點擊範圍後回收區塊留白，保留緊湊頁尾。 */
+  #clinic-footer { padding-block: 12px; }
+  #clinic-footer .cf-clinic-hours { margin-top: 8px; }
+  #clinic-footer .cf-footer-treatment-nav { margin-top: 4px; }
+  #clinic-footer .cf-clinic-legal-footer { margin-top: 5px; }
+
+  /* 手機元件級距：大型資訊卡 18、圖片／FAQ 外框 16、小型雙欄卡 14。
+     不套用到圓形功能鈕、膠囊 CTA 或花草裝飾。 */
+  body.treatment-page :is(.card, .notice, .panel, .allon4-risk-panel, .implant-care-risk) { border-radius: 18px !important; }
+  body.treatment-page :is(.visual img, .anatomy-figure, .anatomy-figure img, .compare-scroll, .implant-care-card, .implant-faq-list, .faq-list, .tds-faq-list) { border-radius: 16px !important; }
+  body:has(.intro) .treat { border-radius: 14px; }
+  body:has(.intro) .need-item { border-radius: 18px; }
+  .team-page .doctor-photo { border-radius: 16px; }
+  .team-page .doctor-layout { border-radius: 18px; }
+  .knowledge-page :is(.article-table, .article-questions) { border-radius: 16px; }
+}
+
+/* 手機浮鈕外觀縮小 15%：40px → 34px；44px 點擊框保留，圖示等比例縮小。 */
+@media (max-width: 767px) {
+  body :is(.treatment-floating-action, .floating-contact-action) { border-width: 5px; }
+  body :is(.treatment-floating-action, .floating-contact-action) svg { width: 19.55px; height: 19.55px; }
+  body.team-page .treatment-floating-action svg { width: 21.25px; height: 21.25px; }
+}
+
+/* 桌機浮鈕與圖示縮小 15%；以 1101px 為界，保留手機／平板既定尺寸。 */
+@media (min-width: 1101px) {
+  body :is(.treatment-floating-action, .floating-contact-action) { width: 54.4px; height: 54.4px; }
+  body :is(.treatment-floating-action, .floating-contact-action) svg { width: 27.2px; height: 27.2px; }
+}
+
+/* 平板／窄桌機植物構圖：診療左側、評論右側各一處主裝飾。
+   植物延伸出頁緣；資訊密集區留白，不再四角平均放小貼圖。 */
+@media (min-width: 768px) and (max-width: 1439px) {
+  [data-botanical="treatments"] .botanical-rail--right,
+  [data-botanical="seo-copy"] .botanical-rail,
+  [data-botanical="knowledge"] .botanical-rail,
+  [data-botanical="contact-details"] .botanical-rail { display: none; }
+
+  /* 768–1280px 以標題區留白承接枝葉；側邊空間增加後，連續銜接
+     1440px 原構圖的 190px、left -66px、top 150px 與 -15deg。 */
+  [data-botanical="treatments"] .botanical-rail--left img {
+    width: calc(clamp(112px, calc(5.46875vw + 70px), 140px) + clamp(0px, calc(31.25vw - 400px), 50px));
+    left: clamp(-66px, calc(28.285714px - 6.547619vw), -22px);
+    top: calc(clamp(-6px, calc(39px - 3.515625vw), 12px) + clamp(0px, calc(97.5vw - 1248px), 156px));
+    bottom: auto;
+    transform: rotate(-15deg);
+    opacity: .84;
+  }
+
+  /* 評論右側與標題留白呼應，連續銜接寬桌機的尺寸與位置。 */
+  [data-botanical="reviews"] .botanical-rail--right img {
+    width: clamp(112px, calc(4.166667vw + 80px), 140px);
+    right: clamp(-42px, calc(-2.678571vw - 3.428571px), -24px);
+    top: clamp(-20px, calc(13.392857vw - 122.857143px), 70px);
+    bottom: auto;
+    transform: scaleX(-1) rotate(5deg);
+    opacity: .74;
+  }
+}

@@ -79,6 +79,7 @@ function renderArticle(){
  let caption=document.querySelector('.article-cover figcaption');
  if(content?.coverCaption){
   if(!caption){caption=document.createElement('figcaption');cover.parentElement.append(caption)}
+  caption.classList.add('image-notice');
   caption.textContent=content.coverCaption;
  }else caption?.remove();
  const link=document.querySelector('#treatment-link');link.href=a.href;link.textContent=a.treatment;
@@ -96,7 +97,7 @@ function render(){
  document.querySelectorAll('[data-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.view===state.view)));
  document.querySelectorAll('[data-sample]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.sample===state.sample)));
  renderList();if(state.view==='article')renderArticle();
- document.title=(state.view==='article'?articles[state.id].title:'牙科知識')+'｜元艾美｜本機設計預覽';
+ document.title=(state.view==='article'?articles[state.id].title:'看牙指南')+'｜元艾美｜本機設計預覽';
 }
 function navigate(intent=''){
  const target=route(state.view,state.id,state.section);
