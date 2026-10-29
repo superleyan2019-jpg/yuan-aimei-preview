@@ -4,6 +4,11 @@
 .treatment-hero-name,
 .treatment-hero-comma { display: none; }
 
+/* 桌機與平板統一版高；手機保留圖、標題與說明的自然高度。 */
+@media (min-width: 768px) {
+  body.treatment-page :is(#implant-hero, #allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero).treatment-hero { height: 520px; }
+}
+
 @media (max-width: 767px) {
   /* 具名根節點可覆寫既有療程 ID 樣式，所有共通數值只在此維護。 */
   body.treatment-page :is(#implant-hero, #allon4-hero, #orthodontics-hero, #ceramic-dsd-hero, #microscopic-endodontics-hero).treatment-hero {

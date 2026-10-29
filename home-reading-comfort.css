@@ -8,8 +8,6 @@ body:has(#about-clinic) {
 }
 
 /* 保留原有中文字體與品牌色，讓文字層級由尺寸、字重和行高決定。 */
-body:has(#about-clinic) .site-header .site-header-links { font-size: 1.0625rem; font-weight: 500; }
-body:has(#about-clinic) .site-header .header-book { font-size: 1.0625rem; font-weight: 500; }
 body:has(#about-clinic) .ux-button,
 body:has(#about-clinic) #home-booking .ux-button { font-size: 1.0625rem; font-weight: 500; line-height: 1.5; }
 body:has(#about-clinic) .ux-hero-actions .ux-button { min-height: 48px; }
@@ -18,7 +16,9 @@ body:has(#about-clinic) .faq-block .section-title h2 { font-size: var(--home-tit
 body:has(#about-clinic) .section-title p { font-size: 1rem; }
 body:has(#about-clinic) .intro p { max-width: 50rem; margin-inline: auto; }
 body:has(#about-clinic) .need-copy b { font-size: var(--home-card-title); font-weight: 600; }
-body:has(#about-clinic) .need-copy p { font-size: var(--home-support); line-height: var(--home-body-leading); color: #425950; text-wrap: balance; }
+/* 同組卡片標題齊頭；取消平均分行，避免短行擠在文字欄左側。 */
+body:has(#about-clinic) .need-copy { align-self: flex-start; }
+body:has(#about-clinic) .need-copy p { font-size: var(--home-support); line-height: var(--home-body-leading); color: #425950; text-wrap: wrap; }
 body:has(#about-clinic) .treat b { font-size: var(--home-card-title); font-weight: 600; }
 body:has(#about-clinic) .treat .treat-description { font-size: var(--home-support); line-height: var(--home-body-leading); color: #425950; text-wrap: balance; }
 body:has(#about-clinic) .seo-copy h2 { font-size: 2.25rem; line-height: 1.45; }
@@ -34,23 +34,6 @@ body:has(#about-clinic) #dental-journal .home-knowledge-read { font-size: 1.0625
 body:has(#about-clinic) #home-booking h2 { font-size: 2rem; }
 body:has(#about-clinic) #home-booking .ux-booking-description { font-size: var(--home-support); line-height: var(--home-body-leading); color: #425950; }
 
-/* 門診資訊比一般頁尾連結重要：維持原時段與表格語意，只調可讀尺寸。 */
-body:has(#about-clinic) #clinic-footer .cf-clinic-contact-link:not(.cf-clinic-phone),
-body:has(#about-clinic) #clinic-footer .cf-hours-table,
-body:has(#about-clinic) #clinic-footer .cf-hours-notes,
-body:has(#about-clinic) #clinic-footer .cf-hours-sunday { font-size: 1rem; line-height: 1.7; }
-/* 地址沿既有兩段資料自然拆行，避免桌機窄資訊欄只剩「號」。 */
-body:has(#about-clinic) #clinic-footer .cf-address-part { display: block; }
-body:has(#about-clinic) #clinic-footer .cf-hours-table th,
-body:has(#about-clinic) #clinic-footer .cf-hours-table td { padding-inline: 2px; }
-body:has(#about-clinic) #clinic-footer .cf-hours-registration { font-size: 1rem; line-height: 1.7; }
-body:has(#about-clinic) #clinic-footer .cf-clinic-legal-footer { color: #425950; }
-body:has(#about-clinic) #clinic-footer .cf-clinic-copyright,
-body:has(#about-clinic) #clinic-footer .cf-clinic-legal-notice { font-size: .875rem; line-height: 1.7; }
-body:has(#about-clinic) #clinic-footer .cf-hours-scroll { max-width: 100%; overflow-x: auto; }
-body:has(#about-clinic) #clinic-footer .cf-hours-scroll:focus-visible { outline: 2px solid #284f45; outline-offset: 2px; }
-body:has(#about-clinic) #clinic-footer .cf-hours-scroll-hint { display: none; }
-
 @media (min-width: 1101px) {
   /* 桌機作為本版主要審稿尺寸：放大標題層級，並替 18px 卡片說明增加實際欄寬。 */
   body:has(#about-clinic) { --home-title: 2.5rem; --home-card-title: 1.5rem; }
@@ -58,24 +41,8 @@ body:has(#about-clinic) #clinic-footer .cf-hours-scroll-hint { display: none; }
   body:has(#about-clinic) .treat-flow { grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); }
 }
 
-/* 導覽字變大後，提早使用原有選單互動，避免 1101–1299px 擠壓預約鈕。 */
-@media (min-width: 1101px) and (max-width: 1299px) {
-  body:has(#about-clinic) .nav.site-header { height: auto; min-height: 100px; padding: 8px 4vw; flex-wrap: wrap; }
-  body:has(#about-clinic) .site-header .site-header-logo { margin-right: auto; }
-  body:has(#about-clinic) .site-header .site-header-logo img { width: 128px; }
-  body:has(#about-clinic) .site-header[data-nav-ready] .header-menu-toggle { display: inline-flex; order: 2; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 10px; border: 1px solid #bcddae; border-radius: 12px; background: #fff; color: #284f45; cursor: pointer; }
-  body:has(#about-clinic) .site-header .header-book { order: 1; }
-  body:has(#about-clinic) .site-header .site-header-links { order: 4; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); flex: 1 1 100%; gap: 4px 16px; padding-top: 12px; border-top: 1px solid #e5eddf; max-height: calc(100dvh - 140px); overflow-y: auto; }
-  body:has(#about-clinic) .site-header[data-nav-ready]:not([data-menu-open]) .site-header-links { display: none; }
-}
-
 @media (max-width: 767px) {
   body:has(#about-clinic) { --home-title: 2rem; --home-card-title: 1.25rem; --home-body: 1.125rem; --home-support: 1.0625rem; }
-  /* 375px 以上可放入完整地址；320px 在兩個原有地址片段之間自然換行。 */
-  body:has(#about-clinic) #clinic-footer .cf-address-part { display: inline; white-space: nowrap; }
-  body:has(#about-clinic) .nav.site-header { min-height: 92px; }
-  body:has(#about-clinic) .site-header .header-book { font-size: 1rem; }
-  body:has(#about-clinic) .site-header .site-header-links { font-size: 1rem; }
   body:has(#about-clinic) .intro p { font-size: 1.125rem; line-height: 1.85; letter-spacing: .01em; }
   body:has(#about-clinic) .intro-word { white-space: nowrap; }
   body:has(#about-clinic) .treat-list { grid-template-columns: minmax(0, 1fr); }
@@ -89,9 +56,6 @@ body:has(#about-clinic) #clinic-footer .cf-hours-scroll-hint { display: none; }
   body:has(#about-clinic) #home-booking h2 { font-size: 1.875rem; }
   body:has(#about-clinic) .ux-hero-actions .ux-button,
   body:has(#about-clinic) #home-booking .ux-button { font-size: 1rem; min-height: 48px; }
-  body:has(#about-clinic) #clinic-footer .cf-hours-table th:first-child { width: 100px; }
-  body:has(#about-clinic) #clinic-footer .cf-hours-table th,
-  body:has(#about-clinic) #clinic-footer .cf-hours-table td { height: 39px; }
 }
 
 @media (max-width: 359px) {
@@ -99,7 +63,4 @@ body:has(#about-clinic) #clinic-footer .cf-hours-scroll-hint { display: none; }
   body:has(#about-clinic) #about-clinic { padding-inline: 28px; }
   body:has(#about-clinic) #about-clinic p { text-wrap: balance; }
   body:has(#about-clinic) .care-values p { text-wrap: balance; }
-  /* 320px 僅讓門診表局部橫移；附可見提示，地址及備註仍正常換行。 */
-  body:has(#about-clinic) #clinic-footer .cf-hours-table { min-width: 310px; }
-  body:has(#about-clinic) #clinic-footer .cf-hours-scroll-hint { display: block; margin: 3px 0 8px; font-size: .875rem; color: #425950; }
 }

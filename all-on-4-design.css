@@ -45,12 +45,13 @@
   box-shadow: 0 6px 18px rgba(40, 79, 69, .09);
 }
 #allon4-content :is(.card, .evaluation-panel) h3 {
-  margin: 0 0 10px;
+  margin: 0 auto 10px;
   font-size: 23.75px;
   line-height: 1.5;
   font-weight: 700;
 }
-#allon4-content .card p,
+#allon4-content .card > :is(h3, p) { inline-size: min(100%, 280px); text-wrap: wrap; }
+#allon4-content .card p { margin-inline: auto; font-size: 18px; line-height: 1.8; }
 #allon4-content .evaluation-panel li { font-size: 18px; line-height: 1.8; text-wrap: balance; }
 #allon4-content .evaluation-panel ul { margin: 0; padding-left: 1.2em; }
 #allon4-content .evaluation-panel li + li { margin-top: 8px; }
@@ -77,7 +78,7 @@
   background: #fff;
 }
 #allon4-content .notice h3 { margin: 0 0 12px; font-size: 23.75px; line-height: 1.5; }
-#allon4-content .notice p { margin: 0; font-size: 20px; line-height: 1.8; text-wrap: balance; }
+#allon4-content .notice p { margin: 0; font-size: 20px; line-height: 1.8; text-wrap: wrap; }
 
 /* 原頁為文字流程，沿用植牙的編號、字級與換欄規則，不借用單顆植牙插圖。 */
 #allon4-content #allon4-journey { padding: 0; background: #fff; }

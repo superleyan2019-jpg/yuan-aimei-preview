@@ -43,7 +43,8 @@
 #clinic-footer .cf-clinic-legal-footer{border-top:1px solid #d7e6ce;margin-top:12px;padding-top:9px;text-align:center;color:#6b7d70;font-size:12px;line-height:1.7}
 #clinic-footer .cf-clinic-legal-footer p{margin:0}
 #clinic-footer .cf-clinic-copyright{font-size:12px;margin-bottom:3px!important}
-@media(min-width:1200px){#clinic-footer .cf-footer-main{align-items:stretch;grid-template-columns:280px minmax(0,1fr) 350px}
+/* 交通欄加寬，讓原始 2:1 地圖等比例增高；三欄共享自然高度。 */
+@media(min-width:1200px){#clinic-footer .cf-footer-main{align-items:stretch;grid-template-columns:280px minmax(0,1fr) 400px}
 #clinic-footer .cf-clinic-hours{display:flex;flex-direction:column}
 #clinic-footer .cf-clinic-hours h3{margin:0 0 8px}
 #clinic-footer .cf-clinic-hours .cf-hours-table{flex:1}

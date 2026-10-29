@@ -2,6 +2,7 @@
 /* 閱讀操作是整張卡片連結的一部分，避免巢狀按鈕與重複鍵盤停駐。 */
 .knowledge-page #cards .read-label {
   display:inline-flex; align-items:center; justify-content:center;
+  align-self:center;
   min-width:128px; min-height:44px; margin-top:auto; padding:10px 22px;
   border:1px solid #5daa96; border-radius:50px; background:#fff; color:#284f45;
   font-size:15px; font-weight:400; line-height:1.5; text-decoration:none;
@@ -36,18 +37,19 @@
 }
 #dental-journal .knowledge-grid article h3,
 .knowledge-page #cards .card h4 {
-  color:#284f45; font-size:23px; font-weight:600; line-height:1.5; text-wrap:balance;
-  letter-spacing:normal; margin:18px 0 14px;
+  color:#284f45; font-size:23px; font-weight:600; line-height:1.5; text-wrap:wrap;
+  inline-size:min(100%, 280px); letter-spacing:normal; margin:18px auto 14px;
 }
 #dental-journal .knowledge-grid article p,
 .knowledge-page #cards .card p {
-  color:#52665e; font-size:18px; font-weight:400; line-height:1.8; text-wrap:balance;
-  letter-spacing:normal; margin:0 0 24px;
+  color:#52665e; font-size:18px; font-weight:400; line-height:1.8; text-wrap:wrap;
+  inline-size:min(100%, 280px); letter-spacing:normal; margin:0 auto 24px;
 }
 @media(max-width:767px){.knowledge-page #cards .card h4{font-size:21px}.knowledge-page #cards .card p{font-size:17px}}
 #dental-journal .knowledge-grid article small,
 .knowledge-page #cards .tag {
   display:inline-block; padding:4px 13px; border-radius:50px;
+  align-self:center;
   color:#284f45; background:#fce9f1; font-size:14px; font-weight:400;
   line-height:1.6; letter-spacing:normal;
 }

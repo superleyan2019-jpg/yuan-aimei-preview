@@ -10,23 +10,12 @@
 
 #orthodontics-evaluation .card h3 {
   text-align: center;
-  text-wrap: balance;
   margin-bottom: 8px;
 }
 
 #orthodontics-evaluation .card p {
   text-align: left;
-  text-wrap: pretty;
-}
-
-/* 讓完整詞組一起換行；不強制桌機換行位置，手機仍可自然排版。 */
-#orthodontics-evaluation .evaluation-phrase {
-  white-space: nowrap;
-}
-
-/* 平板仍為三欄，長詞組放寬換行，避免狹窄欄位出現零碎短行。 */
-@media (min-width: 768px) and (max-width: 1023px) {
-  #orthodontics-evaluation .evaluation-phrase--long {
-    white-space: normal;
-  }
+  inline-size: min(100%, 260px);
+  margin-inline: auto;
+  text-wrap: wrap;
 }

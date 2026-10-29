@@ -17,8 +17,8 @@
   text-align: center;
 }
 #orthodontics-intro .card + .card { border-left: 1px solid #d7e6ce; }
-#orthodontics-intro .card h3 { margin: 0 0 14px; font-size: 23.75px; font-weight: 700; line-height: 1.5; text-wrap: balance; }
-#orthodontics-intro .card p { margin: 0; font-size: 18px; line-height: 1.8; text-wrap: balance; }
+#orthodontics-intro .card h3 { margin: 0 auto 14px; font-size: 23.75px; font-weight: 700; line-height: 1.5; text-wrap: wrap; }
+#orthodontics-intro .card p { margin: 0 auto; font-size: 18px; line-height: 1.8; text-wrap: wrap; }
 /* 核可圖示使用一致顯示框，完整保留原圖比例。 */
 #orthodontics-intro .need-icon { display: block; width: 128px; height: 80px; object-fit: contain; margin: 0 auto 16px; }
 @media (max-width:767px) {

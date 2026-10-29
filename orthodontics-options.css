@@ -1,4 +1,6 @@
 /* 只作用於矯正選擇卡片：共用圖框比例，保留原本的文字與卡片樣式。 */
+/* 三項裝置名稱對齊圖示中心，說明段落沿用原本靠左閱讀。 */
+#orthodontics-options .card h3 { text-align: center; }
 #orthodontics-options .ortho-option-art {
   display: block;
   width: 100%;

@@ -43,8 +43,8 @@
 </style><link rel="stylesheet" href="treatment-media.css?v=a4a94b297bd1"><link rel="stylesheet" href="implant-journey.css?v=57dcd79b9454"><style id="implant-evaluation-design">
 /* 治療前評估卡：字級對齊確認截圖的缺牙項目，圓角對齊首頁三項需求卡。 */
 .treatment-page .treatment-info-cards > .card { border-radius: 10px; }
-.treatment-page .treatment-info-cards h3 { font-size: 23.75px; text-wrap: balance; }
-.treatment-page .treatment-info-cards p { font-size: 18px; line-height: 1.8; text-wrap: balance; }
+.treatment-page .treatment-info-cards h3 { inline-size: min(100%, 280px); margin-inline: auto; font-size: 23.75px; text-wrap: wrap; }
+.treatment-page .treatment-info-cards p { inline-size: min(100%, 280px); margin-inline: auto; font-size: 18px; line-height: 1.8; text-wrap: wrap; }
 @media(max-width:767px){.treatment-page .treatment-info-cards h3{font-size:21px}.treatment-page .treatment-info-cards p{font-size:17px}}
 </style><style id="implant-options-design">
 /* 表頭使用 Logo 品牌青綠；配深色文字，維持淺色背景上的閱讀對比。 */
@@ -69,8 +69,7 @@
 #implant-care .implant-care-card h4 { margin-bottom: 10px; }
 #implant-care .implant-care-card p, #implant-care .implant-care-risk p { margin: 0; color: #3c514b; font-size: var(--treatment-body-size,20px); line-height: 1.8; text-wrap: balance; }
 #implant-care .implant-care-risk { margin-top: 36px; padding: 32px; background: #fdf6f9; border: 1px solid #f2dfe7; border-radius: 10px; }
-#implant-care .implant-care-risk-heading { display: flex; align-items: center; gap: 16px; position: relative; padding-bottom: 18px; margin-bottom: 20px; }
-#implant-care .implant-care-risk-heading::after { content: ""; position: absolute; left: 0; bottom: 0; width: 44px; height: 2px; background: var(--brand-teal,#5daa96); }
+#implant-care .implant-care-risk-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
 #implant-care .implant-care-risk-heading .implant-care-icon { width: 48px; height: 48px; }
 #implant-care .implant-care-risk p + p { margin-top: 20px; }
 /* 較窄螢幕改成單欄，保留 20px 內文與 ICON 在左的閱讀順序。 */
@@ -139,7 +138,7 @@
 @media (max-width:359px) {
  #implant-faq .implant-faq-phrase { max-width:100%; white-space:normal; }
 }
-</style><link rel="stylesheet" href="treatment-floating-actions.css?v=bd30b52ec2ed"><link rel="stylesheet" href="treatment-banner.css?v=8a9de814ceaf"><link rel="stylesheet" href="clinic-footer.css?v=7401679ae009"><link rel="stylesheet" href="implant-banner-font-preview.css?v=99eabf88b626"><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="ux-preview.css?v=b8e881145dc8"><link rel="stylesheet" href="ux-motion.css?v=338545296c63"><script src="adobe-fonts.js?v=c3f8e557e99e"></script><link rel="stylesheet" href="responsive-refinement.css?v=bc23615ad927"><link rel="stylesheet" href="image-notices.css?v=35aa461f251e"><link rel="stylesheet" href="mobile-priority.css?v=f165a10632b8"></head><body class="treatment-page"><a class="ux-skip" href="#main-content">跳到主要內容</a>
+</style><link rel="stylesheet" href="treatment-floating-actions.css?v=bd30b52ec2ed"><link rel="stylesheet" href="treatment-banner.css?v=7fc9cbe5fd68"><link rel="stylesheet" href="clinic-footer.css?v=d8fbaef733c3"><link rel="stylesheet" href="implant-banner-font-preview.css?v=99eabf88b626"><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="ux-preview.css?v=b8e881145dc8"><link rel="stylesheet" href="ux-motion.css?v=338545296c63"><script src="adobe-fonts.js?v=c3f8e557e99e"></script><link rel="stylesheet" href="responsive-refinement.css?v=e0b9593ede8f"><link rel="stylesheet" href="image-notices.css?v=35aa461f251e"><link rel="stylesheet" href="mobile-priority.css?v=f165a10632b8"></head><body class="treatment-page"><a class="ux-skip" href="#main-content">跳到主要內容</a>
 <header class="nav site-header">
   <a class="site-header-logo" href="index.html" aria-label="元艾美牙醫診所首頁"><img src="yuan-aimei-v2-assets/clinic-wordmark.svg" alt="元艾美牙醫診所"></a>
   <button class="header-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="開啟選單"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
@@ -201,7 +200,7 @@
       <div class="cf-hours-notes" id="hours-note"><p><strong>＊週五</strong><span class="cf-hours-session"> 下午 </span><span class="cf-hours-period">14:00–20:00</span><span class="cf-hours-separator">，</span><span class="cf-hours-registration">最後掛號 19:30</span></p><p><strong>＊週六</strong><span class="cf-hours-session"> 下午 </span><span class="cf-hours-period">14:00–17:00</span><span class="cf-hours-separator">，</span><span class="cf-hours-registration">最後掛號 16:30</span></p><p class="cf-hours-sunday">週日休診</p></div>
     </div><section class="cf-footer-location"><h3>交通位置</h3><figure class="cf-clinic-map">
     <a class="cf-clinic-map-image" href="https://goo.gl/maps/HnQeZLzpzb6wZsRm8" target="_blank" rel="noopener noreferrer" aria-label="在 Google 地圖開啟元艾美牙醫診所位置（另開視窗）"><picture><source media="(max-width: 767px)" srcset="yuan-aimei-v2-assets/clinic-google-map-wide-mobile.png" width="780" height="390"><img src="yuan-aimei-v2-assets/clinic-google-map-wide-desktop-web-20261029.webp" alt="元艾美牙醫診所 Google 地圖截圖，位於台中市北屯區遼寧路一段 145 號" width="1520" height="760" loading="eager"></picture></a>
-    <figcaption><a href="https://goo.gl/maps/HnQeZLzpzb6wZsRm8" target="_blank" rel="noopener noreferrer">開啟 Google 地圖 <span aria-hidden="true">↗</span></a></figcaption>
+    <figcaption><a href="https://goo.gl/maps/HnQeZLzpzb6wZsRm8" target="_blank" rel="noopener noreferrer">開啟 Google 地圖</a></figcaption>
     </figure></section></div>
 <div class="cf-clinic-legal-footer"><p class="cf-clinic-copyright">Copyright©2026 元艾美牙醫診所保留一切權利。</p><details class="cf-legal-details" open><summary>網站聲明</summary><p class="cf-clinic-legal-notice">禁止任何網際網路服務業者轉錄其網路資訊知內容供人點閱。但以網路搜尋或超連結方式，進入醫療機構知網址(域)直接點閱者，不在此限。網頁相容性建議使用Chrome瀏覽器閱覽。</p></details></div>
 </div></footer>
