@@ -34,6 +34,8 @@
 .treatment-page .points li { font-size: var(--treatment-body-size); }
 .treatment-page .copy h3,
 .treatment-page .visual-copy h3 { font-size: 23.75px; line-height: 1.6; text-wrap: pretty; }
+/* 短段落與條列自然均分行長，避免末行只留下單一中文字。 */
+.treatment-page .section :is(.copy p, .visual-copy p, .points li, .lead) { text-wrap: balance; }
 
 /* 植牙三個組成部件採較大的標題與主要內文字級，提升結構說明的可讀性。 */
 .treatment-page .parts b { font-size: 23.75px; line-height: 1.5; }
@@ -70,6 +72,9 @@
 }
 @media (max-width: 767px) {
   .treatment-page { --treatment-english-size: 16px; --treatment-heading-tracking: .14em; }
+  /* 手機把區塊標題與主文放回同一閱讀層級；頁末預約標語另依原版型處理。 */
+  .treatment-page .section .title h2 { font-size: 32px; }
+  .treatment-page .section :is(.lead, .copy p, .visual-copy p, .points li) { font-size: 18px; }
   .treatment-page .hero-copy h1 { font-size: 25px; line-height: 1.5; }
   .treatment-page .hero-copy > small { font-size: 15px; }
   .treatment-page .faq h3,

@@ -4,7 +4,7 @@
 .treatment-standard-content :is(.hero-copy,.title h2,.copy h3,.card h3,.notice h3) { color: #284f45; }
 .treatment-standard-content .title i { display: none; }
 .treatment-standard-content .title small { display: block; margin-top: 10px; color: #596e65; }
-.treatment-standard-content .lead { text-wrap: pretty; }
+.treatment-standard-content .lead { text-wrap: balance; }
 .treatment-standard-content .hero-copy { left: 7%; max-width: 46%; }
 .treatment-standard-content .hero-copy p { max-width: 440px; }
 .treatment-standard-content :is(.visual,.grid3) > * { min-width: 0; }
@@ -17,11 +17,11 @@
 
 /* 條件、選項及評估卡：移除舊頂線；不以空白 ICON 佔位。 */
 .treatment-standard-content .card { padding: 27px; border: 0; border-radius: 10px; background: #fff; box-shadow: 0 6px 18px rgba(40,79,69,.09); }
-.treatment-standard-content .card h3 { margin: 0 0 10px; font-size: 20.9px; font-weight: 700; line-height: 1.5; }
-.treatment-standard-content .card p { margin: 0; font-size: 16.8px; line-height: 1.8; }
+.treatment-standard-content .card h3 { margin: 0 0 10px; font-size: 23.75px; font-weight: 700; line-height: 1.5; text-wrap: balance; }
+.treatment-standard-content .card p { margin: 0; font-size: 18px; line-height: 1.8; text-wrap: balance; }
 .treatment-standard-content .notice { max-width: 1050px; padding: 28px 32px; border: 0; border-radius: 10px; background: #fff; }
 .treatment-standard-content .notice h3 { margin: 0 0 12px; font-size: 23.75px; line-height: 1.5; }
-.treatment-standard-content .notice p { margin: 0; font-size: 20px; line-height: 1.8; }
+.treatment-standard-content .notice p { margin: 0; font-size: 20px; line-height: 1.8; text-wrap: balance; }
 .treatment-standard-content .notice.tds-risk { background: #fdf6f9; border: 1px solid #f2dfe7; padding: 32px; }
 
 /* 流程先完成文字版排版，待確認專屬插圖後再放入，不借用別的療程情境。 */
@@ -30,8 +30,8 @@
 .treatment-standard-content .tds-steps { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 28px; margin: 0; padding: 0; list-style: none; }
 .treatment-standard-content .tds-steps .step { position: relative; padding: 0; min-width: 0; min-height: 0; text-align: center; background: transparent; }
 .treatment-standard-content .step b { margin: 0 0 12px; font: 400 25px/1.4 Georgia,serif; color: #5daa96; }
-.treatment-standard-content .step h3 { margin: 0 0 13px; font-size: 19px; line-height: 1.5; font-weight: 700; color: #284f45; }
-.treatment-standard-content .step p { max-width: 215px; margin: auto; font-size: 14px; line-height: 1.8; text-wrap: pretty; }
+.treatment-standard-content .step h3 { margin: 0 0 13px; font-size: 21.5px; line-height: 1.5; font-weight: 700; color: #284f45; text-wrap: balance; }
+.treatment-standard-content .step p { max-width: 215px; margin: auto; font-size: 18px; line-height: 1.8; text-wrap: balance; }
 .treatment-standard-content .step:not(:last-child)::after { content: '→'; position: absolute; top: 5px; right: -25px; color: #5daa96; font-size: 23px; line-height: 1; }
 
 /* 比較表保留資料格線；使用者要移除的是卡片裝飾線。 */
@@ -70,7 +70,7 @@
 .treatment-standard-content summary::-webkit-details-marker { display: none; }
 .treatment-standard-content summary::marker { content: ''; }
 /* Q&A 問題依確認使用一般字重，字級及行距維持原設定。 */
-.treatment-standard-content summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 400; overflow-wrap: anywhere; }
+.treatment-standard-content summary h3 { margin: 0; font-size: 23.75px; line-height: 1.5; letter-spacing: .02em; font-weight: 400; overflow-wrap: anywhere; text-wrap: balance; }
 .treatment-standard-content .faq-q { font: 400 24px/1.5 Georgia,serif; color: #5daa96; }
 .treatment-standard-content .faq-toggle { position: relative; width: 28px; height: 28px; color: #5daa96; }
 .treatment-standard-content .faq-toggle::before,.treatment-standard-content .faq-toggle::after { content: ''; position: absolute; background: currentColor; border-radius: 1px; }
@@ -80,13 +80,13 @@
 .treatment-standard-content details[open] .faq-toggle::after { display: none; }
 .treatment-standard-content .faq-answer { display: grid; grid-template-columns: 46px minmax(0,1fr); gap: 18px; padding: 22px 76px 28px 30px; }
 .treatment-standard-content .faq-a { font: 400 23px/36px Georgia,serif; color: #52665e; }
-.treatment-standard-content .faq-answer p { margin: 0; color: #3c514b; font-size: 20px; line-height: 1.8; }
+.treatment-standard-content .faq-answer p { margin: 0; color: #3c514b; font-size: 20px; line-height: 1.8; text-wrap: balance; }
 .treatment-standard-content summary:focus-visible { outline: 2px solid #284f45; outline-offset: -4px; border-radius: 6px; }
 
 /* 共同預約規範：36px 標語、20px／1.8 說明；只有一個有效 LINE 預約按鈕。 */
 .treatment-standard-content .tds-booking { background: #fff; color: #284f45; }
 .treatment-standard-content .tds-booking h2 { font-size: 36px; line-height: 1.6; }
-.treatment-standard-content .tds-booking p { color: #52665e; font-size: 20px; line-height: 1.8; }
+.treatment-standard-content .tds-booking p { color: #52665e; font-size: 20px; line-height: 1.8; text-wrap: balance; }
 .treatment-standard-content .tds-booking .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; min-height: 48px; max-width: 100%; margin: 0; padding: 12px 30px; background: #bcddae; border-color: #bcddae; color: #284f45; text-decoration: none; }
 .treatment-standard-content .tds-booking .btn:focus-visible { outline: 2px solid #284f45; outline-offset: 4px; }
 @media (hover: hover) {
@@ -122,6 +122,8 @@
   /* 手機 Banner 統一由 treatment-banner.css 管理。 */
   .treatment-standard-content .section { padding: 48px 24px; }
   .treatment-standard-content .card { padding: 24px; }
+  .treatment-standard-content .card h3 { font-size: 21px; }
+  .treatment-standard-content .card p { font-size: 17px; }
   .treatment-standard-content .notice { padding: 24px 20px; background: #f3f8ef; }
   .treatment-standard-content .mint .notice:not(.tds-risk) { background: #fff; }
   .treatment-standard-content .notice.tds-risk { padding: 24px 20px; background: #fdf6f9; }
@@ -130,14 +132,20 @@
   .treatment-standard-content .tds-journey-inner { padding: 44px 26px; }
   .treatment-standard-content .tds-journey .title h2 { font-size: 28px; }
   .treatment-standard-content .tds-steps { display: flex; flex-direction: column; gap: 52px; }
-  .treatment-standard-content .step p { max-width: 280px; font-size: 16px; }
+  .treatment-standard-content .step h3 { font-size: 20px; }
+  .treatment-standard-content .step p { max-width: 280px; font-size: 17px; }
   .treatment-standard-content .step:not(:last-child)::after { display: block; content: '↓'; top: auto; bottom: -37px; right: calc(50% - 7px); }
   .treatment-standard-content .compare-scroll { margin-block: 26px; }
   .treatment-standard-content summary { grid-template-columns: 34px minmax(0,1fr) 24px; align-items: start; gap: 10px; padding: 20px 18px; }
   .treatment-standard-content .faq-q { font-size: 22px; }
+  .treatment-standard-content summary h3 { font-size: 21px; }
   .treatment-standard-content .faq-toggle { width: 24px; margin-top: 4px; }
   .treatment-standard-content .faq-toggle::before { left: 2px; }
   .treatment-standard-content .faq-toggle::after { left: 11px; }
   .treatment-standard-content .faq-answer { grid-template-columns: 24px minmax(0,1fr); gap: 10px; padding: 18px 18px 24px; }
   .treatment-standard-content .faq-a { font-size: 22px; }
+}
+@media (max-width: 359px) {
+  /* 窄手機讓資訊卡保留更多可讀欄寬，避免最後只剩單字。 */
+  .treatment-standard-content .card { padding-inline: 16px; }
 }

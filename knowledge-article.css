@@ -10,7 +10,7 @@
 /* 導讀、目錄與正文位於同一閱讀欄，避免側欄切散閱讀。 */
 .article-page .article-layout{display:block;max-width:none;margin:0}
 .article-page .article-summary{width:100%;max-width:none;padding:0;background:transparent;border-radius:0;margin:0 0 28px}
-.article-page .article-summary p,.article-page .article-section p{font-size:18px;line-height:1.9;margin:0 0 22px;text-wrap:pretty}
+.article-page .article-summary p,.article-page .article-section p{font-size:20px;line-height:1.8;margin:0 0 22px;text-wrap:pretty}
 .article-page strong{font-weight:600;color:var(--ink)}
 .article-page .article-summary strong,.article-panel strong{background:linear-gradient(transparent 55%,#dcead4 55%);padding-inline:2px}
 /* 目錄以內容寬度形成靠左短框，收合與展開維持相同寬度。 */
@@ -28,7 +28,7 @@
 .article-panel--green{background:#f3f8ef}
 .article-panel--pink{background:#fef8fa}
 .article-page .article-panel p:last-child{margin-bottom:0}
-.article-checklist{margin:0;padding-left:1.4em;font-size:18px;line-height:1.9}
+.article-checklist{margin:0;padding-left:1.4em;font-size:20px;line-height:1.8}
 .article-checklist li{padding-left:4px;margin:0 0 14px}
 .article-checklist li::marker{color:#5daa96}
 .article-page .treatment-entry{margin:20px 0 0;font-size:18px}
@@ -56,6 +56,7 @@
  .article-page .toc{padding:6px 16px;margin-bottom:32px}
  .article-page .article-section{margin-bottom:36px}
  .article-page .article-section h2{font-size:24px;margin-bottom:16px}
+ .article-page .article-summary p,.article-page .article-section p,.article-checklist{font-size:18px}
  .article-panel{padding:22px 20px}
  .article-page .consult{margin-top:32px;padding:24px 18px}
  .article-page .consult .journal-button{font-size:14px;min-height:48px}
@@ -67,6 +68,7 @@
 .article-inline-image img{display:block;width:100%;height:auto;border-radius:10px}
 .article-inline-image figcaption{margin-top:10px;font-size:14px;line-height:1.8;color:var(--muted)}
 .article-questions article{margin:0 0 28px}
-.article-questions h3{font-size:20px;line-height:1.8;font-weight:500;margin:0 0 12px}
+.article-questions h3{font-size:23px;line-height:1.6;font-weight:500;margin:0 0 12px;text-wrap:balance}
+@media(max-width:767px){.article-questions h3{font-size:21px}}
 .article-page .article-notice{font-size:14px;line-height:1.9;color:var(--muted);margin:0 0 28px}
 .article-page .consult .article-byline{font-size:14px;color:var(--muted);margin-bottom:14px}

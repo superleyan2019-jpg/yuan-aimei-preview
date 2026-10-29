@@ -11,12 +11,12 @@ const defaultArticleMarkup={
 };
 // 主圖沿用元艾美既有網站素材，依文章分類切換；不取用參考網站圖文。
 const articleCovers={
- '人工植牙':['yuan-aimei-v2-assets/implant-hero.png','人工植牙模型情境示意圖'],
- '牙齒矯正':['yuan-aimei-ortho-assets/hero.png','自然微笑的生活情境示意圖'],
- '全瓷美學':['yuan-aimei-ceramic-assets/hero-v3-single.png','微笑與日常生活情境示意圖'],
- 'All-on-4':['yuan-aimei-allon4-assets/hero-lifestyle.png','熟齡女性與家人用餐的情境示意圖'],
- '根管治療':['yuan-aimei-micro-endo-assets/hero.png','顯微牙科診療情境示意圖'],
- '日常照護':['yuan-aimei-v2-assets/implant-care.png','牙齒模型與口腔清潔用品情境示意圖']
+ '人工植牙':['yuan-aimei-v2-assets/implant-hero-web-20261029.webp','人工植牙模型情境示意圖'],
+ '牙齒矯正':['yuan-aimei-ortho-assets/hero-web-20261029.webp','自然微笑的生活情境示意圖'],
+ '全瓷美學':['yuan-aimei-ceramic-assets/hero-v3-single-web-20261029.webp','微笑與日常生活情境示意圖'],
+ 'All-on-4':['yuan-aimei-allon4-assets/hero-lifestyle-web-20261029.webp','熟齡女性與家人用餐的情境示意圖'],
+ '根管治療':['yuan-aimei-micro-endo-assets/hero-web-20261029.webp','顯微牙科診療情境示意圖'],
+ '日常照護':['yuan-aimei-v2-assets/implant-care-web-20261029.webp','牙齒模型與口腔清潔用品情境示意圖']
 };
 let state={view:'list',id:0,category:'全部',sample:'basic',page:1,section:0};
 let lastArticle=-1;

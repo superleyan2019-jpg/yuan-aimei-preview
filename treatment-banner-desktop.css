@@ -13,7 +13,7 @@
   body.treatment-page #microscopic-endodontics-hero {
     --endo-image-shift: clamp(0px, calc(540px - 37.5vw), 128px);
     /* 白色漸層柔化右移後的圖片左邊界，避免出現直線接縫。 */
-    background-image: linear-gradient(to right, #fff 0, #fff var(--endo-image-shift), rgba(255,255,255,0) calc(var(--endo-image-shift) + 120px)), url("yuan-aimei-micro-endo-assets/hero.png");
+    background-image: linear-gradient(to right, #fff 0, #fff var(--endo-image-shift), rgba(255,255,255,0) calc(var(--endo-image-shift) + 120px)), url("yuan-aimei-micro-endo-assets/hero-web-20261029.webp");
     background-size: 100% 100%, cover;
     background-position: left top, calc(50% + var(--endo-image-shift)) center;
     background-repeat: no-repeat;

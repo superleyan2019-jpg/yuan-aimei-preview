@@ -9,8 +9,9 @@
   margin: 0 auto 18px;
   border-radius: 0;
 }
-.treatment-standard-content .tds-steps--illustrated .step p { font-size: 16.8px; line-height: 1.8; }
+.treatment-standard-content .tds-steps--illustrated .step p { font-size: 18px; line-height: 1.8; }
 .treatment-standard-content .tds-steps--illustrated .step:not(:last-child)::after { top: 130px; }
 @media (max-width: 767px) {
+  .treatment-standard-content .tds-steps--illustrated .step p { font-size: 17px; }
   .treatment-standard-content .tds-steps--illustrated .step:not(:last-child)::after { top: auto; bottom: -37px; }
 }

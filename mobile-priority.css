@@ -1,0 +1,100 @@
+/* 2026-10-29 手機閱讀修正；集中在 <=767px，桌機及平板維持現有版型。 */
+.intro-mobile-break { display: none; }
+/* 桌機網站聲明維持完整顯示，僅手機顯示收合控制。 */
+#clinic-footer .cf-legal-details > summary { display: none; }
+@media (max-width: 767px) {
+  /* 字標等比例縮小，減少固定頁首占高；預約與選單保留 44px 觸控範圍。 */
+  .nav.site-header { padding-block: 6px; min-height: 88px; }
+  .site-header .site-header-logo img { width: 112px; }
+
+  /* 手機頁尾依資訊層級排列：聯絡 → 門診 → 次要資訊 → 版權。
+     display:contents 讓既有區塊參與同一網格，桌機 DOM 與版型保留。 */
+  #clinic-footer .cf-clinic-footer-inner { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #clinic-footer .cf-footer-main,
+  #clinic-footer .cf-footer-main > section:first-child,
+  #clinic-footer .cf-clinic-legal-footer { display: contents; }
+  #clinic-footer .cf-footer-clinic-identity {
+    grid-column: 1 / -1;
+    grid-template-columns: 68px minmax(0, 1fr) 44px;
+    gap: 6px 8px;
+  }
+  #clinic-footer .cf-contact-logo { width: 68px; grid-column: 1; grid-row: 1; }
+  #clinic-footer .cf-clinic-contact-links { display: contents; }
+  #clinic-footer .cf-clinic-contact-link {
+    grid-column: 1 / -1;
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 44px;
+    padding: 0;
+  }
+  #clinic-footer .cf-clinic-contact-link.cf-clinic-phone {
+    grid-column: 2; grid-row: 1;
+    font-size: 20px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  #clinic-footer .cf-clinic-phone .cf-contact-icon { display: none; }
+  /* Facebook 收成同列圖示，仍有 44px 點擊範圍與完整無障礙名稱。 */
+  #clinic-footer .cf-clinic-contact-link[href*="facebook.com"] {
+    grid-column: 3; grid-row: 1; justify-content: center;
+    width: 44px; height: 44px; border: 1px solid #d7e6ce; border-radius: 50%;
+  }
+  #clinic-footer .cf-clinic-contact-link[href*="facebook.com"] > span:nth-child(2) {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);
+  }
+  #clinic-footer .cf-clinic-contact-link[href*="goo.gl/maps"] { grid-row: 2; }
+  #clinic-footer .cf-clinic-hours {
+    grid-column: 1 / -1; order: 1; position: relative;
+    margin-top: 14px; padding-top: 14px; border-top: 1px solid #d7e6ce;
+  }
+  #clinic-footer .cf-clinic-hours h3 { margin-bottom: 8px; line-height: 24px; }
+  #clinic-footer .cf-hours-table { font-size: 15px; }
+  #clinic-footer .cf-hours-table th,
+  #clinic-footer .cf-hours-table td { height: 32px; }
+  #clinic-footer .cf-hours-table th:first-child { width: 100px; }
+  #clinic-footer .cf-hours-notes { margin-top: 8px; font-size: 14px; line-height: 1.8; }
+  #clinic-footer .cf-hours-notes p:not(.cf-hours-sunday) {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 6px;
+  }
+  #clinic-footer .cf-hours-notes p + p { margin-top: 2px; }
+  #clinic-footer .cf-hours-notes strong { margin: 0; }
+  /* 24 小時制已明示下午；手機省略重複的時段文字與逗號，資料不變。 */
+  #clinic-footer :is(.cf-hours-session, .cf-hours-separator) { display: none; }
+  #clinic-footer .cf-hours-registration { display: inline; white-space: nowrap; font-size: 13px; }
+  #clinic-footer .cf-hours-sunday { position: absolute; right: 0; top: 14px; margin: 0; font-size: 13px; line-height: 24px; }
+  #clinic-footer .cf-address-part { display: inline-block; white-space: nowrap; }
+  /* 手機頁尾省略重複的診療導覽；平板與桌機維持原有完整連結。 */
+  #clinic-footer .cf-footer-treatment-nav { display: none; }
+  #clinic-footer .cf-legal-details { order: 2; grid-column: 1 / -1; margin-top: 8px; }
+  #clinic-footer .cf-legal-details > summary {
+    display: list-item; min-height: 44px; padding: 10px 0; font-size: 13px; line-height: 24px; cursor: pointer;
+  }
+  #clinic-footer .cf-clinic-legal-notice { font-size: 12px; line-height: 1.8; padding-bottom: 10px; }
+  #clinic-footer .cf-clinic-copyright {
+    order: 3; grid-column: 1 / -1; margin-top: 0; padding-top: 8px;
+    border-top: 1px solid #d7e6ce; font-size: 11px; line-height: 1.7;
+  }
+
+  /* 浮鈕位於右側 4–48px：首頁閱讀區兩側至少留 52px，保留 4px 間隔。
+     不加大主體內文字級，也不移動全站既有快捷鈕。 */
+  body:has(.intro) :is(.intro, .seo-copy), #home-booking { padding-inline: 52px; }
+  body:has(.intro) :is(.treat-flow, .treatment-groups) {
+    width: calc(100% - 104px); margin-inline: auto;
+  }
+  body:has(.intro) .treat-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  body:has(.intro) .treat { padding: 22px 20px; border-radius: 18px; }
+  body:has(.intro) .treat .treat-description { font-size: 15px; line-height: 1.8; text-wrap: balance; }
+  body:has(.intro) .treat .treat-heading { padding-inline: 18px; }
+  body:has(.intro) .treat .treat-arrow { right: 0; }
+  /* 語意斷行保留 16px 字級與 33.6px 行高，窄手機也不拆開「蛀牙」。 */
+  .intro-mobile-break { display: block; }
+  .intro p { line-height: 2.1; text-wrap: pretty; }
+  .intro-word { white-space: nowrap; }
+}
+@media (max-width: 359px) {
+  /* 320px 裝置仍容納完整電話及兩個頁首操作。 */
+  .site-header .site-header-logo img { width: 104px; }
+  #clinic-footer .cf-footer-clinic-identity { grid-template-columns: 52px minmax(0, 1fr) 44px; gap: 6px; }
+  #clinic-footer .cf-contact-logo { width: 52px; }
+  #clinic-footer .cf-clinic-contact-link.cf-clinic-phone { font-size: 18px; }
+}

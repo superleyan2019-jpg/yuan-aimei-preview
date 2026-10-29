@@ -6,4 +6,4 @@
 /* 此 SVG 原線寬 3，放大後約 3.3px；調為 1.3，對齊左右圖示約 1.4px 的可見線條。 */
 #ceramic-dsd-evaluation .evaluation-icon-box svg[data-care-icon="force"] {stroke-width:1.3;}
 #ceramic-dsd-evaluation .card h3 {text-align:center;}
-#ceramic-dsd-evaluation .card p {text-align:left;text-wrap:pretty;}
+#ceramic-dsd-evaluation .card p {text-align:left;text-wrap:balance;}

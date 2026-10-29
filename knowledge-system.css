@@ -36,14 +36,15 @@
 }
 #dental-journal .knowledge-grid article h3,
 .knowledge-page #cards .card h4 {
-  color:#284f45; font-size:20px; font-weight:600; line-height:1.6;
+  color:#284f45; font-size:23px; font-weight:600; line-height:1.5; text-wrap:balance;
   letter-spacing:normal; margin:18px 0 14px;
 }
 #dental-journal .knowledge-grid article p,
 .knowledge-page #cards .card p {
-  color:#52665e; font-size:16.8px; font-weight:400; line-height:1.8;
+  color:#52665e; font-size:18px; font-weight:400; line-height:1.8; text-wrap:balance;
   letter-spacing:normal; margin:0 0 24px;
 }
+@media(max-width:767px){.knowledge-page #cards .card h4{font-size:21px}.knowledge-page #cards .card p{font-size:17px}}
 #dental-journal .knowledge-grid article small,
 .knowledge-page #cards .tag {
   display:inline-block; padding:4px 13px; border-radius:50px;
@@ -61,7 +62,8 @@
 .article-page .article-content-panel { margin:28px 0; }
 .article-page .article-content-item { margin:24px 0; padding-bottom:6px; border-bottom:1px solid #d7e6ce; }
 .article-page .article-content-item p:first-child { margin-bottom:8px; }
-.article-page .article-section h3 { font-size:20px; line-height:1.8; font-weight:500; margin:28px 0 12px; }
+.article-page .article-section h3 { font-size:23px; line-height:1.6; font-weight:500; margin:28px 0 12px; text-wrap:balance; }
+@media(max-width:767px){.article-page .article-section h3{font-size:21px}}
 /* 比較表保留完整欄位；小螢幕只在表格內橫向捲動，不壓縮正文。 */
 .article-page .article-table { overflow-x:auto; border:1px solid #d7e6ce; border-radius:10px; margin:28px 0; }
 .article-page .article-table table { width:100%; min-width:680px; border-collapse:collapse; font-size:18px; line-height:1.9; }
@@ -76,7 +78,7 @@
  .article-page .article-table-hint+.article-table { margin-top:0; }
 }
 .article-page .article-notice { margin:28px 0; }
-/* 同療程頁的 Q／A、細框與展開底色；字級維持文章問題 20px、答案 18px。 */
+/* 同療程頁的 Q／A、細框與展開底色；問句提高層級，答案保留閱讀字級。 */
 .article-page .article-questions {
   overflow:hidden; border:1px solid #d7e6ce; border-radius:10px; background:#fff;
 }
@@ -89,8 +91,9 @@
 .article-page .article-questions summary::-webkit-details-marker { display:none; }
 .article-page .article-questions summary::marker { content:''; }
 .article-page .article-questions summary h3 {
-  margin:0; font-size:20px; font-weight:500; line-height:1.8; letter-spacing:normal;
+  margin:0; font-size:23px; font-weight:500; line-height:1.6; letter-spacing:normal; text-wrap:balance;
 }
+@media(max-width:767px){.article-page .article-questions summary h3{font-size:21px}}
 .article-page .article-questions .faq-q,
 .article-page .article-questions .faq-a { font:400 22px/1.6 Georgia,serif; color:#5daa96; }
 .article-page .article-questions .faq-a { color:#52665e; }

@@ -32,7 +32,7 @@
 .doctor-heading .doctor-name { display: inline-flex; align-items: baseline; gap: 12px; }
 .doctor-heading .doctor-name .doctor-role { margin: 0; }
 .doctor-qualifications + .doctor-qualifications { margin-top: 28px; }
-.doctor-qualifications h3 { margin: 0 0 10px; color: #284f45; font-size: 20px; font-weight: 500; line-height: 1.6; letter-spacing: .06em; }
+.doctor-qualifications h3 { margin: 0 0 10px; color: #284f45; font-size: 23.75px; font-weight: 500; line-height: 1.6; letter-spacing: .06em; }
 .doctor-qualifications ul { padding-left: 1.15em; margin: 0; font-size: 20px; }
 .doctor-qualifications li { padding-left: .1em; margin: 4px 0; line-height: 1.8; overflow-wrap: anywhere; }
 .doctor-qualifications li::marker { color: #5daa96; font-size: .7em; }
@@ -95,7 +95,7 @@
   .doctor-portrait { width: min(100%,360px); margin: 0 auto; }
   .doctor-heading { margin-bottom: 28px; }
   .doctor-heading .doctor-heading-director { justify-content: center; }
-  .doctor-qualifications h3 { color: #66816b; font-weight: 400; margin-bottom: 12px; }
+  .doctor-qualifications h3 { color: #66816b; font-size: 21px; font-weight: 500; margin-bottom: 12px; }
   .doctor-qualifications ul { list-style: none; padding: 0; }
   .doctor-qualifications li { padding: 0; margin: 7px 0; font-size: 18px; line-height: 1.85; overflow-wrap: normal; }
   .doctor-message, .doctor-section--sage .doctor-message { padding: 0; border-radius: 0; background: transparent; }
