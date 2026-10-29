@@ -1,43 +1,44 @@
-/* 寫實葉片引言：參考原站左右 25vw / 15vw 與三秒入場；
-   所有規則限於 #about-clinic，不影響下方平塗植物或文字排版。 */
-#about-clinic[data-botanical="intro"] .botanical-rail {
-  display: block;
-  top: 0;
-  bottom: 0;
-  height: auto;
-  overflow: visible;
-}
-#about-clinic .botanical-rail--left { width: 25vw; }
-#about-clinic .botanical-rail--right { width: 15vw; }
-#about-clinic .botanical-rail .botanical-sprig {
-  width: 100%;
-  height: auto;
-  top: -50%;
-  bottom: auto;
-  opacity: 1;
-  transform: none;
-}
-#about-clinic .botanical-rail--left img { left: 0; }
-#about-clinic .botanical-rail--right img { right: 0; }
 
-/* 無 JavaScript 時直接呈現靜態葉片；只有初始化成功才隱藏待入場。 */
-#about-clinic[data-leaf-state="pending"] .botanical-sprig { opacity: 0; }
-#about-clinic[data-leaf-state="playing"] .botanical-sprig {
-  animation: intro-leaf-arrive 3s ease-in-out both;
+/* 首頁已確認構圖：以原圖透明間隔分出葉片，各自定位，不修改來源素材。 */
+#about-clinic .leaf-composition{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:visible}
+#about-clinic .leaf-piece{position:absolute;display:block;background-repeat:no-repeat}
+#about-clinic{--leaf-left:max(0px,calc(50% - 920px));--leaf-right:max(0px,calc(50% - 920px))}
+#about-clinic .leaf-l0{width:clamp(46px,4vw,75px);left:calc(var(--leaf-left) + 28px);top:24px;--leaf-entry-limit:-12px}
+#about-clinic .leaf-l1{width:clamp(130px,10.5vw,210px);left:calc(var(--leaf-left) + clamp(40px,6vw,140px));top:78px;--leaf-entry-limit:-66px}
+#about-clinic .leaf-l2{width:clamp(42px,3.8vw,64px);left:calc(var(--leaf-left) + clamp(205px,20vw,380px));top:36px;--leaf-entry-limit:-24px}
+#about-clinic .leaf-l3{width:clamp(62px,5.4vw,90px);left:calc(var(--leaf-left) + clamp(155px,15vw,285px));top:218px;--leaf-entry-limit:-206px}
+#about-clinic .leaf-l4{width:clamp(35px,3vw,52px);left:calc(var(--leaf-left) + 52px);top:240px;--leaf-entry-limit:-228px}
+#about-clinic .leaf-l5{width:clamp(20px,1.8vw,30px);left:calc(var(--leaf-left) + clamp(100px,10vw,195px));top:290px;--leaf-entry-limit:-278px}
+#about-clinic .leaf-l6{width:clamp(30px,2.5vw,44px);left:calc(var(--leaf-left) + 28px);top:305px;--leaf-entry-limit:-293px}
+#about-clinic .leaf-r0{width:18px;right:calc(var(--leaf-right) + 45px);top:27px;--leaf-entry-limit:-15px}
+#about-clinic .leaf-r1{width:clamp(112px,9vw,180px);right:calc(var(--leaf-right) + clamp(30px,4vw,90px));top:48px;--leaf-entry-limit:-36px}
+#about-clinic .leaf-r2{width:clamp(120px,9.5vw,190px);right:calc(var(--leaf-right) + clamp(85px,9vw,185px));top:218px;--leaf-entry-limit:-206px}
+@media(max-width:1100px){
+ #about-clinic .leaf-l0{width:38px;left:18px;top:25px;--leaf-entry-limit:-13px}
+ #about-clinic .leaf-l1{width:108px;left:24px;top:82px;--leaf-entry-limit:-70px}
+ #about-clinic .leaf-l2{width:30px;left:112px;top:24px;--leaf-entry-limit:-12px}
+ #about-clinic .leaf-l3{width:54px;left:88px;top:218px;--leaf-entry-limit:-206px}
+ #about-clinic .leaf-l4{width:30px;left:18px;top:216px;--leaf-entry-limit:-204px}
+ #about-clinic .leaf-l5{width:18px;left:66px;top:278px;--leaf-entry-limit:-266px}
+ #about-clinic .leaf-l6{width:24px;left:14px;top:280px;--leaf-entry-limit:-268px}
+ #about-clinic .leaf-r0{width:12px;right:20px;top:27px;--leaf-entry-limit:-15px}
+ #about-clinic .leaf-r1{width:92px;right:16px;top:54px;--leaf-entry-limit:-42px}
+ #about-clinic .leaf-r2{width:96px;right:44px;top:217px;--leaf-entry-limit:-205px}
 }
+@media(min-width:577px) and (max-width:767px){
+ #about-clinic .leaf-piece{zoom:.62}
+ #about-clinic .leaf-l3,#about-clinic .leaf-r2{top:235px;--leaf-entry-limit:-223px}
+}
+@media(max-width:576px){#about-clinic .leaf-composition{display:none}}
+
+/* 保留首次三秒向下淡入。位移最多為自身高度，且全程與 banner 保留 12px。 */
+#about-clinic .leaf-piece { opacity:1; transform:none; }
+#about-clinic[data-leaf-state="pending"] .leaf-piece { opacity:0; }
+#about-clinic[data-leaf-state="playing"] .leaf-piece { animation:intro-leaf-arrive 3s ease-in-out both; }
 @keyframes intro-leaf-arrive {
-  from { opacity: 0; transform: translate3d(0, -100%, 0); }
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
+ from { opacity:0; transform:translate3d(0,max(-100%,var(--leaf-entry-limit,-12px)),0); }
+ to { opacity:1; transform:translate3d(0,0,0); }
 }
-
-/* 沿用原站手機策略，避免上下窄條切圖與擠壓文字。 */
-@media (max-width: 576px) {
-  #about-clinic .botanical-layer { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  #about-clinic .botanical-rail .botanical-sprig {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
+@media(prefers-reduced-motion:reduce){
+ #about-clinic .leaf-piece { animation:none;opacity:1;transform:none; }
 }
