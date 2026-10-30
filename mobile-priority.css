@@ -83,7 +83,6 @@
   }
   body:has(.intro) .treat-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   body:has(.intro) .treat { padding: 22px 20px; border-radius: 18px; }
-  body:has(.intro) .treat .treat-description { font-size: 15px; line-height: 1.8; text-wrap: balance; }
   body:has(.intro) .treat .treat-heading { padding-inline: 18px; }
   body:has(.intro) .treat .treat-arrow { right: 0; }
   /* 語意斷行保留 16px 字級與 33.6px 行高，窄手機也不拆開「蛀牙」。 */

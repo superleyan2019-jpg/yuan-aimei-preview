@@ -19,7 +19,8 @@ body:has(#about-clinic) .need-copy b { font-size: var(--home-card-title); font-w
 /* 同組卡片標題齊頭；取消平均分行，避免短行擠在文字欄左側。 */
 body:has(#about-clinic) .need-copy { align-self: flex-start; }
 body:has(#about-clinic) .need-copy p { font-size: var(--home-support); line-height: var(--home-body-leading); color: #425950; text-wrap: wrap; }
-body:has(#about-clinic) .treat b { font-size: var(--home-card-title); font-weight: 600; }
+/* 診療卡片字級只在此套用；不同螢幕使用本檔的響應式變數，不再跨檔覆寫。 */
+body:has(#about-clinic) .treat b { font-size: var(--home-card-title); font-weight: 600; line-height: 1.5; letter-spacing: .06em; color: var(--brand-deep); }
 body:has(#about-clinic) .treat .treat-description { font-size: var(--home-support); line-height: var(--home-body-leading); color: #425950; text-wrap: balance; }
 body:has(#about-clinic) .seo-copy h2 { font-size: 2.25rem; line-height: 1.45; }
 body:has(#about-clinic) .seo-copy > p { max-width: 47.5rem; margin-inline: auto; font-size: var(--home-body); line-height: var(--home-body-leading); color: #425950; }
@@ -48,7 +49,33 @@ body:has(#about-clinic) #home-booking .ux-booking-description { font-size: var(-
   body:has(#about-clinic) .treat-list { grid-template-columns: minmax(0, 1fr); }
   body:has(#about-clinic) .treat { padding: 22px 20px; }
   body:has(#about-clinic) .treat .treat-heading { padding-inline: 18px; }
-  body:has(#about-clinic) .treat .treat-description { text-wrap: balance; }
+  body:has(#about-clinic) .treat b { letter-spacing: .04em; }
+  /* 手機省略情境照；保留 figure 上的置中滑動提示，平板與桌機仍顯示原圖。 */
+  body:has(#about-clinic) .home-treatment-figure .photo-block { display: none; }
+  /* 手機診療卡片橫向排列；保留一小段下一張作為可滑動提示。 */
+  body:has(#about-clinic) .home-treatment-figure::after {
+    content: '左右滑動查看更多 →';
+    display: block;
+    margin: 0;
+    text-align: center;
+    color: #52776c;
+    font-size: 15px;
+    letter-spacing: .04em;
+  }
+  body:has(#about-clinic) .treat-list {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding: 4px 4px 20px;
+    scrollbar-width: thin;
+    min-width: 0;
+  }
+  body:has(#about-clinic) .treat-list .treat {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
   body:has(#about-clinic) .faq-block article { padding: 22px 20px; }
   body:has(#about-clinic) .faq-block article p { margin-left: 38px; }
   body:has(#about-clinic) .reviews-preview .review-body { font-size: 1rem; }
