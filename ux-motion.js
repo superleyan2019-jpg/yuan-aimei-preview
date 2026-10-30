@@ -5,6 +5,9 @@
   const seen = new WeakSet();
   const active = new Map();
   const selectors = [
+    // 首頁只讓標題與可瀏覽的項目入場，長篇正文維持立即可讀。
+    '.care-values > div', '.treatments > .section-title', '.treat-list > .treat',
+    '#dental-journal > .section-title', '#dental-journal .knowledge-grid > article',
     '.treatments .photo-block',
     '#implant-structure', '#implant-evaluation .visual-pair', '#implant-care .visual-pair',
     '#implant-journey .journey-step',
@@ -13,7 +16,7 @@
     '.treatment-page .tds-step-art', '#allon4-journey .allon4-journey-art',
     '.doctor-portrait', '.knowledge-page #cards .card', '.knowledge-page .article-cover'
   ];
-  // 只讓圖片、流程插圖與知識卡片輕淡入；正文、FAQ、預約和導覽保持穩定。
+  // 只讓首頁入口、圖片、流程插圖與知識卡片輕淡入；正文、FAQ、預約和導覽保持穩定。
   const targets = new Set();
   const registered = new WeakSet();
   function settle(el) {

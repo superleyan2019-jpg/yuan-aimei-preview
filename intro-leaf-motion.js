@@ -6,11 +6,12 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   let played = false;
   const observer = new IntersectionObserver(entries => {
-    if (!entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.12) || played || small.matches || reduce.matches) return;
+    // 等介紹區有足夠面積進入畫面再播放，避免在首屏尚未看見葉片時就播完。
+    if (!entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.3) || played || small.matches || reduce.matches) return;
     played = true;
     intro.dataset.leafState = 'playing';
     observer.disconnect();
-  }, { threshold: 0.12 });
+  }, { threshold: 0.3 });
 
   function prepare() {
     observer.disconnect();

@@ -31,10 +31,10 @@
 }
 @media(max-width:576px){#about-clinic .leaf-composition{display:none}}
 
-/* 保留首次三秒向下淡入。位移最多為自身高度，且全程與 banner 保留 12px。 */
+/* 保留首次向下淡入，縮至 2.2 秒；位移最多為自身高度，且全程與 banner 保留 12px。 */
 #about-clinic .leaf-piece { opacity:1; transform:none; }
 #about-clinic[data-leaf-state="pending"] .leaf-piece { opacity:0; }
-#about-clinic[data-leaf-state="playing"] .leaf-piece { animation:intro-leaf-arrive 3s ease-in-out both; }
+#about-clinic[data-leaf-state="playing"] .leaf-piece { animation:intro-leaf-arrive 2.2s ease-in-out both; }
 @keyframes intro-leaf-arrive {
  from { opacity:0; transform:translate3d(0,max(-100%,var(--leaf-entry-limit,-12px)),0); }
  to { opacity:1; transform:translate3d(0,0,0); }
